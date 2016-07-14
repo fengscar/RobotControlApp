@@ -207,18 +207,6 @@ ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:1
 		ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:106:17-49
 	android:name
 		ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:105:17-69
-service#com.feng.ServiceCOR.CorServerService
-ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:110:9-112:44
-	android:persistent
-		ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:112:17-42
-	android:name
-		ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:111:17-68
-service#com.feng.Usb.ArmUsbManager
-ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:113:9-115:44
-	android:persistent
-		ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:115:17-42
-	android:name
-		ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:114:17-58
 service#com.feng.SpeechRecognize.IatService
 ADDED from D:\AndroidProjects\RobotControlApp\app\src\main\AndroidManifest.xml:116:9-119:19
 	android:persistent

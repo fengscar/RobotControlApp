@@ -382,10 +382,10 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         angleSpinner.setAdapter(adapter);
         // 起始点
         Spinner spStart = (Spinner) dialogLayout.findViewById(R.id.spStartNode);
-        Spinner spEnd = (Spinner) dialogLayout.findViewById(R.id.spEndNode);
+        final Spinner spEnd = (Spinner) dialogLayout.findViewById(R.id.spEndNode);
         // 如果起始点为空,表示当前路线还未选择第一个开始点
         if (startNode == null) {
-            List<Node> selectableNodes = new ArrayList<>();
+            List<Node> selectableNodes;
             // 如果当前路线是第一条路线,则起始点在工作区内随便选
             if (route.getPreID() == 0) {
                 selectableNodes = mMapDatabaseHelper.getAllNode(route.getWorkspaceID());
@@ -404,7 +404,14 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     String nodeName = ((TextView) view).getText().toString();
-                    Node node = MapDatabaseHelper.getInstance().getNodeByName(route.getWorkspaceID(), nodeName);
+                    Node node = mMapDatabaseHelper.getNodeByName(route.getWorkspaceID(), nodeName);
+                    List<Node> selectableNode = mMapDatabaseHelper.getSelectableNode(node);
+                    String[] selection = new String[selectableNode.size()];
+                    for (int i = 0; i < selectableNode.size(); i++) {
+                        selection[i] = selectableNode.get(i).getName();
+                    }
+                    spEnd.setAdapter(new ArrayAdapter<>(EditMapActivity.this, android.R.layout.simple_spinner_item, selection));
+                    spEnd.invalidate();
                 }
 
                 @Override
@@ -416,7 +423,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
             spStart.setEnabled(false);
             spStart.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, startSelection));
 
-            List<Node> selectableNodes = mMapDatabaseHelper.getSelectableNode(route, startNode);
+            List<Node> selectableNodes = mMapDatabaseHelper.getSelectableNode(startNode);
             String[] selection = new String[selectableNodes.size()];
             for (int i = 0; i < selectableNodes.size(); i++) {
                 selection[i] = selectableNodes.get(i).getName();

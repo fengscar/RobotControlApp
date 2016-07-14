@@ -111,12 +111,14 @@
             android:screenOrientation="landscape" >
         </activity>
 
+        <!--
+            <service
+                android:name="com.feng.ServiceCOR.CorServerService"
+                android:persistent="true"/>
         <service
-            android:name="com.feng.ServiceCOR.CorServerService"
-            android:persistent="true" />
-        <service
-            android:name="com.feng.Usb.ArmUsbManager"
-            android:persistent="true" />
+                android:name="com.feng.Usb.ArmUsbManager"
+                android:persistent="true"/>
+        -->
         <service
             android:name="com.feng.SpeechRecognize.IatService"
             android:persistent="true" >
