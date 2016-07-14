@@ -606,7 +606,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder holder = null;
+            ViewHolder holder;
             if (convertView == null) {
                 holder = new ViewHolder();
                 convertView = mInflater.inflate(R.layout.dialog_path_choose_item, null);
@@ -649,6 +649,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
 
                                             mPathList = mMapDatabaseHelper.getWholeRoute(mRoute.getId());
                                             notifyDataSetChanged();
+
 
                                             return true;
                                         }
