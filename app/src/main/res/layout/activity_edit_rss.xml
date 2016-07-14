@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/custom_background"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:scrollbars="none">
+    <include layout="@layout/uniform_setting_title"/>
+
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+            <!-- 音频设置 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_title3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/para_audio_setting"/>
+            </TableRow>
+
+            <!-- 到点提示 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:shadowColor="#478594"
+                        android:text="@string/para_audio_point"/>
+
+                <Switch
+                        android:id="@+id/audio_switch_point"
+                        style="@style/bwg_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+                <!--
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="音效"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="语音"/>
+                </CheckBox> -->
+            </TableRow>
+
+            <!-- 背景音乐 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/para_audio_BGM"/>
+
+                <Switch
+                        android:id="@+id/audio_switch_BGM"
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+            </TableRow>
+            <!-- 警报 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/para_audio_alarm"/>
+
+                <Switch
+                        android:id="@+id/audio_switch_alarm"
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_title3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="界面设置"/>
+            </TableRow>
+            <!-- 地图模式/ 列表模式 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/para_working_model"/>
+
+                <Switch
+                        android:id="@+id/change_map_model"
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textOff="列表模式"
+                        android:textOn="地图模式"/>
+            </TableRow>
+
+            <!-- 列表排列方式 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/para_listing_sort"/>
+
+                <Switch
+                        android:id="@+id/sort_type"
+                        style="@style/bwg_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textOff="@string/para_listing_sort_byID"
+                        android:textOn="@string/para_listing_sort_byType"/>
+            </TableRow>
+            <!-- 自动进入工作区 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/para_auto_enter_workspace"/>
+
+                <Switch
+                        android:id="@+id/autoEnterWorkspace"
+                        style="@style/bwg_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textOff="关闭"
+                        android:textOn="打开">
+                </Switch>
+            </TableRow>
+
+            <!-- 列表模式下 的列数 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/para_listing_numColumn"/>
+
+                <SeekBar
+                        android:id="@+id/columnNumberSeeker"
+                        style="@style/horizonal_seekbar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="13dp"/>
+            </TableRow>
+            <!-- 网络设置 -->
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_title3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="网络设置"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/para_ip_address"/>
+
+                <EditText
+                        android:id="@+id/etIpAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:digits="0123456789."
+                        android:inputType="textVisiblePassword"
+                        android:maxLength="15"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="13dp"/>
+
+                <TextView
+                        style="@style/bwg_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/para_ip_port"/>
+
+                <EditText
+                        android:id="@+id/etIpPort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="13dp"
+                        android:text="8080"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>

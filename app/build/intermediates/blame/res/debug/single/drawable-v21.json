@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_notifications_black_24dp.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-v21\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_info_black_24dp.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-v21\\ic_info_black_24dp.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ic_sync_black_24dp.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-v21\\ic_sync_black_24dp.xml"
+    }
+]

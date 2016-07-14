@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_version.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\edit_version.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\fab_bg_normal.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-xhdpi-v4\\fab_bg_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_rss.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\edit_rss.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_notifications_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_pwd.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\edit_pwd.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ebtn_exe.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\ebtn_exe.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\menu_self_check.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\menu_self_check.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\chetai_on.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\chetai_on.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\home.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\home.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_paras.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\edit_paras.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\menu.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\menu.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\fab_bg_mini.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-xhdpi-v4\\fab_bg_mini.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_map.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\edit_map.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ebtn_pause.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\ebtn_pause.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ebtn_disable.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\ebtn_disable.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\edit_spearker.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\edit_spearker.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_sync_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_sync_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\refresh_task.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\refresh_task.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_info_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\ic_info_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ebtn_con.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-xhdpi\\ebtn_con.png"
+    }
+]

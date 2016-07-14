@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\popup_edit.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\popup_edit.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_power100.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_power100.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\map_path_arrow2.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\map_path_arrow2.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\fab_btn_save_map.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\fab_btn_save_map.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_schedule_disconnect.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_schedule_disconnect.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_schedule_connect.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_schedule_connect.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\popup_path.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\popup_path.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\fab_btn_add.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\fab_btn_add.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_warn.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_warn.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_schedule_logined.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_schedule_logined.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_back.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_back.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_usb_disconnect.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_usb_disconnect.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_quit.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_quit.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\fab_btn_update_map.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\fab_btn_update_map.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_power80.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_power80.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\btn_setting.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_setting.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_power60.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_power60.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\default_map_background.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\default_map_background.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\fab_btn_edit_map_version.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\fab_btn_edit_map_version.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\popup_del.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\popup_del.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_power20.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_power20.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_power40.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_power40.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\map_path_arrow.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\map_path_arrow.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\drawer_menu_usb_connect.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\mipmap-xxhdpi\\drawer_menu_usb_connect.png"
+    }
+]

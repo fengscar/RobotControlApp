@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按下时 -->
+    <item android:state_pressed="true">
+        <shape>
+            <!--色值-->
+            <solid android:color="@color/rcs_b"/>
+            <!--圆角-->
+            <corners android:radius="4dp"/>
+        </shape>
+    </item>
+    <!--选中任务时背景-->
+    <item android:state_selected="true">
+        <shape>
+            <!--色值-->
+            <gradient android:startColor="#FFffAf00"
+                      android:endColor="@color/rcs_y"
+                      android:angle="270"/>
+            <!--圆角-->
+            <corners android:radius="4dp"/>
+
+        </shape>
+    </item>
+    <!--默认背景-->
+    <item>
+        <shape>
+            <solid android:color="@color/rcs_g"/>
+            <corners android:radius="4dp"/>
+        </shape>
+    </item>
+</selector>  

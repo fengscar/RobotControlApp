@@ -1,0 +1,202 @@
+[
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_node.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_node.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning_content.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_warning_content.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_path.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_path.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_arm.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_arm.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_route.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__button.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog__button.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_version.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_version.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose_item.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_path_choose_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_listing.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_listing.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_oneline.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_input_oneline.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_pwd.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_pwd.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_route.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__title.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog__title.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_map.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_map.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_check.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_check.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_3button.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_self_check_3button.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_drawer.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_drawer.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_self_check.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_self_check.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_node.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_node.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_node.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_node.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_menu.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_loading.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_loading.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_test.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_test.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_route.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_menu.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_map.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_rss.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_rss.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_arm_setting.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\layout_arm_setting.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_group.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\expandable_task_group.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\toast.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_edit.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_path_edit.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_speaker.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_speaker.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_task.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_task.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_menu.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\layout_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_warning.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_path_choose.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_mag.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_mag.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\btn_notify.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\btn_notify.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_mag.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_self_check_mag.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uniform_setting_title.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\uniform_setting_title.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_result.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_self_check_result.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_child.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\expandable_task_child.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_password.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_input_password.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_confirm.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_confirm.xml"
+    }
+]

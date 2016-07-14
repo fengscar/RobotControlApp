@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 左边的 ROUTE选择栏 当处于设置界面可用 -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/mapFrameLayout"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+</FrameLayout>

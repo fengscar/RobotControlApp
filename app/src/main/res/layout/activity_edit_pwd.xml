@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/custom_background"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <!-- 标题 -->
+
+    <include layout="@layout/uniform_setting_title"/>
+
+    <RadioGroup
+            android:layout_marginTop="50dp"
+            android:id="@+id/rgUserGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <RadioButton
+                android:id="@+id/rbCustomer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_customer"
+                android:textSize="30sp"/>
+
+        <RadioButton
+                android:id="@+id/rbServicer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_servicer"
+                android:textSize="30sp"/>
+
+        <RadioButton
+                android:id="@+id/rbProgrammer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_programmer"
+                android:textSize="30sp"/>
+    </RadioGroup>
+
+    <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <TextView
+                style="@style/text_20sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/setting_edit_password_old"/>
+
+        <EditText
+                android:id="@+id/etOldPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:hint="请输入原始密码"
+                android:inputType="number"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:minWidth="100dp"
+                android:paddingRight="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <TextView
+                style="@style/text_20sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/setting_edit_password_new1"/>
+
+        <EditText
+                android:id="@+id/etNewPwd1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/dialog_input_password"
+                android:inputType="numberPassword"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:paddingRight="10dp" android:gravity="left|center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <TextView
+                style="@style/text_20sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/setting_edit_password_new2"/>
+
+        <EditText
+                android:id="@+id/etNewPwd2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:hint="重复新密码"
+                android:inputType="numberPassword"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:minWidth="100dip"
+                android:paddingRight="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/btnSavePwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/setting_edit_password_save"/>
+
+        <ToggleButton
+                android:id="@+id/tbShowPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_weight="0.2"
+                android:textOn="隐藏密码"
+                android:textOff="显示密码"
+                android:layout_gravity="center_vertical"
+                android:text="@string/setting_edit_password_save"/>
+    </LinearLayout>
+</LinearLayout>

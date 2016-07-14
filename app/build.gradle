@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.feng.RSS"
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion 14
+        targetSdkVersion 14
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file("hcwy_apk_key")
+            storePassword "041225"
+            keyAlias "feng"
+            keyPassword "041225"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/Msc.jar')
+    compile files('libs/Sunflower.jar')
+    compile files('libs/usbseriallibrary.jar')
+    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.getbase:floatingactionbutton:1.10.1'
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              style="@style/dialog_background"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent">
+    <include layout="@layout/dialog__title"/>
+    <ListView android:layout_width="match_parent"
+              android:layout_height="350dp"
+              android:id="@+id/lvPathList"
+              android:layout_gravity="center"/>
+    <include layout="@layout/dialog__button"/>
+
+</LinearLayout>

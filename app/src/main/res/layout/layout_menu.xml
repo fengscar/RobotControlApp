@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/custom_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+		<TextView 
+		    android:layout_width="0dp"
+		    style="@style/text_22sp_999999"
+		    android:layout_weight="1"
+		    android:layout_height="wrap_content"
+		    android:text="网络连接"/>
+        <ToggleButton 
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textOn="已连接"
+            android:textOff="重接"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <ImageView 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/blue"/>
+		<TextView 
+		    android:layout_width="0dp"
+		    android:layout_weight="1"
+		    style="@style/text_22sp_999999"
+		    android:layout_height="wrap_content"
+		    android:text="电量信息"/>
+    </LinearLayout>
+    
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <ImageView 
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/blue"/>
+		<TextView 
+		    android:layout_width="0dp"
+		    android:layout_weight="1"
+		    style="@style/text_22sp_999999"
+		    android:layout_height="wrap_content"
+		    android:text="报警信息"/>
+    </LinearLayout>
+    
+    
+
+</LinearLayout>

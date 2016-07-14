@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/dialog_background"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="0dp">
+
+    <include layout="@layout/dialog__title"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+        <TextView
+                style="@style/text_22sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/dialog_node_ID"/>
+
+        <TextView
+                android:id="@+id/tvDialogNodeID"
+                style="@style/text_22sp_333333"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        <TextView
+                style="@style/text_22sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/dialog_node_position"/>
+
+        <TextView
+                android:id="@+id/dialogNodePosition"
+                style="@style/text_22sp_333333"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="200dp"
+                android:gravity="center"/>
+    </LinearLayout>
+
+    <EditText
+            android:id="@+id/etDialogNodeName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="节点名称"
+            android:inputType="textWebEditText"
+            android:maxLength="8"
+            android:maxLines="1"/>
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+        <EditText
+                android:id="@+id/etDialogNodeRFID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:digits="0123456789ABCDEFabcdef"
+                android:focusable="true"
+                android:gravity="center"
+                android:hint="节点RFID"
+                android:imeOptions="actionDone"
+                android:inputType="textVisiblePassword"
+                android:maxLength="4"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+        <Spinner
+                android:id="@+id/spDialogNodeType"
+                style="@style/spinner_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/edit_node_type"
+                android:gravity="center"/>
+    </LinearLayout>
+
+    <include layout="@layout/dialog__button"/>
+
+</LinearLayout>

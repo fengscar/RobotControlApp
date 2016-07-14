@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <include layout="@layout/uniform_setting_title"/>
+    <GridView
+        android:id="@+id/menuGridView"
+        android:layout_width="fill_parent"
+        android:numColumns="2"
+        android:layout_height="fill_parent" >
+    </GridView>
+
+</LinearLayout>

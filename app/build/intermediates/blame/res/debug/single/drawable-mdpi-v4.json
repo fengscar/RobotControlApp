@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\fab_bg_normal.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-mdpi-v4\\fab_bg_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\check_btn.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\check_btn.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\fab_bg_mini.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-mdpi-v4\\fab_bg_mini.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\check_mag.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\check_mag.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\check_barrier.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\check_barrier.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_sync_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\ic_sync_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\check_ultra.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\check_ultra.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\check_infra.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\check_infra.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_info_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\ic_info_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_notifications_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\check_rfid.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-mdpi\\check_rfid.png"
+    }
+]

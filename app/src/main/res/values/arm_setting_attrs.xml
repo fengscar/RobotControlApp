@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="mainText" format="string" />
+    <attr name="subText" format="string" />
+    <attr name="minNum" format="integer" />
+    <attr name="maxNum" format="integer" />
+    <attr name="defaultNum" format="integer" />
+    <attr name="limit" format="string">
+    </attr>
+
+    <declare-styleable name="ArmSetting">
+        <attr name="mainText" />
+        <attr name="subText" />
+        <attr name="minNum" />
+        <attr name="maxNum" />
+        <attr name="defaultNum" />
+        <attr name="limit" />
+    </declare-styleable>
+
+</resources>

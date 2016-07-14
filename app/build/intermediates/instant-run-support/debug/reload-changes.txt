@@ -1,0 +1,5 @@
+CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$override.class
+CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$override.class
+CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$1$override.class
+CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$2$1$override.class

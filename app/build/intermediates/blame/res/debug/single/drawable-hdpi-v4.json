@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_notifications_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_normal.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\yellow.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\yellow.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\circle_skyblue.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\circle_skyblue.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_79.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_blue_79.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_1379.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_blue_1379.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_red_79.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_red_79.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_info_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\ic_info_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\skyblue.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\skyblue.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gray.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\gray.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_mini.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_mini.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\toast_background.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\toast_background.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\blue.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\blue.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_sync_black_24dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\ic_sync_black_24dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_skyblue_270.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_skyblue_270.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_white_gradient.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_white_gradient.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_gold_1379.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_gold_1379.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_layer.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\btn_layer.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dialog.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\dialog.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\warning_yellow.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\warning_yellow.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_yellow_1379.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_yellow_1379.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\red.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\red.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_green_gradient.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_green_gradient.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\green.png",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\green.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\white.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\white.xml"
+    }
+]

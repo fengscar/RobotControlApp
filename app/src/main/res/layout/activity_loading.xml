@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/white" >
+
+    <ImageView
+        android:id="@+id/loadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:src="@drawable/home" />
+    <TextView 
+        android:id="@+id/loadSystemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        style="@style/text_24sp_111111"
+        android:text="@string/system_name"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/loadImage"
+        android:textColor="#ff0099FF"/>
+
+    <ProgressBar
+        android:id="@+id/loadProgress"
+        style="@style/progress_style"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        android:max="1000"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/loadText"
+        style="@style/text_22sp_999999"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loadProgress"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp" />
+
+  
+    <TextView
+        android:id="@+id/loadCompanyTel"
+        style="@style/text_30sp_333333"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:includeFontPadding="false"
+        android:text="@string/companyTel" />
+    
+      <TextView
+        style="@style/text_30sp_333333"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/loadCompanyTel"
+        android:layout_centerHorizontal="true"
+        android:includeFontPadding="false"
+        android:text="@string/companyName" />
+
+
+</RelativeLayout>

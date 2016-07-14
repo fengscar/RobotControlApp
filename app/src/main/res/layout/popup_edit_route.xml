@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+            android:id="@+id/popupEditPath"
+            style="@style/button_skyblue_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:padding="5dp"
+            android:text="路径"
+            android:textSize="22sp" />
+    <Button
+        android:id="@+id/popupEditRoute"
+        style="@style/button_skyblue_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:padding="5dp"
+        android:text="编辑"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/popupDelRoute"
+        style="@style/button_skyblue_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:padding="5dp"
+        android:text="删除"
+        android:textSize="22sp" />
+
+</LinearLayout>

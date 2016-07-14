@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:arm="http://schemas.android.com/apk/res-auto"
+    style="@style/custom_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 标题 -->
+    <include layout="@layout/uniform_setting_title"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- 磁条 -->
+
+            <TextView
+                android:id="@+id/arm_mag"
+                style="@style/button_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arm_mag"
+                android:textSize="26sp" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_mag_max"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="3"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_mag_max"
+                arm:maxNum="6"
+                arm:minNum="1"
+                arm:subText="@string/arm_mag_max_describe" >
+            </com.feng.CustomView.ArmSettingView>
+
+            <!-- 运动参数 -->
+
+            <TextView
+                android:id="@+id/arm_motion"
+                style="@style/button_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arm_motion"
+                android:textSize="26sp" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_motion_originTurnSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="130"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_motion_originTurnSpeed"
+                arm:maxNum="250"
+                arm:minNum="80" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_motion_startSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="80"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_motion_startSpeed"
+                arm:maxNum="100"
+                arm:minNum="50" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_motion_incrementSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="10"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_motion_incrementSpeed"
+                arm:maxNum="50"
+                arm:minNum="5" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_motion_maxSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="350"
+                arm:limit="WWW"
+                arm:mainText="@string/arm_motion_maxSpeed"
+                arm:maxNum="600"
+                arm:minNum="150" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_motion_turnSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="200"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_motion_turnSpeed"
+                arm:maxNum="300"
+                arm:minNum="100" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_motion_ultraSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="200"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_motion_ultraSpeed"
+                arm:maxNum="250"
+                arm:minNum="100" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_motion_readCardSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="150"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_motion_readCardSpeed"
+                arm:maxNum="250"
+                arm:minNum="100" />
+            <!-- 路线信息 -->
+
+            <TextView
+                android:id="@+id/arm_route"
+                style="@style/button_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arm_route"
+                android:textSize="26sp" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_route_maxRoute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="20"
+                arm:limit="RR-"
+                arm:mainText="@string/arm_route_maxRoute" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_route_maxTarget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="10"
+                arm:limit="RR-"
+                arm:mainText="@string/arm_route_maxTarget" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_route_maxNode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="100"
+                arm:limit="RR-"
+                arm:mainText="@string/arm_route_maxNode" />
+            <!-- 超声波 -->
+
+            <TextView
+                android:id="@+id/arm_ultra"
+                style="@style/button_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arm_ultra"
+                android:textSize="26sp" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_ultra_warningDistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="30"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_ultra_warningDistance"
+                arm:maxNum="50"
+                arm:minNum="10" />
+            <!-- 系统信息 -->
+
+            <TextView
+                android:id="@+id/arm_sys"
+                style="@style/button_gray"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/arm_sys"
+                android:textSize="26sp" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_sys_soft_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="3"
+                arm:limit="RRR"
+                arm:mainText="@string/arm_sys_soft_version"
+                arm:maxNum="6"
+                arm:minNum="1"
+                arm:subText="@string/arm_sys_soft_version_describe" >
+            </com.feng.CustomView.ArmSettingView>
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_sys_robot_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="1"
+                arm:limit="WWR"
+                arm:mainText="@string/arm_sys_robot_id"
+                arm:maxNum="10"
+                arm:minNum="1"
+                arm:subText="@string/arm_sys_robot_id_describe" >
+            </com.feng.CustomView.ArmSettingView>
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_sys_sendPeriod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="30"
+                arm:limit="WR-"
+                arm:mainText="@string/arm_sys_sendPeriod"
+                arm:maxNum="50"
+                arm:minNum="5" />
+
+            <com.feng.CustomView.ArmSettingView
+                android:id="@+id/arm_sys_sendCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                arm:defaultNum="3"
+                arm:limit="WW-"
+                arm:mainText="@string/arm_sys_sendCount"
+                arm:maxNum="5"
+                arm:minNum="1" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

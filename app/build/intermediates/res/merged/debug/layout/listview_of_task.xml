@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/list_view_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/taskListID"
+        android:layout_width="fill_parent"
+        style="@style/text_20sp_999999"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="fill_parent" />
+
+    <TextView
+        android:id="@+id/taskListName"
+        style="@style/text_22sp_333333"
+        android:layout_width="fill_parent"
+         android:layout_gravity="center_horizontal"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

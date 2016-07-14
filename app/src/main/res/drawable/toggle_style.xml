@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  不可用时 -->
+	<item android:drawable="@drawable/green" android:state_enabled="false"/>
+	<!--  运行时 -->
+    <item android:drawable="@drawable/red" android:state_checked="true"/>
+    <!--  正常时 -->
+    <item android:drawable="@drawable/blue"/>
+</selector>

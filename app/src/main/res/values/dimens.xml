@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="workspace_grid_horizontal_spacing">30dp</dimen>
+    <dimen name="workspace_grid_vertical_spacing">30dp</dimen>
+    <dimen name="dialog_title_width">300dp</dimen>
+    <dimen name="menu_layout_width">350dp</dimen>
+    <!-- 报警dialog -->
+    <dimen name="dialog_warning_width">500dp</dimen>
+    <!-- 任务列表 -->
+    <dimen name="home_btn_width">175dp</dimen>
+    <!-- 返回主页 按键 -->
+    <dimen name="home_btn_height">100dp</dimen>
+    <!-- 执行按键 宽度 -->
+    <dimen name="operating_btn_width">100dp</dimen>
+    <dimen name="state_list_height">35dp</dimen>
+    <!-- 标题栏高度 -->
+    <dimen name="menu_title_height">50dp</dimen>
+
+    <dimen name="dialogEditTextWidth">150dp</dimen>
+    <dimen name="dialogEditTextHeight">50dp</dimen>
+</resources>

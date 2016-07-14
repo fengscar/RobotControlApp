@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">机器人软件系统</string>
+    <string name="action_settings">Settings</string>
+    <!-- 主页 -->
+    <string name="ebtnExecute">执行</string>
+    <string name="ebtnContinue">继续</string>
+    <string name="ebtnPause">暂停</string>
+    <string name="ebtnDisable">待机</string>
+    <string name="btnWashSelect">撤台</string>
+    <string name="btnWashCancel">取消</string>
+    <string name="setting">设置</string>
+    <string name="quit">退出</string>
+    <string name="clearTasks">清空</string>
+    <string name="refreshTasks">刷新</string>
+    <string name="system_name">单机版传菜机器人软件系统 测试版</string>
+    <string name="companyName">福建省和创伟业智能科技有限公司</string>
+    <string name="companyTel">0591_12345678</string>
+    <string name="ScheduleLogin">已登录到调度系统</string>
+    <string name="ScheduleConnect">已连接但未登录</string>
+    <string name="ScheduleDisconnect">未连接调度系统</string>
+    <string name="usbConnect">机器人已连接</string>
+    <string name="usbDisconnect">机器人未连接</string>
+    <string name="powerUnknown">获取电量失败</string>
+    <!-- 设置菜单 -->
+    <string name="menu_edit_quit">退出登录</string>
+    <string name="menu_edit_password">密码管理</string>
+    <string name="menu_edit_map">编辑地图</string>
+    <string name="menu_edit_speaker">语音设置</string>
+    <string name="menu_edit_rss">软件设置</string>
+    <string name="menu_edit_arm">机器人设置</string>
+    <string name="menu_edit_version">系统升级</string>
+    <string name="menu_self_check">自检测试</string>
+    <string name="cancel">返回</string>
+
+    <!-- 设置界面_编辑工作区 -->
+    <string name="setting_add_workspace">添加工作区</string>
+    <!-- 设置界面_编辑地图 -->
+    <string name="edit_map_workspace_name">工作区X</string>
+    <string name="edit_map_add_route">添加路线</string>
+    <string name="edit_map_auto_adjust">自动对齐</string>
+    <string name="setting_edit_workspace">编辑工作区</string>
+    <string name="setting_delete_workspace">删除</string>
+    <string name="save_map">保存地图</string>
+
+    <!--编辑路径dialog-->
+    <string name="dialog_path_path">所选路径</string>
+    <string name="dialog_path_route">所属路线</string>
+    <string name="dialog_path_yaw">行走转向</string>
+    <string name="dialog_path_angle">到点转向</string>
+    <string name="dialog_path_distance">距离</string>
+    <string name="dialog_path_maxspeed">限速</string>
+
+    <!-- 自检模块 -->
+    <string name="self_check_begin">开始自检</string>
+    <!-- 设置界面_修改密码 -->
+    <string name="setting_edit_password_old">原始密码</string>
+    <string name="setting_edit_password_new1">新的密码</string>
+    <string name="setting_edit_password_new2">重复密码</string>
+    <string name="setting_edit_password_save">修改密码</string>
+    <string name="setting_edit_password_reset">重置密码</string>
+    <string name="setting_edit_password_show">显示密码</string>
+
+    <!-- 编辑工作区 -->
+    <string name="edit_workspace_id">工作区编号</string>
+    <string name="edit_workspace_floor">所在楼层</string>
+    <string name="edit_workspace_name">工作区名称</string>
+    <string name="edit_workspace_map">平面图</string>
+    <string name="show_workspace_id">编号</string>
+    <string name="show_workspace_floor">楼层</string>
+    <string name="show_workspace_nodeNum">节点</string>
+    <string name="show_workspace_name">名称</string>
+    <string name="edit_map_version">修改</string>
+    <!-- 参数设置 -->
+    <string name="para_setting">参数设置</string>
+    <!-- 参数设置-音频 -->
+    <string name="para_audio_setting">音频设置</string>
+    <string name="para_audio_alarm">报警提示</string>
+    <string name="para_audio_point">到点提示</string>
+    <string name="para_audio_BGM">背景音乐</string>
+    <!-- 参数设置-界面 -->
+    <string name="para_working_model">操作界面样式</string>
+    <string name="para_listing_sort">排序方式</string>
+    <string name="para_listing_numColumn">列数</string>
+    <string name="para_listing_sort_byID">节点编号</string>
+    <string name="para_listing_sort_byType">节点类型</string>
+    <string name="para_auto_enter_workspace">自动进入上次工作区</string>
+    <string name="para_ip_address">IP地址</string>
+    <string name="para_ip_port">端口</string>
+    <!-- 系统设置 -->
+    <string name="edit_version">更新与激活</string>
+    <!-- 语音设置 -->
+    <string name="edit_speaker">语音设置</string>
+    <string name="edit_speaker_running">运行提示</string>
+    <string name="edit_speaker_RFID">经过点提示</string>
+    <string name="edit_speaker_TARGET">到达点提示</string>
+    <string name="edit_speaker_ERROR">报警提示</string>
+    <string name="edit_speaker_warning">异常提示</string>
+    <string name="edit_speaker_TTS">识别与匹配</string>
+    <!-- listView of Route / dialog of Route -->
+    <string name="routeID">路线编号</string>
+    <string name="routePreID">前级路线</string>
+    <string name="routeName">路线名称</string>
+    <string name="routeEnabled">是否可用</string>
+
+    <!-- 添加节点对话框 -->
+    <string name="dialog_node_ID">编号</string>
+    <string name="dialog_node_position">坐标</string>
+    <!-- 输入密码对话框 -->
+    <string name="dialog_input_password">请输入六位数字密码</string>
+
+    <!-- 对话框 添加节点 类型选项 -->
+    <string-array name="edit_node_type">
+        <item>工作台</item>
+        <item>交叉点</item>
+        <item>厨房</item>
+        <item>消洗区</item>
+    </string-array>
+
+    <string name="user_customer">普通用户</string>
+    <string name="user_servicer">维护人员</string>
+    <string name="user_programmer">开发人员</string>
+    <!-- 用户权限 类型选项 -->
+    <string-array name="user_type">
+        <item>@string/user_customer</item>
+        <item>@string/user_servicer</item>
+        <item>@string/user_programmer</item>
+    </string-array>
+
+    <!-- arm 的参数设置 -->
+    <!-- 组名 -->
+    <string name="arm_mag">磁传感</string>
+    <!-- 具体的设置项 -->
+    <string name="arm_mag_max">单磁条最大感应数</string>
+    <!-- 具体的描述 (可无) -->
+    <string name="arm_mag_max_describe">默认是3</string>
+    <string name="arm_motion">运动</string>
+    <string name="arm_motion_targetTurnFlag">目的地转向</string>
+    <string name="arm_motion_targetTurnFlag_describe">到达目标点后是否转向</string>
+    <string name="arm_motion_originTurnSpeed">原地转向速度</string>
+    <string name="arm_motion_startSpeed">启动速度</string>
+    <string name="arm_motion_incrementSpeed">速度增量</string>
+    <string name="arm_motion_maxSpeed">最大速度</string>
+    <string name="arm_motion_turnSpeed">转弯速度</string>
+    <string name="arm_motion_ultraSpeed">超声感应速度</string>
+    <string name="arm_motion_readCardSpeed">读卡速度</string>
+    <string name="arm_route">路线</string>
+    <string name="arm_route_maxRoute">最大路线数</string>
+    <string name="arm_route_maxTarget">最大目的和最大目的路线</string>
+    <string name="arm_route_maxNode">行驶路线最大节点数</string>
+    <string name="arm_ultra">超声波</string>
+    <string name="arm_ultra_warningDistance">超声波报警距离</string>
+    <string name="arm_sys">系统信息</string>
+    <string name="arm_sys_soft_version">固件版本号</string>
+    <string name="arm_sys_soft_version_describe">ARM下位机软件版本号</string>
+    <string name="arm_sys_robot_id">机器人编号</string>
+    <string name="arm_sys_robot_id_describe">在同一局域网下必须唯一</string>
+    <string name="arm_sys_sendCount">上报次数</string>
+    <string name="arm_sys_sendPeriod">上报间隔</string>
+    <string name="arm_sys_reset">恢复出厂设置</string>
+
+    <!-- 自检模块  listView 名称 -->
+    <string name="selfCheckListBarrier">红外避障检测</string>
+    <string name="selfCheckListRFID">RFID读卡检测</string>
+    <string name="selfCheckListMag">磁传感器检测</string>
+    <string name="selfCheckListInfra">人体红外检测</string>
+    <string name="selfCheckListBtn">外设按键检测</string>
+    <string name="selfCheckListUltra">超声波检测</string>
+    <string name="selfCheckListMotor">电机检测</string>
+
+    <!-- 自检模块  解释文本 -->
+    <string name="selfCheckExplainBarrier">请依次遮挡图中的各个红外传感器.如果遮挡时对应的灯变绿,表示传感器工作正常;如果遮挡时对应的灯没有变化,表示传感器运行异常,请停止使用并联系厂家
+    </string>
+    <string name="selfCheckExplainRFID">
+        请将测试节点卡放到底盘的RFID读卡模块下方.如果能正常显示该节点卡的4位十六进制卡号,表示该模块正常;如果未显示卡号,则表示该模块异常,请停止使用并联系厂家
+    </string>
+    <string name="selfCheckExplainMag">请将测试磁条放到底盘的磁传感器下方.如果能正常显示当前的磁传感器状态,则表示该模块正常;如果未显示有部分点不能点亮,则表示该模块异常,请停止使用并联系厂家
+    </string>
+    <string name="selfCheckExplainInfra">人体红外安装在机器人头部下方,当机器人正前方有人时,下方的指示灯将会亮起.如果没有亮起,表示该模块异常,请停止使用并联系厂家</string>
+    <string name="selfCheckExplainBtn">外设按键安装在机器人肩膀上,左右各一个.按下按键后,下方的控件会有显示.如果不能正常显示,表示该案件已经失灵,但不影响使用.可以联系厂家进行维护修理.
+    </string>
+    <string name="selfCheckExplainUltra">超声波传感器安装在机器人正下方,如图所示.当传感器前方有物体时,下方会显示具体的距离.如果没有显示或者显示异常,则表示传感器失效,请联系厂家并进行维护
+    </string>
+    <string name="selfCheckExplainMotor">点击下方的按键,如果机器人完成按照指定的操作,则表示电机出现了异常,请联系厂家进行维护</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact based on your message
+        history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+</resources>

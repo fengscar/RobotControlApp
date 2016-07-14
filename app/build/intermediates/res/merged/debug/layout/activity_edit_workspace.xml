@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/beige"
+                android:orientation="vertical">
+
+    <include
+            android:id="@+id/title"
+            layout="@layout/uniform_setting_title"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"/>
+
+    <FrameLayout
+            android:layout_below="@id/title"
+            android:id="@+id/edit_workspace_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/fam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            fab:fab_addButtonSize="normal"
+            fab:fab_labelStyle="@style/fab_menu_labels_style"
+            fab:fab_expandDirection="up"
+            fab:fab_addButtonColorNormal="@color/aquamarine"
+            fab:fab_addButtonColorPressed="@color/aquamarine"
+            fab:fab_addButtonPlusIconColor="#808080">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabEditMapVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_icon="@mipmap/fab_btn_edit_map_version"
+                fab:fab_colorNormal="@color/azure"
+                fab:fab_colorPressed="@color/aquamarine"
+                fab:fab_title="修改地图版本"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabSaveMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_icon="@mipmap/fab_btn_save_map"
+                fab:fab_colorNormal="@color/azure"
+                fab:fab_colorPressed="@color/aquamarine"
+                fab:fab_title="保存地图"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabUpdateMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_icon="@mipmap/fab_btn_update_map"
+                fab:fab_colorNormal="@color/azure"
+                fab:fab_colorPressed="@color/aquamarine"
+                fab:fab_title="更新地图"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAddWorkspace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_icon="@mipmap/fab_btn_add"
+                fab:fab_colorNormal="@color/azure"
+                fab:fab_colorPressed="@color/aquamarine"
+                fab:fab_title="添加工作区"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+</RelativeLayout>

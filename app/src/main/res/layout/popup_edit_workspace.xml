@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/popupEditData"
+        style="@style/button_skyblue_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:padding="8dp"
+        android:text="编辑"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/popupEditMap"
+        style="@style/button_skyblue_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="8dp"
+        android:text="选择平面图"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/popupDelete"
+        style="@style/button_skyblue_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:padding="8dp"
+        android:text="删除"
+        android:textSize="22sp" />
+
+</LinearLayout>

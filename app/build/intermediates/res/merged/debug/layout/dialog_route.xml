@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="@style/dialog_background"
+              android:layout_width="300dp"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/dialog__title"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="8dp">
+
+        <TextView
+                style="@style/text_22sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/routeID"/>
+
+        <TextView
+                android:id="@+id/addRouteId"
+                style="@style/text_22sp_333333"
+                android:layout_width="0dp"
+                android:minWidth="@dimen/dialogEditTextWidth"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/llPreRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="8dp">
+
+        <TextView
+                style="@style/text_22sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/routePreID"/>
+        <Spinner android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:id="@+id/spPreRoute"
+                 android:gravity="center"
+                 android:dropDownWidth="200dp"
+                 android:spinnerMode="dropdown"
+                 android:layout_gravity="center"
+                 android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="8dp">
+
+        <TextView
+                style="@style/text_22sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/routeName"/>
+
+        <EditText
+                android:id="@+id/etRouteName"
+                style="@style/text_22sp_333333"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:imeOptions="actionDone"
+                android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="8dp">
+
+        <TextView
+                style="@style/text_22sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/routeEnabled"/>
+
+        <Switch
+                android:id="@+id/swRouteEnable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textOff="禁用"
+                android:textOn="启用"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/dialog__button"/>
+
+</LinearLayout>
