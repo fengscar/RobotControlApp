@@ -1,12 +1,10 @@
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$ViewHolder$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$2$override.class
-CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$8$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$9$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$10$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$override.class
-CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Database\MapDatabaseHelper$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$1$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$11$override.class
 CHANGED,D:\AndroidProjects\RobotControlApp\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\feng\Activities\EditMapActivity$PathListViewAdapter$2$1$override.class

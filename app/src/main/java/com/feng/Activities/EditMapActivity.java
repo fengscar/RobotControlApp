@@ -367,7 +367,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         }
     }
 
-    private void showAddPathDialog(final Route route, Node startNode) {
+    private void showAddPathDialog(final Dialog chooseDialog, final Route route, Node startNode) {
         CustomDialog.Builder mBuilder = new CustomDialog.Builder(this);
         mBuilder.setResourceID(R.layout.dialog_path_edit);
         //初始化Spinner选项
@@ -437,7 +437,13 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         pathAdd.setRouteID(route.getId());
         int orderID = mMapDatabaseHelper.getMaxPathOrder(route.getId()) + 1;
         pathAdd.setOrderID(orderID);
-        mBuilder.setCancelBtnClick(R.id.dialogCancelBtn, null)
+        mBuilder.setCancelBtnClick(R.id.dialogCancelBtn, new CustomDialogCallback() {
+            @Override
+            public boolean onDialogBtnClick(List<View> viewList) {
+                chooseDialog.show();
+                return true;
+            }
+        })
                 .setTitle("添加路径")
                 .setButtonText("添加", "取消")
                 .setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
@@ -446,8 +452,12 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                         if (newPath == null) {
                             L.e("装载 路径 时出错");
                             return false;
+                        } else if (mMapDatabaseHelper.addData(newPath)) {
+                            mapFragment.refreshAll();
+                            chooseDialog.show();
+                            return true;
                         } else {
-                            return mMapDatabaseHelper.addData(newPath);
+                            return false;
                         }
                     }
                 })
@@ -460,7 +470,8 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                 .show();
     }
 
-    private void showEditPathDialog(final Path path) {
+    //显示编辑path的dialog, 当操作结束,继续显示chooseDialog
+    private void showEditPathDialog(final Dialog chooseDialog, final Path path) {
         CustomDialog.Builder mBuilder = new CustomDialog.Builder(this);
         mBuilder.setResourceID(R.layout.dialog_path_edit);
         //初始化Spinner选项
@@ -487,7 +498,13 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         String[] endNodeSelection = new String[]{mMapDatabaseHelper.getNodeByID(path.getEndNode()).getName()};
         spEnd.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, endNodeSelection));
 
-        mBuilder.setCancelBtnClick(R.id.dialogCancelBtn, null)
+        mBuilder.setCancelBtnClick(R.id.dialogCancelBtn, new CustomDialogCallback() {
+            @Override
+            public boolean onDialogBtnClick(List<View> viewList) {
+                chooseDialog.show();
+                return true;
+            }
+        })
                 .setTitle("编辑路径")
                 .setButtonText("修改", "取消")
                 .setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
@@ -498,6 +515,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                             return false;
                         } else if (mMapDatabaseHelper.updateData(newPath)) {
                             mapFragment.refreshAll();
+                            chooseDialog.show();
                             return true;
                         } else {
                             return false;
@@ -521,21 +539,22 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         builder.setTitle(route.getName() + "包含的路径");
         builder.setButtonText("添加路径", "取消");
         builder.setCancelBtnClick(R.id.dialogCancelBtn, null);
-        //当前路线的最后一个节点. 如果没有则为空
-        final Node node = mMapDatabaseHelper.getLastNodeByRouteID(route.getId());
-        builder.setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
-            @Override
-            public boolean onDialogBtnClick(List<View> viewList) {
-                showAddPathDialog(route, node);
-                return true;
-            }
-        });
+        final Dialog dialog = builder.create(null, null);
+
         // 如果该节点不可以添加路径,将添加按键设置为不可用
         Button addPath = (Button) builder.getViewByID(R.id.dialogOKBtn);
         if (mMapDatabaseHelper.isCompleted(route)) {
             addPath.setEnabled(false);
         }
-        Dialog dialog = builder.create(null, null);
+        //当前路线的最后一个节点. 如果没有则为空
+        final Node node = mMapDatabaseHelper.getLastNodeByRouteID(route.getId());
+        builder.setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
+            @Override
+            public boolean onDialogBtnClick(List<View> viewList) {
+                showAddPathDialog(dialog, route, node);
+                return true;
+            }
+        });
         ListView lvPaths = (ListView) builder.getViewByID(R.id.lvPathList);
         PathListViewAdapter pathChooseDialogAdapter = new PathListViewAdapter(this, route, dialog);
         lvPaths.setAdapter(pathChooseDialogAdapter);
@@ -609,7 +628,8 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                     @Override
                     public void onClick(View v) {
 //                        mDialog.dismiss();
-                        showEditPathDialog(path);
+                        mDialog.hide();
+                        showEditPathDialog(mDialog, path);
                     }
                 });
 
@@ -629,6 +649,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
 
                                             mPathList = mMapDatabaseHelper.getWholeRoute(mRoute.getId());
                                             notifyDataSetChanged();
+
                                             return true;
                                         }
                                         return false;

@@ -1289,7 +1289,7 @@ public class MapDatabaseHelper extends SQLiteOpenHelper implements I_MapData {
     // 根据当前路线选中的起始点,获取终点的可选范围 ( 去掉不可选就是可选的)
     // 以下情况的节点不可选:
     // 1. 起始点不可选
-    public List<Node> getSelectableNode(Node startNode) {
+    public List<Node> getSelectableNode( Node startNode) {
         String sql = "select * from node where " + NODE_ID + "!=?";
         return getNodeList(mDatabase.rawQuery(sql, new String[]{String.valueOf(startNode.getId())}));
     }
