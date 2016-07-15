@@ -469,7 +469,7 @@ containing a value of this type.
         public static final int yellow=0x7f02004e;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c00ba;
+        public static final int action_settings=0x7f0c00b9;
         public static final int addPathOrderID=0x7f0c0070;
         public static final int addPathRouteID=0x7f0c006f;
         public static final int addRoute=0x7f0c0021;
@@ -517,8 +517,8 @@ containing a value of this type.
         public static final int btnSavePwd=0x7f0c002a;
         public static final int btnSetting=0x7f0c004d;
         public static final int btnSub=0x7f0c00a2;
-        public static final int btnUniformTitleLeft=0x7f0c00b7;
-        public static final int btnUniformTitleRight=0x7f0c00b9;
+        public static final int btnUniformTitleLeft=0x7f0c00b6;
+        public static final int btnUniformTitleRight=0x7f0c00b8;
         public static final int btn_dialog_clear=0x7f0c007e;
         public static final int btn_dialog_confirm=0x7f0c007d;
         public static final int change_map_model=0x7f0c002f;
@@ -584,7 +584,6 @@ containing a value of this type.
         public static final int ivErrorIcon=0x7f0c007f;
         public static final int ivSignPic=0x7f0c008e;
         public static final int left=0x7f0c0004;
-        public static final int listViewPreRouteID=0x7f0c00a8;
         public static final int listViewRouteID=0x7f0c00a7;
         public static final int listViewRouteName=0x7f0c00a6;
         public static final int listingFrameLayout=0x7f0c008a;
@@ -603,16 +602,16 @@ containing a value of this type.
         public static final int menuGridView=0x7f0c004f;
         public static final int mini=0x7f0c0002;
         public static final int normal=0x7f0c0003;
-        public static final int popupDelNode=0x7f0c00ac;
-        public static final int popupDelPath=0x7f0c00ae;
-        public static final int popupDelRoute=0x7f0c00b1;
-        public static final int popupDelete=0x7f0c00b4;
-        public static final int popupEditData=0x7f0c00b2;
-        public static final int popupEditMap=0x7f0c00b3;
-        public static final int popupEditNode=0x7f0c00ab;
-        public static final int popupEditPath=0x7f0c00ad;
-        public static final int popupEditRoute=0x7f0c00b0;
-        public static final int popupMovePath=0x7f0c00af;
+        public static final int popupDelNode=0x7f0c00ab;
+        public static final int popupDelPath=0x7f0c00ad;
+        public static final int popupDelRoute=0x7f0c00b0;
+        public static final int popupDelete=0x7f0c00b3;
+        public static final int popupEditData=0x7f0c00b1;
+        public static final int popupEditMap=0x7f0c00b2;
+        public static final int popupEditNode=0x7f0c00aa;
+        public static final int popupEditPath=0x7f0c00ac;
+        public static final int popupEditRoute=0x7f0c00af;
+        public static final int popupMovePath=0x7f0c00ae;
         public static final int rbCustomer=0x7f0c0024;
         public static final int rbProgrammer=0x7f0c0026;
         public static final int rbServicer=0x7f0c0025;
@@ -630,16 +629,16 @@ containing a value of this type.
         public static final int svContent=0x7f0c007b;
         public static final int swRouteEnable=0x7f0c0079;
         public static final int taskFragment=0x7f0c0048;
-        public static final int taskListID=0x7f0c00a9;
-        public static final int taskListName=0x7f0c00aa;
+        public static final int taskListID=0x7f0c00a8;
+        public static final int taskListName=0x7f0c00a9;
         public static final int taskListView=0x7f0c0045;
         public static final int tbExecute=0x7f0c004a;
         public static final int tbMag=0x7f0c0098;
         public static final int tbShowPwd=0x7f0c002b;
         public static final int tbWash=0x7f0c004b;
         public static final int title=0x7f0c0036;
-        public static final int toastImage=0x7f0c00b5;
-        public static final int toastText=0x7f0c00b6;
+        public static final int toastImage=0x7f0c00b4;
+        public static final int toastText=0x7f0c00b5;
         public static final int tvCheckItem=0x7f0c00a5;
         public static final int tvDialogNodeID=0x7f0c0064;
         public static final int tvErrorCode=0x7f0c0080;
@@ -653,7 +652,7 @@ containing a value of this type.
         public static final int tvPathName=0x7f0c006b;
         public static final int tvPathOrder=0x7f0c006a;
         public static final int tvSubtitle=0x7f0c00a1;
-        public static final int tvUniformTitleCenter=0x7f0c00b8;
+        public static final int tvUniformTitleCenter=0x7f0c00b7;
         public static final int up=0x7f0c0007;
         public static final int workspaceGridView=0x7f0c0097;
     }

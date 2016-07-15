@@ -4,26 +4,26 @@
     api-level="19"
     density="mdpi"
     format="7"
-    timestamp="26844942179316" >
+    timestamp="93463163757699" >
 
     <task
         name="javac"
-        duration="827" />
+        duration="2664" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="108" />
+        duration="328" />
     <task
         name="verifier"
-        duration="6" />
+        duration="47" />
 
     <artifact
         location="D:\AndroidProjects\RobotControlApp\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="26844942179316" >
+    <build timestamp="93463163757699" >
         <artifact
             location="D:\AndroidProjects\RobotControlApp\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

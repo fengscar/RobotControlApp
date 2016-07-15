@@ -12,12 +12,12 @@
         "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_path.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_arm.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_arm.xml"
-    },
-    {
         "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_route.xml",
         "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_arm.xml",
+        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_arm.xml"
     },
     {
         "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_workspace.xml",
