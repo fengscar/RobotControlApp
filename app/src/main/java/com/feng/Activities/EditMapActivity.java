@@ -543,18 +543,21 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
 
         // 如果该节点不可以添加路径,将添加按键设置为不可用
         Button addPath = (Button) builder.getViewByID(R.id.dialogOKBtn);
+        addPath.setText("添加路径");
         if (mMapDatabaseHelper.isCompleted(route)) {
             addPath.setEnabled(false);
+        } else {
+            //当前路线的最后一个节点. 如果没有则为空
+            final Node node = mMapDatabaseHelper.getLastNodeByRouteID(route.getId());
+            addPath.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.hide();
+                    showAddPathDialog(dialog, route, node);
+                }
+            });
         }
-        //当前路线的最后一个节点. 如果没有则为空
-        final Node node = mMapDatabaseHelper.getLastNodeByRouteID(route.getId());
-        builder.setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
-            @Override
-            public boolean onDialogBtnClick(List<View> viewList) {
-                showAddPathDialog(dialog, route, node);
-                return true;
-            }
-        });
+
         ListView lvPaths = (ListView) builder.getViewByID(R.id.lvPathList);
         PathListViewAdapter pathChooseDialogAdapter = new PathListViewAdapter(this, route, dialog);
         lvPaths.setAdapter(pathChooseDialogAdapter);
@@ -643,13 +646,14 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                                 new CustomDialogCallback() {
                                     @Override
                                     public boolean onDialogBtnClick(List<View> viewList) {
+                                        //TODO 删除时应该刷新 路径选择dialog的添加按键...暂时设置为隐藏吧
+                                        mDialog.dismiss();
                                         //删除成功
                                         if (mMapDatabaseHelper.delData(path)) {
                                             mapFragment.refreshAll();
 
                                             mPathList = mMapDatabaseHelper.getWholeRoute(mRoute.getId());
                                             notifyDataSetChanged();
-
 
                                             return true;
                                         }
