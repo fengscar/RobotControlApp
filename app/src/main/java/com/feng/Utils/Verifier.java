@@ -97,17 +97,13 @@ public class Verifier implements ArmProtocol{
 	 * @param buffer
 	 * @return
 	 */
-	private boolean verify(byte[] buffer){
-		byte verify = 0;
+	public boolean verify(byte[] buffer){
+		byte verifyBit = 0;
 		byte checkBit= buffer[buffer.length-1];
 		for(int v=0;v<buffer.length-1;v++){
-			verify+=buffer[v];
+			verifyBit+=buffer[v];
 		}
-		if( checkBit == verify){
-			return true;
-		}else{
-			return false;
-		}
+		return checkBit == verifyBit;
 	}
 
 	public  byte[] getHead(byte[] buffer){

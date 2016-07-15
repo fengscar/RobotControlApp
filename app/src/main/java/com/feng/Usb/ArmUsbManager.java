@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.util.Log;
 import com.feng.Constant.ArmProtocol;
 import com.feng.Constant.I_Parameters;
 import com.feng.RobotApplication;
@@ -41,9 +42,6 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
     // ARM USB驱动对象,用来收发数据
     private static UsbSerialDriver sDriver;
     private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
-    // 保存接收到的数据
-    private byte[] mRecData = new byte[1024];
-    private int mRecCount = 0;
 
     // 设备实体类
     class DeviceEntry {
@@ -62,9 +60,6 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
 
     /**
      * 添加观察者, 当系统状态改变时/接受数据时 ,通知该系统的handler,让其发送数据
-     *
-     * @param activityName
-     * @param activityMessagehandler
      */
     public void addObserver(String activityName, Handler activityMessagehandler) {
         activityHandlerMap.put(activityName, activityMessagehandler);
@@ -79,27 +74,64 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
     // Runnable 对象.  监听usb的接收
     private SerialInputOutputManager mSerialIoManager;
 
+    // 保存接收到的数据
+    private byte[] mRecData = new byte[1024];
+    private int mRecCount = 0; //当前接收到的数据
     private final SerialInputOutputManager.Listener mListener = new SerialInputOutputManager.Listener() {
         @Override
         public void onRunError(Exception e) {
             e.printStackTrace();
         }
 
+        // 由于串口模块输出时,数据可能出现截断或者粘包,所以要加入一个缓冲区,来循环判断接收的数据是否正确
         @Override
         public void onNewData(final byte[] data) {
             // 将接收到的数据存放到 缓存中
             System.arraycopy(data, 0, mRecData, mRecCount, data.length);
             mRecCount += data.length;
+
+            byte[] debugCache = new byte[mRecCount]; //用来输出调试信息
+            System.arraycopy(mRecData, 0, debugCache, 0, mRecCount);
+            Log.w(TAG, "receive: " + Arrays.toString(data) + ", cache: " + Arrays.toString(debugCache));
+
+            //判断是否是正确的数据 (过滤调试信息)
+            int mIndex = 0;
+            while (mRecData[mIndex] != 0x01 && mRecCount > 0) {
+                mIndex++;
+                mRecCount--;
+            }
             // 如果当前缓存区有数据(>5), 并且已经完整接收到数据
-            while (mRecCount >= 5 && mRecData[DATA_LENGTH] + 5 <= mRecCount) {
+            while (mRecCount >= 5 && mRecData[mIndex + DATA_LENGTH] + 5 <= mRecCount) {
+                // 判断数据长度是否正确
+                int commandLength = mRecData[mIndex + DATA_LENGTH] + 5;
+                if (commandLength < 0) {
+                    mIndex++;
+                    mRecCount--;
+                    continue;
+                }
                 // 处理一条data
-                int commandLength = mRecData[DATA_LENGTH] + 5;
                 byte[] command = new byte[commandLength];
-                System.arraycopy(mRecData, 0, command, 0, commandLength);
-                receive(command);
+                System.arraycopy(mRecData, mIndex, command, 0, commandLength);
+                if (mVerifier.verify(command)) {
+                    /**
+                     * 识别出正确的一条命令,开始处理
+                     */
+                    receive(command);
+                    // 累计已处理的数据数
+                    mIndex += commandLength;
+                    mRecCount -= commandLength;
+                } else {
+                    // 无法通过校验, mIndex++
+                    mIndex++;
+                    mRecCount--;
+                }
+            }
+            if (mIndex == 0) {
+                return;
+            } else {
                 // 清理缓存 ( 数据前移,计数重置)
-                mRecCount -= commandLength;
-                System.arraycopy(mRecData, commandLength, mRecData, 0, mRecCount);
+                System.arraycopy(mRecData, mIndex, mRecData, 0, mRecCount);
+                L.e(TAG, "处理了 " + mIndex + " 字节数据");
             }
         }
     };
@@ -200,20 +232,15 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
     }
 
     public void receive(byte[] data) {
-        if (!mVerifier.confirmReceiveData(data)) {
-            L.e(TAG, "接收包错误: " + Arrays.toString(data));
-            return;
+        currentReceive = data;
+        // 最后一个参数表示不需要打包
+        if (belongAction(data, RECEIVE_ACTIONS)) {
+            //自动回复.
+            this.reply(data, true);
+            L.i(TAG, "[USB接收]: 已自动回复" + Arrays.toString(data));
+            notifyActivities(new UsbData(data));
         } else {
-            currentReceive = data;
-            // 最后一个参数表示不需要打包
-            if (belongAction(data, RECEIVE_ACTIONS)) {
-                //自动回复.
-                this.reply(data, true);
-                L.i(TAG, "[USB接收]: 已自动回复" + Arrays.toString(data));
-                notifyActivities(new UsbData(data));
-            } else {
-                L.w(TAG, "[ARM-USB回复]: " + Arrays.toString(data));
-            }
+            L.w(TAG, "[ARM-USB回复]: " + Arrays.toString(data));
         }
     }
 
