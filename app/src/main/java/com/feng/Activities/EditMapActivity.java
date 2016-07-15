@@ -334,7 +334,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                 //	wsHolder.imageBtn=(ImageButton)convertView.findViewById(R.id.girdViewOfWorkspaceImageBtn);
                 routeHolder.ID = (TextView) convertView.findViewById(R.id.listViewRouteID);
                 routeHolder.name = (TextView) convertView.findViewById(R.id.listViewRouteName);
-                routeHolder.preID = (TextView) convertView.findViewById(R.id.listViewPreRouteID);
+//                routeHolder.preID = (TextView) convertView.findViewById(R.id.listViewPreRouteID);
                 //				routeHolder.enableImage=(ImageView)convertView.findViewById(R.id.listVIewRouteEnable);
                 convertView.setTag(routeHolder);
             } else {
@@ -344,7 +344,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
             Route route = routeListData.get(position);
             routeHolder.name.setText(route.getName());
             routeHolder.ID.setText(String.valueOf(route.getId()));
-            routeHolder.preID.setText(String.valueOf(route.getPreID()));
+//            routeHolder.preID.setText(String.valueOf(route.getPreID()));
 
             // 这里是样式
             if (position == selectItem) {
