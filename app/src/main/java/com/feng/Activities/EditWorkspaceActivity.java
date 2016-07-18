@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 public class EditWorkspaceActivity extends BaseActivity implements I_Parameters {
-
+    private final static String TAG = EditWorkspaceActivity.class.getSimpleName();
     public MyHandler handler = new MyHandler(this);
     private FloatingActionButton fabEditMapversion, fabUpdateMap, fabAddWorkspace, fabSaveMap;
     private FloatingActionsMenu fam;
@@ -246,7 +247,7 @@ public class EditWorkspaceActivity extends BaseActivity implements I_Parameters 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             Uri uri = data.getData();
-            L.e(uri.toString());
+            Log.i(TAG, "onActivityResult: " + uri.toString());
             ContentResolver cr = this.getContentResolver();
             try {
                 Bitmap bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
@@ -259,7 +260,7 @@ public class EditWorkspaceActivity extends BaseActivity implements I_Parameters 
     }
 
     public interface ChangeMapCallback {
-        public void changeBmp(Bitmap map);
+        void changeBmp(Bitmap map);
     }
 
     private ChangeMapCallback mCallback;

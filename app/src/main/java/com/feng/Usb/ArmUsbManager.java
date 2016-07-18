@@ -249,7 +249,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
      */
     protected boolean belongAction(byte[] buffer, HashMap<String, byte[]> map) {
         for (byte[] head : map.values()) {
-            if (mVerifier.compareHead(buffer, head) == true) {
+            if (mVerifier.compareHead(buffer, head)) {
                 return true;
             }
         }

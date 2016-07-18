@@ -1094,10 +1094,14 @@ public class MapDatabaseHelper extends SQLiteOpenHelper implements I_MapData {
 
     //更新工作区信息
     public boolean updateData(Workspace ws) {
-        String sql = "update workspace set " + WORKSPACE_ID + "=?, " + WORKSPACE_NAME +
-                " =?, " + WORKSPACE_FLOOR + "=? where " + WORKSPACE_ID + " =?";
+        String sql = "update workspace set " + WORKSPACE_NAME + " =?, " + WORKSPACE_FLOOR + "=? ," +
+                WORKSPACE_MAP + "=?  where " + WORKSPACE_ID + " =?";
         try {
-            mDatabase.execSQL(sql, new Object[]{ws.getId(), ws.getName(), ws.getFloor(), ws.getId()});
+            // 将bitmap转换成 byte[]
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            ws.getMapPic().compress(Bitmap.CompressFormat.PNG, 80, os);
+            byte[] bitmapByte = os.toByteArray();
+            mDatabase.execSQL(sql, new Object[]{ws.getName(), ws.getFloor(), bitmapByte, ws.getId()});
         } catch (Exception e) {
             L.e(LOG, e.toString());
             T.show("修改失败,该编号已存在");
@@ -1289,7 +1293,7 @@ public class MapDatabaseHelper extends SQLiteOpenHelper implements I_MapData {
     // 根据当前路线选中的起始点,获取终点的可选范围 ( 去掉不可选就是可选的)
     // 以下情况的节点不可选:
     // 1. 起始点不可选
-    public List<Node> getSelectableNode( Node startNode) {
+    public List<Node> getSelectableNode(Node startNode) {
         String sql = "select * from node where " + NODE_ID + "!=?";
         return getNodeList(mDatabase.rawQuery(sql, new String[]{String.valueOf(startNode.getId())}));
     }

@@ -152,6 +152,7 @@ public class WorkspaceFragment extends Fragment {
                                             public void changeBmp(Bitmap map) {
                                                 //第2步
                                                 list.get(position).setMapPic(map);
+                                                mDatabaseHelper.updateData(list.get(position));
                                                 handler.sendEmptyMessage(120);
                                             }
                                         });
@@ -245,7 +246,6 @@ public class WorkspaceFragment extends Fragment {
             } else {
                 wsHolder.imageBtn.setBackgroundResource(R.mipmap.default_map_background);
             }
-
             return convertView;
         }
 

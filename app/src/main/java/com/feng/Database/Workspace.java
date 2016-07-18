@@ -100,8 +100,6 @@ public class Workspace implements I_MapData {
     }
 
     public Bitmap getMapPic() {
-//		String getMapSql="select "+WORKSPACE_MAP + " from workspace where "+WORKSPACE_ID+"=?";
-//		db.execSQL(getMapSql, new Object[]{this.getId()});
         return mapPic;
     }
 

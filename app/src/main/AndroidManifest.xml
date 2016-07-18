@@ -3,7 +3,6 @@
           package="com.feng.RSS"
           android:versionCode="1"
           android:versionName="服务机器人平板端单机测试版">
-
     <!-- 网络操作 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
