@@ -1,45 +1,47 @@
 package com.feng.Schedule;
 
+import android.util.Log;
+import com.feng.Constant.I_Parameters;
+import com.feng.RobotApplication;
+import com.feng.Utils.SP;
+
 /**
+ * 该类 的get、set 直接操作SP中的数据
  * Created by fengscar on 2016/5/19.
  */
 public class ScheduleServerInfo {
-
-    private String ip;
-
-    private int port;
+    private final static String TAG = ScheduleServerInfo.class.getSimpleName();
 
     public String getIp() {
-        return ip;
+        return (String) SP.get(RobotApplication.getContext(), I_Parameters.IP_ADDRESS, "192.168.1.125");
     }
 
     public int getPort() {
-        return port;
+        return (int) SP.get(RobotApplication.getContext(), I_Parameters.IP_PORT, 12250);
     }
 
     public void setIp(String ip) {
-        this.ip = ip;
+        if (ip == null) {
+            Log.e(TAG, "setIp: IP地址不能为NULL");
+            return;
+        }
+        SP.put(RobotApplication.getContext(), I_Parameters.IP_ADDRESS, ip);
     }
 
     public void setPort(int port) {
-        this.port = port;
+        SP.put(RobotApplication.getContext(), I_Parameters.IP_PORT, port);
     }
 
     private static ScheduleServerInfo instance = null;
 
     public static ScheduleServerInfo getInstance() {
         if (instance == null) {
-
             synchronized (ScheduleServerInfo.class) {
                 if (instance == null) {
                     instance = new ScheduleServerInfo();
-                    //TODO 要改成在 设置界面中 获取
-                    instance.setIp("192.168.1.125");
-                    instance.setPort(12250);
                 }
             }
         }
         return instance;
     }
-
 }

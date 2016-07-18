@@ -253,11 +253,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
-                        android:enabled="false"
+                        android:enabled="true"
+                        android:inputType="number"
+                        android:maxLength="5"
                         android:gravity="center"
                         android:paddingLeft="13dp"
                         android:paddingRight="13dp"
-                        android:text="8080"/>
+                        android:text="12250"/>
+            </TableRow>
+            <TableRow>
+                <Button android:id="@+id/btnScanLAN"
+                        android:text="@string/sp_editRobotActivity_btn_scan"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"/>
+                <Button android:id="@+id/btnTestConnect"
+                        android:text="@string/sp_editRobotActivity_btn_testConnect"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"/>
             </TableRow>
         </TableLayout>
     </ScrollView>

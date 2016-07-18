@@ -40,7 +40,7 @@ public class BaseActivity extends Activity implements ArmProtocol, ScheduleProto
         private WeakReference<BaseActivity> activityWeakReference;
 
         public BaseUsbHandler(BaseActivity activity) {
-            activityWeakReference = new WeakReference<BaseActivity>(activity);
+            activityWeakReference = new WeakReference<>(activity);
         }
 
         @Override

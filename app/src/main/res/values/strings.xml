@@ -88,6 +88,8 @@
     <string name="para_auto_enter_workspace">自动进入上次工作区</string>
     <string name="para_ip_address">IP地址</string>
     <string name="para_ip_port">端口</string>
+    <string name="sp_editRobotActivity_btn_scan">扫描当前网段</string>
+    <string name="sp_editRobotActivity_btn_testConnect">测试连接状态</string>
     <!-- 系统设置 -->
     <string name="edit_version">更新与激活</string>
     <!-- 语音设置 -->

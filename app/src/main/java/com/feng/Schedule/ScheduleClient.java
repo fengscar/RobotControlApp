@@ -177,7 +177,7 @@ public class ScheduleClient implements ScheduleProtocal {
 
     public static ScheduleClient getInstance() {
         if (instance == null) {
-            synchronized (ScheduleServerInfo.class) {
+            synchronized (ScheduleClient.class) {
                 if (instance == null) {
                     instance = new ScheduleClient();
                 }
