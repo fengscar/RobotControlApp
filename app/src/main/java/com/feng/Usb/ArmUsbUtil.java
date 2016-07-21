@@ -135,7 +135,7 @@ public class ArmUsbUtil extends ArmUsbManager implements ArmProtocol {
     public List<Node> getNodesFromByte(byte[] fromArmBytes) {
         MapDatabaseHelper mDatabaseHelper = MapDatabaseHelper.getInstance();
         List<Node> result = new ArrayList<>();
-        byte[] setOrDelData = mTransfer.getData(fromArmBytes, 1);
+        byte[] setOrDelData = mTransfer.getBody(fromArmBytes, 1);
         if (setOrDelData == null) {
             return Collections.EMPTY_LIST;
         }

@@ -62,7 +62,7 @@ public class BaseReceiver extends BroadcastReceiver implements ArmProtocol {
                 }
                 switch (detailAction) {
                     case ERROR_FROM_ARM:
-                        switch (transfer.getData(receiveData)[0]) {
+                        switch (transfer.getBody(receiveData)[0]) {
                             case 0x01:
                                 L.e("模块编号错误");
                                 break;
@@ -239,7 +239,7 @@ public class BaseReceiver extends BroadcastReceiver implements ArmProtocol {
             case 0x07:
                 switch (buffer[COMMAND]) {
                     case 0x01:
-                        L.i("剩余电量为 : " + (int) transfer.getData(buffer)[0] + " %");
+                        L.i("剩余电量为 : " + (int) transfer.getBody(buffer)[0] + " %");
                         break;
                     case 0x02:
                         switch (buffer[DATA]) {

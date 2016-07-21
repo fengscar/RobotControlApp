@@ -170,9 +170,12 @@ public class MenuActivity extends BaseActivity implements I_Parameters {
                     break;
                 //系统设置
                 case 6:
-                    intent.setClass(MenuActivity.this, EditVersionActivity.class);
+//                    intent.setClass(MenuActivity.this, EditVersionActivity.class);
+                    intent.setClass(MenuActivity.this, SettingsActivity.class);
                     startActivity(intent);
+
                     break;
+
 
                 default:
                     break;

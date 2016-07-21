@@ -15,11 +15,9 @@
                 android:focusableInTouchMode="true"
                 android:orientation="vertical">
             <!-- 音频设置 -->
-
             <TableRow
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content">
-
                 <TextView
                         style="@style/bwg_title3"
                         android:layout_width="fill_parent"

@@ -168,7 +168,7 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
             if (intent.getAction().equals(SEND_SUCCESS) &&
                     SELF_CHECK_START_STOP.equals(getSendAction(intent))) {
                 //如果是   开启自检
-                if (transfer.getData(sendData)[0] == (byte) 0x01) {
+                if (transfer.getBody(sendData)[0] == (byte) 0x01) {
                     startCheck = true;
                     if (currentCheck != -1) {
                         changeFragment(checkFragment.get(currentCheck));

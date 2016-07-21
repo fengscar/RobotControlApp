@@ -12,7 +12,7 @@ public interface ArmProtocol {
     int COMMAND = 2;
     int DATA_LENGTH = 3;
     int DATA = 4;
-    byte ROBOT_ID=0x01;
+    byte ROBOT_ID = 0x01;
     /**
      * intent 包含的 头byte 的key
      * intent.putExtra( UNIFORM_HEAD,  {0x01,0x02...} )
@@ -30,7 +30,7 @@ public interface ArmProtocol {
      * @ARMClientService 监听 action为该值的广播,
      * 当接收到(用户按下后发出的)广播后,执行对应的操作(发送命令给ARM)
      */
-	/*   运动模块    */
+    /*   运动模块    */
     /**
      * 查询运动状态  null
      * replyID:11
@@ -93,6 +93,9 @@ public interface ArmProtocol {
      */
     byte[] LongTimeNotOperate = {0x01, 0x01, 0x0F};
     String LONG_TIME_NOT_OPERATE = "长时间无人操作";
+
+    byte[] DoorOperate = {0x01, 0x01, 0x10};
+    String DOOR_OPERATE = "操作门控";
 
 
     /*   路径算法    */
@@ -157,7 +160,14 @@ public interface ArmProtocol {
     String REPLY_UPLORD_MAP = "回复上传地图";
 
 
-    // 红外避障
+    byte[] SetStopPoint = {0x01, 0x02, 0x0c};
+    String SET_STOP_POINT = "设置停靠点";
+
+    byte[] CurrentPath = {0x01, 0x02, 0x0d};
+    String CURRENT_PATH = "上报当前路线";
+
+
+    //红外避障
     byte[] SelfCheckBarrier = {0x01, 0x03, 0x01};
     String SELF_CHECK_BARRIER = "红外模块自检开始";
     // 查询障碍物情况 障碍物方位 0x01-0x07

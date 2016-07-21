@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +54,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends BaseActivity implements I_Parameters, ArmProtocol, ScheduleProtocal {
-    private final static String LOG = MainActivity.class.getSimpleName();
+    private final static String TAG = MainActivity.class.getSimpleName();
 
     private MapDatabaseHelper mDatabaseHelper;
 
@@ -200,16 +201,42 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
             }
             switch (action) {
                 case CURRENT_RFID:
-                    int nodeID = transfer.byteToInt(transfer.getData(dataReceive));
-                    Node completedNode = mDatabaseHelper.getNodeByID(nodeID);
-                    if (completedNode == null) {
-                        L.e(LOG, "[OnReceiveRFID]读到错误的RFID点...");
+                    int nodeID = transfer.byteToInt(transfer.getBody(dataReceive));
+                    Node currentNode = mDatabaseHelper.getNodeByID(nodeID);
+                    if (currentNode == null) {
+                        L.e(TAG, "[OnReceiveRFID]读到错误的RFID点...");
                         break;
                     }
-                    arriveNode(completedNode);
+                    arriveNode(currentNode);
                     handler.sendEmptyMessage(REFRESH);
 
+                    // 通知调度
+                    sRobot.setLocation(currentNode);
+                    if (mScheduleClient != null && mScheduleClient.isConnect()) {
+                        mScheduleClient.updateStatus(sRobot);
+                    }
+
                     break;
+
+                case CURRENT_PATH:
+                    // 首位: 总路径数,  剩余: 节点ID
+                    try {
+                        byte[] currentPathByte = transfer.getBody(dataReceive);
+                        int pathNum = currentPathByte[0];
+                        int[] paths = new int[pathNum];
+                        for (int i = 0; i < pathNum; i++) {
+                            paths[i] = transfer.byteToInt(new byte[]{currentPathByte[i * 2 + 1], currentPathByte[i * 2 + 2]});
+                        }
+                        sRobot.setPaths(paths);
+                        if (mScheduleClient != null && mScheduleClient.isConnect()) {
+                            mScheduleClient.updateStatus(sRobot);
+                        }
+
+                    } catch (IndexOutOfBoundsException e) {
+                        Log.e(TAG, "handleReceive: [CurrentPath] 传来的数据有误");
+                    }
+                    break;
+
 
                 case MACHINE_START_BTN:
                     // 不发送数据,只切换状态!
@@ -245,10 +272,10 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
             if (action == null) {
                 return false;
             }
-            L.i(LOG, "发送成功!" + action);
+            L.i(TAG, "发送成功!" + action);
             switch (action) {
                 case QUERY_STATE:
-                    byte[] detailData = transfer.getData(dataReceive);
+                    byte[] detailData = transfer.getBody(dataReceive);
                     if (detailData[0] == (byte) 0x00) {
                         //停止中
                         tbExecute.setChecked(false);
@@ -267,8 +294,10 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         tbExecute.setChecked(false);
                         sRobot.setState(RobotEntity.RobotState.ERROR);
                     }
-//                    sRobot.setSpeed()
 
+                    if (mScheduleClient != null && mScheduleClient.isConnect()) {
+                        mScheduleClient.updateStatus(sRobot);
+                    }
 
                     break;
 
@@ -296,6 +325,12 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         mIFragmentControl.addTask(currentTargets);
                     }
                     updateWashBtn();
+
+                    // 更新调度
+                    sRobot.setTasks(getIntTaskList());
+                    if (mScheduleClient != null && mScheduleClient.isConnect()) {
+                        mScheduleClient.updateStatus(sRobot);
+                    }
                     break;
 
 
@@ -311,23 +346,31 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                     }
                     //更新撤台按键状态
                     updateWashBtn();
+
+                    sRobot.setTasks(getIntTaskList());
+                    if (mScheduleClient != null && mScheduleClient.isConnect()) {
+                        mScheduleClient.updateStatus(sRobot);
+                    }
                     break;
 
                 case DEL_TARGETS:
                     // 成功删除的节点s
                     List<Node> delTargets = mArmUsbUtil.getNodesFromByte(dataSend);
-
                     mExpanderAdapter.delTarget(delTargets);
-
                     if (mIFragmentControl != null) {
                         mIFragmentControl.delTask(delTargets);
                     }
                     updateWashBtn();
+
+                    sRobot.setTasks(getIntTaskList());
+                    if (mScheduleClient != null && mScheduleClient.isConnect()) {
+                        mScheduleClient.updateStatus(sRobot);
+                    }
                     break;
 
                 case QUERY_POWER:
-                    byte[] percent = transfer.getData(dataReceive);
-                    L.e(LOG, "更新电量为 :" + Arrays.toString(percent));
+                    byte[] percent = transfer.getBody(dataReceive);
+                    L.e(TAG, "更新电量为 :" + Arrays.toString(percent));
                     mDrawerMenuAdatper.updatePowerState(percent[0]);
                     break;
 
@@ -358,7 +401,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
         //初始化应用级对象 (机器人实体,USB通信,,调度通信)
         sRobot = RobotEntity.getInstance();
         mArmUsbUtil = RobotApplication.getArmUsbUtil();
-        mArmUsbUtil.addObserver(LOG, new MainUsbHandler(this));
+        mArmUsbUtil.addObserver(TAG, new MainUsbHandler(this));
         // 调度系统客户端对象
         mScheduleClient = RobotApplication.getScheduleClient();
         //初始化 处理调度系统命令的handler
@@ -377,7 +420,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
         // 初始化ARM状态
         initArmState();
         // 初始化调度系统链接状态
-        mDrawerMenuAdatper.updateScheduleState(mScheduleClient.getSocketConnect(), mScheduleClient.getLoginState());
+        mDrawerMenuAdatper.updateScheduleState(mScheduleClient.isConnect(), mScheduleClient.getLoginState());
 
     }
 
@@ -393,7 +436,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                      */
                     String command = json.getString(ScheduleProtocal.COMMAND);
                     if (command != null) {
-                        L.i(LOG, "接收到调度服务端指令: " + command);
+                        L.i(TAG, "接收到调度服务端指令: " + command);
                         switch (command) {
                             case RobotCommand.COMMAND_MOVE:
                                 // 命令机器人继续行走...
@@ -404,7 +447,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                                 mArmUsbUtil.setMove(false);
                                 break;
                             default:
-                                L.e(LOG, "未知的调度服务端指令");
+                                L.e(TAG, "未知的调度服务端指令");
                                 break;
                         }
                     }
@@ -469,16 +512,16 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
             if (mIFragmentControl != null) {
                 mIFragmentControl.delTask(currentNode);
             }
-            L.i(LOG, "到达目的点 : " + currentNode.getName());
+            L.i(TAG, "到达目的点 : " + currentNode.getName());
             T.show(" 已到达 : " + currentNode.getName());
             intentDealer.sendTtsIntent(TTS_START_SPEAK, " 已到达 : " + currentNode.getName());
             lockContentView(false);
         } else {
-            L.i(LOG, "经过点 : " + currentNode.getName());
+            L.i(TAG, "经过点 : " + currentNode.getName());
             setCurrentNode(currentNode);
         }
 
-        sRobot.setTasks(getNodeTaskList());
+        sRobot.setTasks(getIntTaskList());
 
         //通知调度系统..
         if (mScheduleClient != null) {
@@ -899,7 +942,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         mScheduleClient = RobotApplication.getScheduleClient();
                     } else {
                         // 如果未连接 socket, 重新连接
-                        if (!mScheduleClient.getSocketConnect()) {
+                        if (!mScheduleClient.isConnect()) {
                             mScheduleClient.reconnect();
                         } else {
                             // 如果是已连接未登录,重新登录

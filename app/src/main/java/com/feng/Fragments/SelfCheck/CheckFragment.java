@@ -4,8 +4,6 @@
  */
 package com.feng.Fragments.SelfCheck;
 
-import java.util.zip.CheckedInputStream;
-
 import com.feng.Activities.SelfCheckActivity;
 import com.feng.Constant.ArmProtocol;
 import com.feng.RSS.R;
@@ -19,7 +17,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -120,7 +117,7 @@ public  class CheckFragment extends Fragment implements ArmProtocol{
 	}
 	protected byte[] getCheckData(Intent intent){
 		byte[] receiveData=intent.getByteArrayExtra(UNIFORM_RECEIVE);
-		return new Transfer().getData(receiveData);
+		return new Transfer().getBody(receiveData);
 	}
 	public void startCheck(){
 		L.e("自检模块 开始测试");

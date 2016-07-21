@@ -3,6 +3,7 @@
           package="com.feng.RSS"
           android:versionCode="1"
           android:versionName="服务机器人平板端单机测试版">
+
     <!-- 网络操作 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
@@ -106,12 +107,14 @@
                 android:screenOrientation="landscape">
         </activity>
 
-  <!--      <service
+        <!--
+            <service
                 android:name="com.feng.ServiceCOR.CorServerService"
                 android:persistent="true"/>
         <service
                 android:name="com.feng.Usb.ArmUsbManager"
-                android:persistent="true"/>-->
+                android:persistent="true"/>
+        -->
         <service
                 android:name="com.feng.SpeechRecognize.IatService"
                 android:persistent="true">
@@ -124,7 +127,7 @@
         </receiver>
 
         <activity
-                android:name="com.feng.Base.SettingsActivity"
+                android:name="com.feng.Activities.SettingsActivity"
                 android:label="@string/title_activity_settings">
         </activity>
     </application>

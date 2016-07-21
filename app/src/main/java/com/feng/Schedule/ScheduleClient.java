@@ -3,12 +3,12 @@ package com.feng.Schedule;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Base64;
+import android.util.Log;
 import com.feng.Constant.I_MapData;
 import com.feng.Constant.I_Parameters;
 import com.feng.Constant.RobotEntity;
 import com.feng.Database.FileTransporter;
 import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Node;
 import com.feng.RobotApplication;
 import com.feng.Utils.L;
 import com.feng.Utils.SP;
@@ -20,7 +20,6 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.Socket;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -35,7 +34,7 @@ import java.util.Map;
  * 后台线程接收到调度系统的回复时,会寻找对应的handler进行处理
  */
 public class ScheduleClient implements ScheduleProtocal {
-    private final static String LOG = ScheduleClient.class.getSimpleName();
+    private final static String TAG = ScheduleClient.class.getSimpleName();
 
     private final static int HEART_BEAT_MESSAGE = 555;
     // 通知的Message的 what 举例
@@ -65,7 +64,7 @@ public class ScheduleClient implements ScheduleProtocal {
     // socket连接状态
     private boolean SocketConnectState = false;
 
-    public boolean getSocketConnect() {
+    public boolean isConnect() {
         return SocketConnectState;
     }
 
@@ -95,7 +94,7 @@ public class ScheduleClient implements ScheduleProtocal {
                 put(HEART_BEAT, new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
-                        L.i(LOG, "接收到服务端心跳包");
+                        L.i(TAG, "接收到服务端心跳包");
                     }
                 });
 
@@ -108,7 +107,7 @@ public class ScheduleClient implements ScheduleProtocal {
                             boolean success = json.getBoolean(SUCCESS);
                             String expStr = json.getString(EXPLAIN);
 
-                            L.i(LOG, "接收到响应" + success + expStr);
+                            L.i(TAG, "接收到响应" + success + expStr);
 
                             setLoginState(success);
                             notifyActivity(success ? LOGIN_SUCCESS : LOGIN_FAILED);
@@ -165,7 +164,7 @@ public class ScheduleClient implements ScheduleProtocal {
                 put(UPDATE_STATUS, new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
-                        L.i(LOG, "成功将状态信息同步到调度系统");
+                        L.i(TAG, "成功将状态信息同步到调度系统");
                     }
                 });
             }
@@ -215,10 +214,10 @@ public class ScheduleClient implements ScheduleProtocal {
             @Override
             public void run() {
                 try {
-                    L.i(LOG, "[开启线程] 调度系统客户端后台线程");
+                    L.i(TAG, "[开启线程] 调度系统客户端后台线程");
                     ScheduleServerInfo serverInfo = ScheduleServerInfo.getInstance();
                     sSocket = new Socket(serverInfo.getIp(), serverInfo.getPort());
-                    L.i(LOG, "Socket成功连接到调度系统...");
+                    L.i(TAG, "Socket成功连接到调度系统...");
 
                     SocketConnectState = true;
                     notifyActivity(SOCKET_CONNECT);
@@ -228,7 +227,7 @@ public class ScheduleClient implements ScheduleProtocal {
                     login();
 
                 } catch (IOException e) {
-                    L.e(LOG, "连接到调度系统失败" + '\n' + e.toString());
+                    L.e(TAG, "连接到调度系统失败" + '\n' + e.toString());
 
                     close();
                     return;
@@ -245,32 +244,32 @@ public class ScheduleClient implements ScheduleProtocal {
                         String jsonStr = reader.readLine();
                         if (null == jsonStr) {
                             // 服务端 退出
-                            L.e(LOG, "客户端停止接收信息,服务端已退出");
+                            L.e(TAG, "客户端停止接收信息,服务端已退出");
                             close();
                             break;
                         }
                         if (jsonStr.equals("")) {
                             continue;
                         }
-                        L.d(LOG, "[Receive Json]" + jsonStr);
+                        L.d(TAG, "[Receive Json]" + jsonStr);
 
                         JSONObject json = new JSONObject(jsonStr);
 
                         String method = json.getString(METHOD);
                         if (method.equals("") || !handlerMap.containsKey(method)) {
-                            L.e(LOG, "HandlerMap has not method : " + method);
+                            L.e(TAG, "HandlerMap has not method : " + method);
                             continue;
                         }
 
                         // 根据 Method , 获取不同的handler进行响应
                         Handler handler = handlerMap.get(method);
                         if (handler == null) {
-                            L.d(LOG, "Handler is null");
+                            L.d(TAG, "Handler is null");
                             continue;
                         }
                         // 判断是否有Result字段
                         if (!json.has(RESULT)) {
-                            L.d(LOG, "JSON has not Result");
+                            L.d(TAG, "JSON has not Result");
                             continue;
                         }
 
@@ -285,7 +284,7 @@ public class ScheduleClient implements ScheduleProtocal {
                         handler.sendMessage(msg);
 
                     } catch (IOException | JSONException | NullPointerException e) {
-                        L.e(LOG, e.toString());
+                        L.e(TAG, e.toString());
                     }
                 }
             }
@@ -322,7 +321,7 @@ public class ScheduleClient implements ScheduleProtocal {
         String robotID = (String) SP.get(RobotApplication.getContext(), I_Parameters.ROBOT_ID, "HCWY-A01");
         String robotName = (String) SP.get(RobotApplication.getContext(), I_Parameters.ROBOT_NAME, "PangPang");
 
-        L.i(LOG, robotID + "[ " + robotName + " ]   正在登录......");
+        L.i(TAG, robotID + "[ " + robotName + " ]   正在登录......");
 
         JSONObject param = new JSONObject();
         // 设备类型
@@ -385,7 +384,7 @@ public class ScheduleClient implements ScheduleProtocal {
      */
     public void updateStatus(RobotEntity robotEntity) {
         if (robotEntity == null) {
-            L.e(LOG, "向调度系统更新状态失败 :参数为空");
+            L.e(TAG, "向调度系统更新状态失败 :参数为空");
             return;
         }
         try {
@@ -393,11 +392,11 @@ public class ScheduleClient implements ScheduleProtocal {
              * 获取机器人状态
              */
             int locationID = robotEntity.getLocation().getId();
-            String state = robotEntity.getState();
+            int state = robotEntity.getState().toInt();
             int speed = robotEntity.getSpeed();
             String[] warnings = robotEntity.getWarnings();
-            List<Node> nodeList = robotEntity.getTasks();
-            List<Node> pathList = robotEntity.getPaths();
+            int[] nodeList = robotEntity.getTasks();
+            int[] pathList = robotEntity.getPaths();
 
             /**
              * 生成JSON 对象
@@ -422,19 +421,18 @@ public class ScheduleClient implements ScheduleProtocal {
                 jsonParam.put(TASKS, null);
             } else {
                 JSONArray tasksJsonArray = new JSONArray();
-                for (Node node : nodeList) {
-                    tasksJsonArray.put(node.getId());
-                    jsonParam.put(TASKS, tasksJsonArray);
+                for (int node : nodeList) {
+                    tasksJsonArray.put(node);
                 }
+                jsonParam.put(TASKS, tasksJsonArray);
             }
-
 
             if (pathList == null) {
                 jsonParam.put(PATHS, null);
             } else {
                 JSONArray pathsJsonArray = new JSONArray();
-                for (Node node : pathList) {
-                    pathsJsonArray.put(node.getId());
+                for (int path : pathList) {
+                    pathsJsonArray.put(path);
                 }
                 jsonParam.put(PATHS, pathsJsonArray);
             }
@@ -461,7 +459,8 @@ public class ScheduleClient implements ScheduleProtocal {
     public void sendJson(String method, JSONObject param) {
         if (sSocket == null || !sSocket.isConnected()) {
             notifyActivity(SOCKET_DISCONNECT);
-            L.e(LOG, "调度系统还未连接");
+            Log.e(TAG, "sendJson: 发送失败,调度系统还未连接");
+            return;
         }
         try {
             // 获取 输出流
@@ -476,7 +475,7 @@ public class ScheduleClient implements ScheduleProtocal {
             // 输出流发送 JSON字符串
             writer.write(json.toString());
             writer.flush();
-            L.d(LOG, "[Send JSON]" + json.toString());
+            L.d(TAG, "[Send JSON]" + json.toString());
         } catch (JSONException | IOException | NullPointerException e) {
             e.printStackTrace();
         }
@@ -494,7 +493,7 @@ public class ScheduleClient implements ScheduleProtocal {
             this.SocketConnectState = false;
             notifyActivity(SOCKET_DISCONNECT);
             innerHandler.removeMessages(HEART_BEAT_MESSAGE);
-            L.i(LOG, "[关闭线程] 调度系统客户端线程");
+            L.i(TAG, "[关闭线程] 调度系统客户端线程");
         } catch (IOException e) {
             e.printStackTrace();
         }

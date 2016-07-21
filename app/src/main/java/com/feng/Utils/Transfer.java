@@ -108,15 +108,15 @@ public class Transfer implements ArmProtocol{
 	 * 获取 接收到的数据中的 data( 去掉 头 及 校验位)
 	 * @param buffer
 	 */
-	public  byte[] getData(byte[] buffer){
-		return this.getData(buffer, 0);
+	public  byte[] getBody(byte[] buffer){
+		return this.getBody(buffer, 0);
 	}
 	/**
 	 * @param srcData
 	 * @param offset  返回的数据的 偏移量
 	 * @return
 	 */
-	public  byte[] getData(byte[] srcData,int offset){
+	public  byte[] getBody(byte[] srcData, int offset){
 		if( srcData[ArmProtocol.DATA_LENGTH]==0){
 			return null;
 		}
@@ -128,14 +128,14 @@ public class Transfer implements ArmProtocol{
 		System.arraycopy(srcData, ArmProtocol.DATA+offset, dstData,0, dstData.length);
 		return dstData;
 	}
-	public byte[] getData(Intent intent){
-		return this.getData( intent.getByteArrayExtra(ArmProtocol.UNIFORM_RECEIVE) );
+	public byte[] getBody(Intent intent){
+		return this.getBody( intent.getByteArrayExtra(ArmProtocol.UNIFORM_RECEIVE) );
 	}
 	/*
 	 * 数据中第一位(唯一位)  0x01 return true, else return false
 	 */
 	public boolean getFlag(byte[] buffer){
-		byte flag=this.getData(buffer)[0];
+		byte flag=this.getBody(buffer)[0];
 		return flag==(byte)0x01 ? true : false;
 	}
 	/**
