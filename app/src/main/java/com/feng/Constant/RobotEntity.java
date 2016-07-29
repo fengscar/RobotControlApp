@@ -1,7 +1,5 @@
 package com.feng.Constant;
 
-import com.feng.Database.Node;
-
 /**
  * Created by fengscar on 2016/5/28.
  * 用来描述当前系统所连接的机器人
@@ -48,7 +46,7 @@ public class RobotEntity {
 
     private boolean mIsLogin;
 
-    private Node mLocation; //当前位置
+    private int mLocation; //当前位置
     private RobotState mState;  //当前状态
     private int mSpeed;  //当前速度
     private String[] mWarnings;  // 报警信息
@@ -85,14 +83,13 @@ public class RobotEntity {
     }
 
 
-    public Node getLocation() {
+    public int getLocation() {
         return mLocation;
     }
 
-    public void setLocation(Node location) {
+    public void setLocation(int location) {
         mLocation = location;
     }
-
 
     public RobotState getState() {
         return mState;
@@ -137,7 +134,7 @@ public class RobotEntity {
     private static RobotEntity instance = null;
 
     private RobotEntity() {
-        mLocation = null;
+        mState = RobotState.FREE;
     }
 
     public static RobotEntity getInstance() {

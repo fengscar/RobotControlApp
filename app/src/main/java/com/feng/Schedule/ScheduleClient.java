@@ -391,7 +391,7 @@ public class ScheduleClient implements ScheduleProtocal {
             /**
              * 获取机器人状态
              */
-            int locationID = robotEntity.getLocation().getId();
+            int locationID = robotEntity.getLocation();
             int state = robotEntity.getState().toInt();
             int speed = robotEntity.getSpeed();
             String[] warnings = robotEntity.getWarnings();

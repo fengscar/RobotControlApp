@@ -211,7 +211,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                     handler.sendEmptyMessage(REFRESH);
 
                     // 通知调度
-                    sRobot.setLocation(currentNode);
+                    sRobot.setLocation(currentNode.getId());
                     if (mScheduleClient != null && mScheduleClient.isConnect()) {
                         mScheduleClient.updateStatus(sRobot);
                     }
