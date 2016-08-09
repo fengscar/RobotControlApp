@@ -8,7 +8,7 @@ package com.feng.Activities;
 import android.os.Bundle;
 import android.view.View;
 import com.feng.Base.BaseActivity;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.RSS.R;
 
 public class TestActivity extends BaseActivity implements ArmProtocol{

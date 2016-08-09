@@ -2,7 +2,7 @@ package com.feng.Utils;
 
 import android.view.View;
 import android.widget.EditText;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 
 import java.util.Arrays;
 import java.util.List;

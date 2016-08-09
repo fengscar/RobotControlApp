@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.*;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.Constant.I_Parameters;
 import com.feng.RSS.R;
 import com.feng.Utils.IntentDealer;

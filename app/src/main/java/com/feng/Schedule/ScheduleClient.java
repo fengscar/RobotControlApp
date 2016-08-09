@@ -6,14 +6,12 @@ import android.util.Base64;
 import android.util.Log;
 import com.feng.Constant.I_MapData;
 import com.feng.Constant.I_Parameters;
-import com.feng.Constant.RobotEntity;
 import com.feng.Database.FileTransporter;
 import com.feng.Database.MapDatabaseHelper;
 import com.feng.RobotApplication;
 import com.feng.Utils.L;
 import com.feng.Utils.SP;
 import com.feng.Utils.T;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +31,7 @@ import java.util.Map;
  * <--要处理调度系统主动发送的信息, activity通过putHandler添加处理指定Method的handler,
  * 后台线程接收到调度系统的回复时,会寻找对应的handler进行处理
  */
-public class ScheduleClient implements ScheduleProtocal {
+public class ScheduleClient implements ScheduleProtocal, ScheduleRobot.IRobotStatusChangeListener {
     private final static String TAG = ScheduleClient.class.getSimpleName();
 
     private final static int HEART_BEAT_MESSAGE = 555;
@@ -85,6 +83,7 @@ public class ScheduleClient implements ScheduleProtocal {
     private ScheduleClient() {
         this.startThread();
         initHandlerMap();
+        ScheduleRobot.getInstance().setIRobotStatusChangeListener(this);
     }
 
     //初始化 handlerMap, 加入 接收到 heartbeat ,syncMap, updateMap时的处理
@@ -382,67 +381,12 @@ public class ScheduleClient implements ScheduleProtocal {
     /**
      * 机器人更新实时状态...(当机器人状态改变时调用)
      */
-    public void updateStatus(RobotEntity robotEntity) {
-        if (robotEntity == null) {
+    public void updateStatus(IUpdateStatus robot) {
+        if (robot == null) {
             L.e(TAG, "向调度系统更新状态失败 :参数为空");
             return;
         }
-        try {
-            /**
-             * 获取机器人状态
-             */
-            int locationID = robotEntity.getLocation();
-            int state = robotEntity.getState().toInt();
-            int speed = robotEntity.getSpeed();
-            String[] warnings = robotEntity.getWarnings();
-            int[] nodeList = robotEntity.getTasks();
-            int[] pathList = robotEntity.getPaths();
-
-            /**
-             * 生成JSON 对象
-             */
-            JSONObject jsonParam = new JSONObject();
-            jsonParam.put(LOCATION, locationID);
-            jsonParam.put(STATE, state);
-            jsonParam.put(SPEED, speed);
-
-
-            if (warnings == null) {
-                jsonParam.put(WARNINGS, null);
-            } else {
-                JSONArray warningJsonArray = new JSONArray();
-                for (String warning : warnings) {
-                    warningJsonArray.put(warning);
-                }
-                jsonParam.put(WARNINGS, warningJsonArray);
-            }
-
-            if (nodeList == null) {
-                jsonParam.put(TASKS, null);
-            } else {
-                JSONArray tasksJsonArray = new JSONArray();
-                for (int node : nodeList) {
-                    tasksJsonArray.put(node);
-                }
-                jsonParam.put(TASKS, tasksJsonArray);
-            }
-
-            if (pathList == null) {
-                jsonParam.put(PATHS, null);
-            } else {
-                JSONArray pathsJsonArray = new JSONArray();
-                for (int path : pathList) {
-                    pathsJsonArray.put(path);
-                }
-                jsonParam.put(PATHS, pathsJsonArray);
-            }
-
-            sendJson(UPDATE_STATUS, jsonParam);
-        } catch (NullPointerException | JSONException e) {
-            e.printStackTrace();
-        }
-
-
+        sendJson(UPDATE_STATUS, robot.getRobotStatusJSON());
     }
 
 
@@ -498,5 +442,10 @@ public class ScheduleClient implements ScheduleProtocal {
             e.printStackTrace();
         }
         instance = null;
+    }
+
+    @Override
+    public void onStatusChange(IUpdateStatus robot) {
+        this.updateStatus(robot);
     }
 }

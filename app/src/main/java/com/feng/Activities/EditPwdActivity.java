@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 import com.feng.Base.BaseActivity;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.Constant.I_Parameters;
 import com.feng.CustomView.CustomDialog;
 import com.feng.CustomView.CustomDialogCallback;

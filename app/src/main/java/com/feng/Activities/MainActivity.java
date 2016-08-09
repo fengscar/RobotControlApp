@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
@@ -17,12 +18,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 import android.widget.ImageView.ScaleType;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.feng.Adapter.DrawerMenuAdapter;
 import com.feng.Adapter.ExpanderAdapter;
 import com.feng.Base.BaseActivity;
-import com.feng.Constant.ArmProtocol;
 import com.feng.Constant.I_Parameters;
-import com.feng.Constant.RobotEntity;
 import com.feng.CustomView.WarningDialogCallback;
 import com.feng.Database.MapDatabaseHelper;
 import com.feng.Database.Node;
@@ -36,8 +37,14 @@ import com.feng.RSS.R;
 import com.feng.RobotApplication;
 import com.feng.Schedule.ScheduleClient;
 import com.feng.Schedule.ScheduleProtocal;
+import com.feng.Schedule.ScheduleRobot;
 import com.feng.SpeechRecognize.IatService;
-import com.feng.Usb.ArmUsbUtil;
+import com.feng.Usb.ArmHandler.MotionHandler;
+import com.feng.Usb.ArmHandler.PathHandler;
+import com.feng.Usb.ArmHandler.PowerHandler;
+import com.feng.Usb.ArmHandler.SystemHandler;
+import com.feng.Usb.ArmProtocol;
+import com.feng.Usb.ArmUsbManager;
 import com.feng.Usb.UsbData;
 import com.feng.Usb.UsbEvent;
 import com.feng.UserManage.PasswordManager;
@@ -56,14 +63,16 @@ import java.util.List;
 public class MainActivity extends BaseActivity implements I_Parameters, ArmProtocol, ScheduleProtocal {
     private final static String TAG = MainActivity.class.getSimpleName();
 
+    @BindView(R.id.ibHome)
+    ImageButton ibHomeMenu;
+
+    private ArmUsbManager mArmUsbManager = ArmUsbManager.getInstance();
     private MapDatabaseHelper mDatabaseHelper;
 
     private ScheduleClient mScheduleClient;
-    private ArmUsbUtil mArmUsbUtil;
 
     private ToggleButton tbWash, tbExecute;
     //点击LOGO图标返回工作区
-    private ImageButton ibHomeMenu;
 
 
     private ExpandableListView taskListView;
@@ -82,7 +91,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
     private DrawerLayout mDrawerLayout;
     private DrawerMenuAdapter mDrawerMenuAdatper;
 
-    private RobotEntity sRobot;
+    private ScheduleRobot sRobot;
 
     private View currentView;
 
@@ -127,7 +136,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                     return;
                 }
                 UsbData data = (UsbData) msg.obj;
-                UsbEvent event = data.getUsbEvent();
+                UsbEvent event = data.getEvent();
                 byte[] dataReceive = data.getDataReceive();
                 byte[] dataSend = data.getDataToSend();
 
@@ -201,7 +210,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
             }
             switch (action) {
                 case CURRENT_RFID:
-                    int nodeID = transfer.byteToInt(transfer.getBody(dataReceive));
+                    int nodeID = transfer.twoByteToInt(transfer.getBody(dataReceive));
                     Node currentNode = mDatabaseHelper.getNodeByID(nodeID);
                     if (currentNode == null) {
                         L.e(TAG, "[OnReceiveRFID]读到错误的RFID点...");
@@ -225,12 +234,11 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         int pathNum = currentPathByte[0];
                         int[] paths = new int[pathNum];
                         for (int i = 0; i < pathNum; i++) {
-                            paths[i] = transfer.byteToInt(new byte[]{currentPathByte[i * 2 + 1], currentPathByte[i * 2 + 2]});
+                            paths[i] = transfer.twoByteToInt(new byte[]{currentPathByte[i * 2 + 1], currentPathByte[i * 2 + 2]});
                         }
+                        sRobot.beginNotifyChange();
                         sRobot.setPaths(paths);
-                        if (mScheduleClient != null && mScheduleClient.isConnect()) {
-                            mScheduleClient.updateStatus(sRobot);
-                        }
+                        sRobot.endNotifyChange();
 
                     } catch (IndexOutOfBoundsException e) {
                         Log.e(TAG, "handleReceive: [CurrentPath] 传来的数据有误");
@@ -275,29 +283,34 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
             L.i(TAG, "发送成功!" + action);
             switch (action) {
                 case QUERY_STATE:
-                    byte[] detailData = transfer.getBody(dataReceive);
-                    if (detailData[0] == (byte) 0x00) {
-                        //停止中
-                        tbExecute.setChecked(false);
-                        sRobot.setState(RobotEntity.RobotState.FREE);
-                    } else if (detailData[0] == (byte) 0x01 ||
-                            detailData[0] == (byte) 0x03) {
-                        //形式中  , 转向中
-                        tbExecute.setChecked(true);
-                        sRobot.setState(RobotEntity.RobotState.MOVING);
-                    } else if (detailData[0] == (byte) 0x02) {
-                        // 原地转向
-                        tbExecute.setChecked(false);
-                        sRobot.setState(RobotEntity.RobotState.WAITING);
-                    } else if (detailData[0] == (byte) 0x04) {
-                        //故障
-                        tbExecute.setChecked(false);
-                        sRobot.setState(RobotEntity.RobotState.ERROR);
-                    }
-
-                    if (mScheduleClient != null && mScheduleClient.isConnect()) {
-                        mScheduleClient.updateStatus(sRobot);
-                    }
+                    sRobot.beginNotifyChange();
+                    byte[] body = transfer.getBody(dataReceive);
+                    sRobot.beginNotifyChange();
+                    sRobot.updateMotionStatusFromArm(body);
+                    sRobot.endNotifyChange();
+//                    byte[] detailData = transfer.getBody(dataReceive);
+//                    if (detailData[0] == (byte) 0x00) {
+//                        //停止中
+//                        tbExecute.setChecked(false);
+//                        sRobot.setState(RobotEntity.MotionState.FREE);
+//                    } else if (detailData[0] == (byte) 0x01 ||
+//                            detailData[0] == (byte) 0x03) {
+//                        //形式中  , 转向中
+//                        tbExecute.setChecked(true);
+//                        sRobot.setState(RobotEntity.MotionState.MOVING);
+//                    } else if (detailData[0] == (byte) 0x02) {
+//                        // 原地转向
+//                        tbExecute.setChecked(false);
+//                        sRobot.setState(RobotEntity.MotionState.WAITING);
+//                    } else if (detailData[0] == (byte) 0x04) {
+//                        //故障
+//                        tbExecute.setChecked(false);
+//                        sRobot.setState(RobotEntity.MotionState.ERROR);
+//                    }
+//
+//                    if (mScheduleClient != null && mScheduleClient.isConnect()) {
+//                        mScheduleClient.updateStatus(sRobot);
+//                    }
 
                     break;
 
@@ -316,7 +329,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
 //                    lockContentView(false);
                     break;
                 case QUERY_TARGET:
-                    List<Node> currentTargets = mArmUsbUtil.getNodesFromByte(dataReceive);
+                    List<Node> currentTargets = PathHandler.getInstance().getNodesFromByte(dataReceive);
                     mExpanderAdapter.clearTask();
                     mExpanderAdapter.addTarget(currentTargets);
                     // 具体的工作区界面可能还未初始化
@@ -337,7 +350,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                 //添加任务成功
                 case ADD_TARGETS:
                     //成功添加的节点s
-                    List<Node> addTargets = mArmUsbUtil.getNodesFromByte(dataSend);
+                    List<Node> addTargets = PathHandler.getInstance().getNodesFromByte(dataSend);
                     //向任务列表 添加任务
                     mExpanderAdapter.addTarget(addTargets);
                     // 向Fragment添加任务..(fragment有判断,如果是撤台Node,不添加)
@@ -355,7 +368,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
 
                 case DEL_TARGETS:
                     // 成功删除的节点s
-                    List<Node> delTargets = mArmUsbUtil.getNodesFromByte(dataSend);
+                    List<Node> delTargets = PathHandler.getInstance().getNodesFromByte(dataSend);
                     mExpanderAdapter.delTarget(delTargets);
                     if (mIFragmentControl != null) {
                         mIFragmentControl.delTask(delTargets);
@@ -396,18 +409,22 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
         //  当Activity从 lockContentView(?) 中切换回来时,可以不需要重新初始化各个控件
         LayoutInflater inflater = LayoutInflater.from(this);
         currentView = inflater.inflate(R.layout.activity_main, null);
+
+//        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
         setContentView(currentView);
 
+        ButterKnife.bind(this);
+
         //初始化应用级对象 (机器人实体,USB通信,,调度通信)
-        sRobot = RobotEntity.getInstance();
-        mArmUsbUtil = RobotApplication.getArmUsbUtil();
-        mArmUsbUtil.addObserver(TAG, new MainUsbHandler(this));
+        sRobot = ScheduleRobot.getInstance();
+        ArmUsbManager.getInstance().addObserver(TAG, new MainUsbHandler(this));
         // 调度系统客户端对象
         mScheduleClient = RobotApplication.getScheduleClient();
         //初始化 处理调度系统命令的handler
         this.initScheduleHandler();
 
-//        initIAT();
+        initIAT();
         initView();
         initFragment();
 
@@ -440,11 +457,11 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         switch (command) {
                             case RobotCommand.COMMAND_MOVE:
                                 // 命令机器人继续行走...
-                                mArmUsbUtil.setMove(true);
+                                MotionHandler.getInstance().setExecuteMove(true);
                                 break;
                             case RobotCommand.COMMAND_STOP:
                                 //命令机器人停止行走
-                                mArmUsbUtil.setMove(false);
+                                MotionHandler.getInstance().setExecuteMove(false);
                                 break;
                             default:
                                 L.e(TAG, "未知的调度服务端指令");
@@ -456,7 +473,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                      */
                     if (json.has(ADD_TASKS) && !json.isNull(ADD_TASKS)) {
                         JSONArray addTaskArray = json.getJSONArray(ADD_TASKS);
-                        if (addTaskArray != null && addTaskArray.length() > 0 && mArmUsbUtil != null) {
+                        if (addTaskArray != null && addTaskArray.length() > 0 && mArmUsbManager != null) {
                             List<Node> nodeList = new ArrayList<>();
                             for (int i = 0; i < addTaskArray.length(); i++) {
                                 Node node = mDatabaseHelper.getNodeByID(addTaskArray.getInt(i));
@@ -464,7 +481,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                                     nodeList.add(node);
                                 }
                             }
-                            mArmUsbUtil.addTarget(nodeList);
+                            PathHandler.getInstance().addTargets(nodeList);
                         }
                     }
 
@@ -473,7 +490,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                      */
                     if (json.has(DEL_TASKS) && !json.isNull(DEL_TASKS)) {
                         JSONArray delTaskArray = json.getJSONArray(DEL_TASKS);
-                        if (delTaskArray != null && delTaskArray.length() > 0 && mArmUsbUtil != null) {
+                        if (delTaskArray != null && delTaskArray.length() > 0 && mArmUsbManager != null) {
                             List<Node> nodeList = new ArrayList<>();
                             for (int i = 0; i < delTaskArray.length(); i++) {
                                 Node node = mDatabaseHelper.getNodeByID(delTaskArray.getInt(i));
@@ -481,7 +498,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                                     nodeList.add(node);
                                 }
                             }
-                            mArmUsbUtil.delTarget(nodeList);
+                            PathHandler.getInstance().delTargets(nodeList);
                         }
                     }
                     /**
@@ -756,13 +773,13 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
         // 设置回调...当用户点击 fragment中的元素时调用
         mIFragmentControl.setCallback(new UserControlFragmentCallback() {
             @Override
-            public void onUserAdd(Node node) {
-                mArmUsbUtil.addTarget(node);
+            public void onUserAdd(@NonNull Node node) {
+                PathHandler.getInstance().addTargets(node.getId());
             }
 
             @Override
-            public void onUserDel(Node node) {
-                mArmUsbUtil.delTarget(node);
+            public void onUserDel(@NonNull Node node) {
+                PathHandler.getInstance().delTargets(node.getId());
             }
         });
         fragmentTransaction.show((Fragment) mIFragmentControl);
@@ -795,8 +812,6 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
         //执行按键 extend from Button
         tbExecute = (ToggleButton) findViewById(R.id.tbExecute);
         tbWash = (ToggleButton) findViewById(R.id.tbWash);
-        ibHomeMenu = (ImageButton) findViewById(R.id.ibHome);
-
 
         HomePageOnClickListener clickListener = new HomePageOnClickListener();
         tbExecute.setOnClickListener(clickListener);
@@ -860,8 +875,8 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
             }
 
             @Override
-            public void onDeleteTask(Node node) {
-                mArmUsbUtil.delTarget(node);
+            public void onDeleteTask(@NonNull Node node) {
+                PathHandler.getInstance().delTargets(node.getId());
             }
         });
 
@@ -893,12 +908,12 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
      * @param node
      * @return 删除任务是否成功
      */
-    public boolean deleteTask(Node node) {
+    public boolean deleteTask(@NonNull Node node) {
         boolean deleceResult = false;
         // refresh ExpandableListView
         deleceResult = mExpanderAdapter.delTarget(node);
         // send to ARM
-        mArmUsbUtil.delTarget(node);
+        PathHandler.getInstance().delTargets(node.getId());
 
         // send to Schedule
 //        mScheduleClient.updateTask(getIntTaskList(), null);
@@ -953,10 +968,10 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                     }
                     break;
                 case DrawerMenuAdapter.USB_BTN:
-                    mArmUsbUtil.query(QueryUsbState);
+                    SystemHandler.getInstance().queryUsbConnectStatus();
                     break;
                 case DrawerMenuAdapter.POWER_BTN:
-                    mArmUsbUtil.query(QueryPower);
+                    PowerHandler.getInstance().queryCurrentPower();
                     break;
                 case DrawerMenuAdapter.WARNNING_BTN:
                     if (warningDialog.getWarningCount() != 0) {
@@ -978,10 +993,10 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         //点击后先不改变状态
                         tbExecute.setChecked(false);
                         // 让USB发送 , 收到回复后, 在onReceive中会改变 按键的状态
-                        mArmUsbUtil.setMove(true);
+                        MotionHandler.getInstance().setExecuteMove(true);
                     } else {
                         tbExecute.setChecked(true);
-                        mArmUsbUtil.setMove(false);
+                        MotionHandler.getInstance().setExecuteMove(false);
                     }
                     break;
 
@@ -1004,9 +1019,9 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         //只有一个清洗区时
                         Node node = nodeList.get(0);
                         if (tbWash.isChecked()) {
-                            mArmUsbUtil.delTarget(node);
+                            PathHandler.getInstance().delTargets(node.getId());
                         } else {
-                            mArmUsbUtil.addTarget(node);
+                            PathHandler.getInstance().addTargets(node.getId());
                         }
                         break;
                     }
@@ -1018,7 +1033,7 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
                         break;
                     }
                     // 清空所有的任务
-                    mArmUsbUtil.delTarget(mExpanderAdapter.getTasks());
+                    PathHandler.getInstance().delTargets(mExpanderAdapter.getTasks());
                     // 应该等ARM回复后再操作 任务列表
 //                    mExpanderAdapter.clearTask();
 
@@ -1088,16 +1103,16 @@ public class MainActivity extends BaseActivity implements I_Parameters, ArmProto
         resetActivity();
 
         // 初始化 USB链接状态
-        mArmUsbUtil.query(QueryUsbState);
+        SystemHandler.getInstance().queryUsbConnectStatus();
 
         //查询当前任务
-        mArmUsbUtil.query(QueryTarget);
+        PathHandler.getInstance().queryTarget();
 
         // 初始化电量信息 ( 默认为无法获取)
-        mArmUsbUtil.query(QueryPower);
+        PowerHandler.getInstance().queryCurrentPower();
 
         //查询运动状态
-        mArmUsbUtil.query(QueryState);
+        MotionHandler.getInstance().queryMotionState();
     }
 
 

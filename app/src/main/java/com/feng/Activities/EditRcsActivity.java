@@ -5,7 +5,7 @@ import android.os.Message;
 import android.widget.*;
 import com.feng.Base.BaseActivity;
 import com.feng.Constant.I_Parameters;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.RSS.R;
 import com.feng.Schedule.ScheduleClient;
 import com.feng.Schedule.ScheduleServerInfo;

@@ -4,9 +4,9 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.usb.UsbManager;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.CustomView.WarningDialog;
-import com.feng.RobotApplication;
+import com.feng.Usb.ArmUsbManager;
 import com.feng.Utils.*;
 
 import java.io.IOException;
@@ -43,10 +43,10 @@ public class BaseReceiver extends BroadcastReceiver implements ArmProtocol {
         //确保 接收到 多次广播,只执行一次操作
         switch (intent.getAction()) {
             case UsbManager.ACTION_USB_DEVICE_ATTACHED:
-                RobotApplication.getArmUsbUtil().connect();
+                ArmUsbManager.getInstance().connect();
                 break;
             case UsbManager.ACTION_USB_DEVICE_DETACHED:
-                RobotApplication.getArmUsbUtil().disconnect();
+                ArmUsbManager.getInstance().disconnect();
                 break;
             case USB_RECEIVE:
                 dealReceive(receiveData);

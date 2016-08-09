@@ -65,12 +65,12 @@ public class MapDatabaseHelper extends SQLiteOpenHelper implements I_MapData {
     // 当调用构造函数 发现已存在同名数据库时,升级版本
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String sqlAddWidthColumn = "alter table workspace add " + WORKSPACE_WIDTH + " integer";
-        String sqlAddHeightColumn = "alter table workspace add " + WORKSPACE_HEIGHT + " integer";
-        // SQLite似乎不支持一次添加多个字段,需要分开
-        db.execSQL(sqlAddWidthColumn);
-        db.execSQL(sqlAddHeightColumn);
-        L.i(LOG, "更新版本: 从" + oldVersion + "升级到" + newVersion + ",本次更新在Workspace表中添加了2个字段:工作区的尺寸大小");
+//        String sqlAddWidthColumn = "alter table workspace add " + WORKSPACE_WIDTH + " integer";
+//        String sqlAddHeightColumn = "alter table workspace add " + WORKSPACE_HEIGHT + " integer";
+//        // SQLite似乎不支持一次添加多个字段,需要分开
+//        db.execSQL(sqlAddWidthColumn);
+//        db.execSQL(sqlAddHeightColumn);
+//        L.i(LOG, "更新版本: 从" + oldVersion + "升级到" + newVersion + ",本次更新在Workspace表中添加了2个字段:工作区的尺寸大小");
     }
 
     // SQLite defaults to PRAGMA foreign_keys = OFF every time you open the database.

@@ -1,75 +1,59 @@
 package com.feng.Usb;
 
-import android.content.Context;
-import android.hardware.usb.UsbDevice;
-import android.hardware.usb.UsbManager;
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Message;
-import android.os.SystemClock;
+import android.os.*;
 import android.util.Log;
-import com.feng.Constant.ArmProtocol;
 import com.feng.Constant.I_Parameters;
-import com.feng.RobotApplication;
+import com.feng.Usb.ArmHandler.MotionHandler;
+import com.feng.Usb.ArmHandler.PowerHandler;
+import com.feng.Usb.UsbSerial.UsbSerialConnector;
+import com.feng.Usb.UsbSerial.UsbSerial_CP2102;
+import com.feng.Usb.UsbSerial.UsbSerial_PL2303;
 import com.feng.Utils.L;
+import com.feng.Utils.T;
 import com.feng.Utils.Transfer;
 import com.feng.Utils.Verifier;
 import com.hoho.android.usbserial.driver.UsbSerialDriver;
-import com.hoho.android.usbserial.driver.UsbSerialProber;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 
 /**
  * @author 福建省和创伟业智能科技有限公司
  * @创建时间 2016-2-29 下午4:46:11
+ * 功能: 管理USB的连接,重连,断开..发送/接收
  */
 
 public class ArmUsbManager implements ArmProtocol, I_Parameters {
     private final static String TAG = ArmUsbManager.class.getSimpleName();
 
+    private static UsbSerialDriver sUsbSerialDriver;
+
+    //region 单例模式的实现
+
+    private static ArmUsbManager instance = null;
+
     protected ArmUsbManager() {
     }
 
-    // 用来获取 USB设备列表
-    private UsbManager mUsbManager;
-    // ARM USB驱动对象,用来收发数据
-    private static UsbSerialDriver sDriver;
-    private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
-
-    // 设备实体类
-    class DeviceEntry {
-        public UsbDevice device;
-        public UsbSerialDriver driver;
-
-        DeviceEntry(UsbDevice device, UsbSerialDriver driver) {
-            this.device = device;
-            this.driver = driver;
+    public static ArmUsbManager getInstance() {
+        if (instance == null) {
+            synchronized (ArmUsbManager.class) {
+                if (instance == null) {
+                    instance = new ArmUsbManager();
+                }
+            }
         }
+        return instance;
     }
+    //endregion
 
-    private DeviceEntry mEntry;
-
-    protected Map<String, Handler> activityHandlerMap = new HashMap<>();
-
-    /**
-     * 添加观察者, 当系统状态改变时/接受数据时 ,通知该系统的handler,让其发送数据
-     */
-    public void addObserver(String activityName, Handler activityMessagehandler) {
-        activityHandlerMap.put(activityName, activityMessagehandler);
-        L.i(TAG, "添加观察者: " + activityName + ",当前有 " + activityHandlerMap.size() + " 个观察者");
-    }
-
-    public void delObserver(String activityKey) {
-        activityHandlerMap.remove(activityKey);
-        L.i(TAG, "删除观察者: " + activityKey + ",当前有 " + activityHandlerMap.size() + " 个观察者");
-    }
+    private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
+    private final ExecutorService sendExecutor = Executors.newFixedThreadPool(5);
 
     // Runnable 对象.  监听usb的接收
     private SerialInputOutputManager mSerialIoManager;
@@ -136,6 +120,24 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
         }
     };
 
+    protected Map<String, Handler> activityHandlerMap = new HashMap<>();
+
+    /**
+     * 添加观察者, 当系统状态改变时/接受数据时 ,通知该系统的handler,让其发送数据
+     */
+    public void addObserver(String activityName, Handler activityMessagehandler) {
+        if (activityHandlerMap.containsKey(activityName)) {
+            return;
+        }
+        activityHandlerMap.put(activityName, activityMessagehandler);
+        L.i(TAG, "添加观察者: " + activityName + ",当前有 " + activityHandlerMap.size() + " 个观察者");
+    }
+
+    public void delObserver(String activityKey) {
+        activityHandlerMap.remove(activityKey);
+        L.i(TAG, "删除观察者: " + activityKey + ",当前有 " + activityHandlerMap.size() + " 个观察者");
+    }
+
     /**
      * 通知Activity(Usb服务端向客户端发送通知)..(具体事件定义查看 {@link com.feng.Usb.UsbEvent }
      */
@@ -159,54 +161,79 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
     // 当前接收的数据
     private byte[] currentReceive;
     private Verifier mVerifier = new Verifier();
-    private boolean CONNECT_FLAG = false;
+    private boolean mConnectFlag = false;
 
-    public boolean getConnectState() {
-        return CONNECT_FLAG;
+    public boolean isConnect() {
+        return mConnectFlag;
     }
 
     //内部的handler ,用来处理重连等问题
+    private final int ACTION_RECONNECT_USB = 122;
+    //    private final int ACTION_QUERY_STATE = 123;
+//    private final int ACTION_QUERY_POWER = 124;
     private Handler innerHandler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case REFRESH_USB:
+                case ACTION_RECONNECT_USB:
                     reconnect();
                     break;
+
+//                case ACTION_QUERY_STATE:
+//                    removeMessages(ACTION_QUERY_STATE);
+//                    motionHandler.queryMotionState();
+//                    sendEmptyMessageDelayed(ACTION_QUERY_STATE, 500);
+//                    break;
+//
+//                case ACTION_QUERY_POWER:
+//                    removeMessages(ACTION_QUERY_POWER);
+//                    powerHandler.queryCurrentPower();
+//                    sendEmptyMessageDelayed(ACTION_QUERY_STATE, 180000);
+//
+//                    break;
+
                 default:
                     break;
             }
         }
     };
 
-    /**
-     * 获取 驱动 并开始回调接收
-     *
-     * @return
-     */
-    private boolean initDriver() {
-        L.i(TAG, "USB initDriver...");
-        sDriver = mEntry.driver;
-        try {
-            sDriver.open();
-            sDriver.setParameters(115200, 8, UsbSerialDriver.STOPBITS_1, UsbSerialDriver.PARITY_NONE);
-        } catch (IOException e) {
-            try {
-                sDriver.close();
-            } catch (IOException e2) {
-                return false;
+    //region 轮询机器人的方法
+    private Timer queryTimer;
+
+    private void startQueryRobot() {
+        queryTimer = new Timer();
+        queryTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                MotionHandler.getInstance().queryMotionState();
             }
-            sDriver = null;
-            return false;
-        }
-        startIoManager();
-        return true;
+        }, 1000, 1000); //延迟0ms开始查询,间隔1000ms一次
+
+        queryTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                PowerHandler.getInstance().queryCurrentPower();
+            }
+        }, 1000, 180000); //延迟0ms开始查询,半分钟查询一次
     }
 
+    private void stopQueryRobot() {
+        if (queryTimer != null) {
+            queryTimer.cancel();
+        }
+    }
+
+    //endregion的方法的方法
+
+
     private void startIoManager() {
-        if (sDriver != null) {
+        if (sUsbSerialDriver != null) {
             L.i(TAG, "Starting io manager...");
-            mSerialIoManager = new SerialInputOutputManager(sDriver, mListener);
+            mSerialIoManager = new SerialInputOutputManager(sUsbSerialDriver, mListener);
             mExecutor.submit(mSerialIoManager);
+            mConnectFlag = true;
+
+
         }
     }
 
@@ -215,6 +242,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
             L.e(TAG, "Stopping io manager...");
             mSerialIoManager.stop();
             mSerialIoManager = null;
+            mConnectFlag = false;
         }
     }
 
@@ -225,11 +253,12 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
                 new byte[]{data[0], data[1], data[2]},
                 isSuccess ? new byte[]{(byte) 0x01} : new byte[]{(byte) 0x00});
         try {
-            sDriver.write(dataToSend, 0);
+            sUsbSerialDriver.write(dataToSend, 0);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     public void receive(byte[] data) {
         currentReceive = data;
@@ -244,63 +273,8 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
         }
     }
 
-    /**
-     * 判断 buffer是否属于 指定Action的MAP中
-     */
-    protected boolean belongAction(byte[] buffer, HashMap<String, byte[]> map) {
-        for (byte[] head : map.values()) {
-            if (mVerifier.compareHead(buffer, head)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public void connect() {
-        if (!CONNECT_FLAG) {
-            L.i(TAG, "开始连接USB");
-
-            mUsbManager = (UsbManager) RobotApplication.getContext().getSystemService(Context.USB_SERVICE);
-
-            new GetUsbTask().execute((Void) null);
-        }
-    }
-
-    public void reconnect() {
-        L.i(TAG, "Usb准备重连...");
-        CONNECT_FLAG = false;
-        stopIoManager();
-        connect();
-    }
-
-
-    public void disconnect() {
-        innerHandler.removeMessages(REFRESH_USB);
-        L.e(TAG, "正在断开USB连接");
-        stopIoManager();
-        try {
-            //移除队列中的 重连信息
-            if (mEntry == null) {
-                L.i(TAG, "mEntry为空");
-                return;
-            }
-            if (mEntry.driver != null) {
-                mEntry.driver.close();
-            }
-            if (mEntry.device != null) {
-                mEntry.device = null;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        CONNECT_FLAG = false;
-        L.i(TAG, "[关闭线程] ARM-USB通信线程");
-        //通知 activity
-        notifyActivities(UsbEvent.UsbDisconnect);
-    }
-
     public void send(byte[] data) {
-        if (!CONNECT_FLAG) {
+        if (!mConnectFlag) {
             L.e(TAG, "USB还未连接,发送失败:" + Arrays.toString(data));
             notifyActivities(new UsbData(UsbEvent.UsbConnectFailed));
             return;
@@ -312,65 +286,163 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
         }
     }
 
-    /**
-     * 启动一个异步任务,来连接USB.
-     * 连接成功会启动一个新线程来接收USB数据,并通过回调接口(SerialInputOutputManager.Listener)来接收数据
-     * <p/>
-     * --在doInBackground()中
-     * 1. 查找USB设备
-     * 2. 获取该设备驱动
-     * <p/>
-     * --在onPostExecute中
-     * 3. 配置该USB驱动信息,开始回调 ; (如果驱动配置错误,则通过handler延迟n秒后重连)
-     */
-    class GetUsbTask extends AsyncTask<Void, Void, DeviceEntry> {
-        @Override
-        protected DeviceEntry doInBackground(Void... params) {
-            //			SystemClock.sleep(1000);
-            DeviceEntry result = new DeviceEntry(null, null);
+    public void send(byte[] head, byte[] body) {
+        this.send(new Transfer().packingByte(head, body));
+    }
+
+    public void send(ArmHead head, byte[] body) {
+        this.send(head.getHead(), body);
+    }
+
+    public void send(ArmHead head, byte body) {
+        this.send(head, new byte[]{body});
+    }
+
+    public void send(ArmHead head, boolean b) {
+        this.send(head, (byte) (b ? 0x01 : 0x00));
+    }
+
+    //    /**
+//     * 通过USB 向ARM发送data
+//     * 不能再UI线程使用
+//     *
+//     * @param data 所发送的data
+//     * @return 发送结果: 成功/失败
+//     */
+    public UsbData sendForResult(byte[] data) {
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            Log.e(TAG, "send: d当前在UI线程发送");
+        }
+        if (!mConnectFlag) {
+            Log.e(TAG, "send: USB还未连接,发送失败:" + Arrays.toString(data));
+            notifyActivities(UsbEvent.UsbDisconnect);
+            return new UsbData(UsbEvent.UsbSendFailed, null, null);
+        }
+        if (mVerifier.confirmSendData(data)) {
+//            new SendTask().execute(data);
             try {
-                L.i(TAG, "当前的USB设备有" + mUsbManager.getDeviceList().size() + "个");
-                for (final UsbDevice device : mUsbManager.getDeviceList().values()) {
-                    L.i(TAG, "找到USB设备: " + device.toString());
-                    final List<UsbSerialDriver> drivers =
-                            UsbSerialProber.probeSingleDevice(mUsbManager, device);
-                    if (drivers.isEmpty()) {
-                        result = new DeviceEntry(device, null);
-                    } else {
-                        for (UsbSerialDriver driver : drivers) {
-                            result = new DeviceEntry(device, driver);
-                        }
-                    }
-                    //如果找到CP2012 后, 停止搜索其他设备...因为找到其他设备后result会被替换..
-                    if ((device.getVendorId() == 4292 && device.getProductId() == 60000)
-                            || (device.getVendorId() == 1659 && device.getProductId() == 8963)) {
-                        L.i(TAG, "找到USB转串口设备及驱动,停止查找并退出...");
-                        break;
-                    }
+                FutureTask<UsbData> sendTask = new FutureTask<>(new SendCallable(data));
+                sendExecutor.submit(sendTask);
+                while (!sendTask.isDone()) {
                 }
+                return sendTask.get();
+//                return new UsbData(UsbEvent.UsbSendFailed, null, null);
             } catch (Exception e) {
                 e.printStackTrace();
+                return new UsbData(UsbEvent.UsbSendFailed, null, null);
             }
-            return result;
+        } else {
+            L.e(TAG, "发送失败-数据格式错误 : " + Arrays.toString(data));
+            return new UsbData(UsbEvent.UsbSendFailed, null, null);
+        }
+    }
+
+    //
+//    /**
+//     * 创建一个线程来发送byte[],实时监测当前接收值并与之对比HEAD
+//     * 返回是否发送成功
+//     */
+    private class SendCallable implements Callable<UsbData> {
+        private UsbData mUsbData;
+
+
+        public SendCallable(byte[] data) {
+            mUsbData = new UsbData();
+            mUsbData.setDataToSend(data);
         }
 
         @Override
-        protected void onPostExecute(DeviceEntry result) {
-            mEntry = result;
-            if (mEntry.device != null && mEntry.driver != null) {
-                if (initDriver() == true) {
-                    CONNECT_FLAG = true;
-                    L.i(TAG, "(＾－＾) USB设备连接成功,驱动配置成功");
-                    notifyActivities(new UsbData(UsbEvent.UsbConnect));
+        public UsbData call() throws Exception {
+            byte[] head = mVerifier.getHead(mUsbData.getDataToSend());
+            //当前发送次数
+            int sendCount = 0;
+            // 重置当前接收的信息
+            currentReceive = null;
+            try {
+                while (sendCount < SEND_REPEAT_COUNT) {
+                    sUsbSerialDriver.write(mUsbData.getDataToSend(), 0);
+                    sendCount++;
+                    Log.i(TAG, "[USB发送]: " + sendCount + "次 ---" + Arrays.toString(mUsbData.getDataToSend()));
+                    SystemClock.sleep(SEND_TIMEOUT);
+                    // 与当前接收到的 currentReceive比较 头三位( 是否不严谨?)
+                    //如果相同 返回发送成功 ,退出 while() 不再发送, 并返回接收到的结果
+                    if (mVerifier.compareHead(currentReceive, head)) {
+                        mUsbData.setDataReceive(currentReceive);
+                        mUsbData.setEvent(UsbEvent.UsbSendSuccess);
+                        return mUsbData;
+                    }
+                    // 如果接收到的是 错误0x50... 退出!
+                    if (mVerifier.compareHead(currentReceive, ErrorFromArm)) {
+                        mUsbData.setDataReceive(currentReceive);
+                        mUsbData.setEvent(UsbEvent.UsbSendFailed);
+                        return mUsbData;
+                    }
                 }
-            } else {
-                CONNECT_FLAG = false;
-                L.e(TAG, mEntry.device == null ? "USB设备未找到" : "USB驱动未找到");
-                L.e(TAG, USB_CONNECT_TIMEOUT / 1000 + "秒后重连...");
-                notifyActivities(new UsbData(UsbEvent.UsbConnectFailed));
-                innerHandler.sendEmptyMessageDelayed(REFRESH_USB, USB_CONNECT_TIMEOUT);
+                // 如果没有接收到 回复, 发送失败
+                mUsbData.setEvent(UsbEvent.UsbSendFailed);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return mUsbData;
+        }
+    }
+
+
+    public void connect() {
+        // 先断开连接...
+        if (sUsbSerialDriver != null) {
+            try {
+                sUsbSerialDriver.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
+        if (!mConnectFlag) {
+            Log.i(TAG, "connecting...");
+            try {
+                sUsbSerialDriver = UsbSerialConnector.getInstance().getCurrentUsbSerialDriver(new UsbSerial_CP2102(), new UsbSerial_PL2303());
+            } catch (SecurityException e) {
+                T.show("没有USB连接权限!\n请重新插拔USB连接线");
+                innerHandler.removeMessages(ACTION_RECONNECT_USB);
+                return;
+            }
+
+            startIoManager();
+            // 开始轮询机器人
+            startQueryRobot();
+//            innerHandler.sendEmptyMessageDelayed(ACTION_QUERY_STATE, 500);
+//            innerHandler.sendEmptyMessageDelayed(ACTION_QUERY_POWER, 1800000);
+
+        }
+    }
+
+    public void reconnect() {
+        L.i(TAG, "Usb准备重连...");
+        mConnectFlag = false;
+        stopIoManager();
+        connect();
+    }
+
+    public void disconnect() {
+        instance = null;
+        innerHandler.removeMessages(ACTION_RECONNECT_USB);
+//        innerHandler.removeMessages(ACTION_QUERY_STATE);
+//        innerHandler.removeMessages(ACTION_QUERY_POWER);
+
+        L.e(TAG, "正在断开USB连接");
+        stopIoManager();
+        stopQueryRobot();
+        try {
+            if (sUsbSerialDriver != null) {
+                sUsbSerialDriver.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mConnectFlag = false;
+        L.i(TAG, "[关闭线程] ARM-USB通信线程");
+        //通知 activity
+        notifyActivities(UsbEvent.UsbDisconnect);
     }
 
     class SendTask extends AsyncTask<byte[], Void, byte[]> {
@@ -385,7 +457,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
             currentReceive = null;
             try {
                 while (sendCount < SEND_REPEAT_COUNT) {
-                    sDriver.write(dataToSend, 0);
+                    sUsbSerialDriver.write(dataToSend, 0);
                     sendCount++;
                     L.e(TAG, "[USB发送]: " + sendCount + "次 ---" + Arrays.toString(dataToSend));
                     SystemClock.sleep(SEND_TIMEOUT);
@@ -417,6 +489,19 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
                 notifyActivities(new UsbData(UsbEvent.UsbSendSuccess, receive, dataToSend));
             }
         }
+    }
+
+
+    /**
+     * 判断 buffer是否属于 指定Action的MAP中
+     */
+    protected boolean belongAction(byte[] buffer, HashMap<String, byte[]> map) {
+        for (byte[] head : map.values()) {
+            if (mVerifier.compareHead(buffer, head)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

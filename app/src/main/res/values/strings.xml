@@ -187,6 +187,14 @@
     <string name="selfCheckExplainMotor">点击下方的按键,如果机器人完成按照指定的操作,则表示电机出现了异常,请联系厂家进行维护</string>
     <string name="title_activity_settings">Settings</string>
 
+    <string name="selfCheck_pass">通 过</string>
+    <string name="selfCheck_error">出 错</string>
+
+
+    <!--自检模块 显示文本(占位符)-->
+    <string name="selfCheck_ultra_distance">%d cm</string>
+
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->

@@ -1,6 +1,6 @@
 package com.feng.Database;
 
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.Utils.Transfer;
 
 import java.util.ArrayList;

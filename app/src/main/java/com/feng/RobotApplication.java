@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import com.feng.Database.MapDatabaseHelper;
 import com.feng.Schedule.ScheduleClient;
-import com.feng.Usb.ArmUsbUtil;
+import com.feng.Usb.ArmUsbManager;
 import com.feng.Utils.L;
 
 /**
@@ -16,26 +16,20 @@ public class RobotApplication extends Application {
     private final static String LOG = RobotApplication.class.getSimpleName();
 
     private static Context context;
-    private static ArmUsbUtil sArmUsbUtil;
+    private static ArmUsbManager sArmUsbManager;
     private static ScheduleClient sScheduleClient;
 
     public void onCreate() {
         super.onCreate();
         context = getApplicationContext();
 
-        L.i(LOG, "App启动: 初始化Usb通信V1.0");
-        sArmUsbUtil = ArmUsbUtil.getInstance();
+        L.i(LOG, "App启动: 初始化Usb通信V8.09");
+        sArmUsbManager = ArmUsbManager.getInstance();
+        sArmUsbManager.connect();
+
         sScheduleClient = ScheduleClient.getInstance();
 
 //		LogcatHelper.getInstance(context).start();
-    }
-
-    public static ArmUsbUtil getArmUsbUtil() {
-        if (sArmUsbUtil == null) {
-            L.i(LOG, "重新获取USB连接对象");
-            sArmUsbUtil = ArmUsbUtil.getInstance();
-        }
-        return sArmUsbUtil;
     }
 
     public static ScheduleClient getScheduleClient() {
@@ -60,8 +54,8 @@ public class RobotApplication extends Application {
      * 所以在mainActivity退出时,调用该函数来释放资源,关闭网络连接.
      */
     public void quit() {
-        sArmUsbUtil.disconnect();
-        sArmUsbUtil = null;
+        sArmUsbManager.disconnect();
+        sArmUsbManager = null;
 
         sScheduleClient.close();
         sScheduleClient = null;

@@ -14,7 +14,7 @@ import android.os.Message;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.Constant.I_Parameters;
 import com.feng.RSS.R;
 import com.feng.Sound.Speaker;

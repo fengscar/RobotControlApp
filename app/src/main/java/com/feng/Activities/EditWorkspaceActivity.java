@@ -19,15 +19,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import com.feng.Base.BaseActivity;
 import com.feng.Constant.I_Parameters;
+import com.feng.CustomView.CustomDialog;
+import com.feng.CustomView.CustomDialogCallback;
 import com.feng.Database.MapDatabaseHelper;
 import com.feng.Database.Workspace;
 import com.feng.Fragments.WorkspaceFragment;
 import com.feng.RSS.R;
-import com.feng.Schedule.ScheduleClient;
-import com.feng.CustomView.CustomDialog;
-import com.feng.CustomView.CustomDialogCallback;
-import com.feng.Utils.L;
 import com.feng.RobotApplication;
+import com.feng.Schedule.ScheduleClient;
+import com.feng.Utils.L;
 import com.feng.Utils.SP;
 import com.feng.Utils.T;
 import com.getbase.floatingactionbutton.FloatingActionButton;
@@ -129,7 +129,7 @@ public class EditWorkspaceActivity extends BaseActivity implements I_Parameters 
         fabAddWorkspace.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                T.show("OK");
+                T.show("PASS");
                 return true;
             }
         });
@@ -225,7 +225,7 @@ public class EditWorkspaceActivity extends BaseActivity implements I_Parameters 
                     break;
 
                 case R.id.fabSaveMap:
-                    RobotApplication.getArmUsbUtil().saveMap();
+//                    ArmUsbManager.getInstance().saveMap();
                     T.show("正在保存地图...");
                     fam.collapse();
                     break;

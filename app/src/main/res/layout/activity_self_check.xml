@@ -7,56 +7,63 @@
     <include layout="@layout/uniform_setting_title"/>
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
         <ListView
-            android:id="@+id/lvSelfCheckItem"
-            android:layout_width="@dimen/home_btn_width"
-            android:layout_height="fill_parent"
-            android:scrollbars="none" />
+                android:id="@+id/lvSelfCheckItem"
+                android:layout_width="@dimen/home_btn_width"
+                android:layout_height="fill_parent"
+                android:scrollbars="none"/>
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+            <FrameLayout
+                    android:id="@+id/flSelfCheckFragment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"/>
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+                <Button
+                        android:id="@+id/btnCheckPass"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/self_check_pass"/>
+                <Button
+                        android:id="@+id/btnCheckError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/self_check_error"/>
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <Button
+                            android:id="@+id/btnCheckBegin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@mipmap/self_check_begin"/>
+                    <Button
+                            android:id="@+id/btnCheckNext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:background="@mipmap/self_check_next"/>
+                    <Button
+                            android:id="@+id/btnCheckFinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:background="@mipmap/self_check_finish"/>
+                </FrameLayout>
 
-        <FrameLayout
-            android:id="@+id/flSelfCheckFragment"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        </RelativeLayout>
 
-        <Button
-            android:id="@+id/btnCheckOK"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#33DA9A"
-            android:text="通 过"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btnCheckError"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#E04006"
-            android:text="出 错"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btnCheckNext"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#36C2F2"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

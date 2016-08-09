@@ -1,7 +1,7 @@
 package com.feng.Utils;
 
 import android.content.Intent;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 
 /**
  *  各类数据的转换 convert 以及 byte的处理( 合并等)
@@ -10,7 +10,7 @@ import com.feng.Constant.ArmProtocol;
  * @功能
  */
 public class Transfer implements ArmProtocol{
-	public int byteToInt(byte[] data){
+	public int twoByteToInt(byte[] data){
 		return 256*(int)data[1]+(int)data[0];
 	}
 	/**

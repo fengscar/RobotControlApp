@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Display;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.Schedule.ScheduleProtocal;
 import com.feng.CustomView.WarningDialog;
 import com.feng.Usb.UsbData;
@@ -51,11 +51,33 @@ public class BaseActivity extends Activity implements ArmProtocol, ScheduleProto
                     return;
                 }
                 UsbData data = (UsbData) msg.obj;
-                UsbEvent event = data.getUsbEvent();
+                UsbEvent event = data.getEvent();
                 byte[] dataReceive = data.getDataReceive();
                 byte[] dataSend = data.getDataToSend();
 
                 L.e(LOG, "处理信息:" + data.toString());
+
+                String action = new Transfer().getAction(dataReceive);
+                if (action == null) {
+                    return;
+                }
+                switch (action) {
+                    case BARRIER_WARNING:
+                    case LONG_TIME_NOT_OPERATE:
+                    case MOVE_DISTANCE_OVERFLOW:
+                    case MISSING_RFID:
+                    case WRONG_RFID:
+                    case MISSING_MAGNETIC:
+                    case ULTRASONIC_WARNING:
+                    case INFRARED_WARNING:
+                        if (dataReceive[DATA] == 0x01) {
+                            activity.warningDialog.addWarning(false, action, action, null);
+                        } else {
+                            activity.warningDialog.removeWarning(INFRARED_WARNING);
+                        }
+                        break;
+
+                }
             }
         }
     }

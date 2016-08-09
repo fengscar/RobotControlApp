@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import com.feng.Base.BaseActivity;
-import com.feng.Constant.ArmProtocol;
+import com.feng.Usb.ArmProtocol;
 import com.feng.Constant.I_Parameters;
 import com.feng.RSS.R;
 import com.feng.CustomView.ArmSettingView;

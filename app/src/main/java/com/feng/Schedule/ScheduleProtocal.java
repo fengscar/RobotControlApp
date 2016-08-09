@@ -21,16 +21,21 @@ public interface ScheduleProtocal {
     String MAP_VERSION="MapVersion";
     String MAP_DATA="MapData";
 
+
     String UPDATE_STATUS = "UpdateStatus";
-    String LOCATION="Location";
-    String STATE="State";
-    String SPEED="Speed";
-    String WARNINGS="Warnings";
-    String TASKS="Tasks";
-    String PATHS="Paths";
+    String LOCATION = "Location";
+    String MOTION_STATE = "MotionState";
+    String SCHEDULE_MOVE = "ScheduleMove";
+    String SPEED = "Speed";
+    String WARNINGS = "Warnings";
+    String TASKS = "Tasks";
+    String PATHS = "Paths";
+    String POWER = "Power";
+
 
     String PUSH_COMMAND="PushCommand";
     String COMMAND="Command";
+
     String ADD_TASKS="AddTasks";
     String DEL_TASKS="DelTasks";
 

@@ -16,6 +16,7 @@ import com.feng.Base.BaseActivity;
 import com.feng.Constant.I_Parameters;
 import com.feng.RSS.R;
 import com.feng.RobotApplication;
+import com.feng.SelfCheck.SelfCheckActivity;
 import com.feng.Utils.SP;
 
 public class MenuActivity extends BaseActivity implements I_Parameters {

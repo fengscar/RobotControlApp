@@ -102,7 +102,7 @@
                 android:screenOrientation="landscape">
         </activity>
         <activity
-                android:name="com.feng.Activities.SelfCheckActivity"
+                android:name="com.feng.SelfCheck.SelfCheckActivity"
                 android:label="@string/app_name"
                 android:screenOrientation="landscape">
         </activity>
