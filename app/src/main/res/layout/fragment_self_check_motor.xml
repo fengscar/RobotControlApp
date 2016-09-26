@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/tvExplain"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="22sp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/btn1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_margin="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/selector_btn_self_check"
+                android:gravity="center"
+                android:text="转动90度"
+                android:textColor="@color/white"
+                android:textSize="40sp"/>
+        <Button
+                android:id="@+id/btn2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_margin="50dp"
+                android:background="@drawable/selector_btn_self_check"
+                android:gravity="center"
+                android:text="转动180度"
+                android:minWidth="60dp"
+                android:textColor="@color/white"
+                android:textSize="40sp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -17,12 +17,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.feng.Base.BaseActivity;
 import com.feng.Constant.I_Parameters;
 import com.feng.CustomView.CustomDialog;
 import com.feng.CustomView.CustomDialogCallback;
-import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Workspace;
+import com.feng.Database.Map.MapDatabaseHelper;
+import com.feng.Database.Map.Workspace;
 import com.feng.Fragments.WorkspaceFragment;
 import com.feng.RSS.R;
 import com.feng.RobotApplication;
@@ -40,8 +43,110 @@ import java.util.List;
 public class EditWorkspaceActivity extends BaseActivity implements I_Parameters {
     private final static String TAG = EditWorkspaceActivity.class.getSimpleName();
     public MyHandler handler = new MyHandler(this);
-    private FloatingActionButton fabEditMapversion, fabUpdateMap, fabAddWorkspace, fabSaveMap;
-    private FloatingActionsMenu fam;
+
+
+    @BindView(R.id.tvUniformTitleCenter)
+    TextView mTvUniformTitleCenter;
+    @BindView(R.id.btnUniformTitleRight)
+    Button mBtnUniformTitleRight;
+    @BindView(R.id.fabEditMapVersion)
+    FloatingActionButton mFabEditMapVersion;
+    @BindView(R.id.fam)
+    FloatingActionsMenu mFam;
+
+    @OnClick({R.id.btnUniformTitleLeft, R.id.fabEditMapVersion, R.id.fabSaveMap, R.id.fabUpdateMap, R.id.fabAddLifter, R.id.fabAddWorkspace})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnUniformTitleLeft:
+                EditWorkspaceActivity.this.finish();
+                break;
+
+            case R.id.fabEditMapVersion:
+                final View dialogView = View.inflate(EditWorkspaceActivity.this, R.layout.dialog_input_oneline, null);
+                final EditText etInputMode = (EditText) dialogView.findViewById(R.id.etInput);
+                int mapVersion = (int) SP.get(EditWorkspaceActivity.this, I_Parameters.MAP_VERSION, 1);
+                etInputMode.setText(String.valueOf(mapVersion));
+                etInputMode.setSelection(etInputMode.getText().length());
+
+                new AlertDialog.Builder(EditWorkspaceActivity.this)
+                        .setTitle("编辑地图版本")
+                        .setIcon(android.R.drawable.ic_dialog_info)
+                        .setView(dialogView)
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                try {
+                                    int mapVersion = Integer.valueOf(etInputMode.getText().toString());
+                                    SP.put(EditWorkspaceActivity.this, I_Parameters.MAP_VERSION, mapVersion);
+                                    T.show("修改地图版本成功");
+
+                                    mapUpdate();
+                                } catch (NumberFormatException e) {
+                                    T.show("只接受数字格式的版本号");
+                                }
+                            }
+                        })
+                        .setNegativeButton("取消", null)
+                        .show();
+                mFam.collapse();
+                break;
+
+            case R.id.fabSaveMap:
+//                    ArmUsbManager.getInstance().saveMap();
+                T.show("正在保存地图...");
+                mFam.collapse();
+                break;
+
+            case R.id.fabUpdateMap:
+                RobotApplication.getScheduleClient().updateMap();
+                T.show("正在更新地图...");
+                mFam.collapse();
+                break;
+
+            case R.id.fabAddLifter:
+                CustomDialog.Builder lifterBuilder = new CustomDialog.Builder(EditWorkspaceActivity.this);
+                lifterBuilder.setResourceID(R.layout.dialog_lifter)
+                        .setButtonText("添加", "取消")
+                        .setTitle("添加提升机")
+                        .setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
+                            public boolean onDialogBtnClick(List<View> viewList) {
+                                T.show("暂未开发");
+                                return true;
+                            }
+                        })
+                        .setCancelBtnClick(R.id.dialogCancelBtn, null)
+                        .create(new int[]{R.id.etLifterName}, new Object[]{null})
+                        .show();
+                mFam.collapse();
+                break;
+
+            case R.id.fabAddWorkspace:
+                final MapDatabaseHelper mDatabase = MapDatabaseHelper.getInstance();
+                int maxWorkspaceID = mDatabase.getMaxWorkspaceID();
+                CustomDialog.Builder builder = new CustomDialog.Builder(EditWorkspaceActivity.this);
+                builder.setResourceID(R.layout.dialog_workspace)
+                        .setButtonText("添加", "取消")
+                        .setTitle("添加工作区")
+                        .setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
+                            public boolean onDialogBtnClick(List<View> viewList) {
+                                Workspace wData = Workspace.loadWorkspace(viewList);
+                                if (wData != null && mDatabase.addData(wData)) {
+                                    handler.sendEmptyMessage(REFRESH);
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            }
+                        })
+                        .setCancelBtnClick(R.id.dialogCancelBtn, null)
+                        .create(new int[]{R.id.dialog_workspace_id, R.id.dialog_workspace_floor,
+                                R.id.dialog_workspace_name}, new Object[]{maxWorkspaceID + 1, null, null})
+                        .show();
+                mFam.collapse();
+                break;
+        }
+        handler.sendEmptyMessage(0);
+    }
 
     private static class MyHandler extends Handler {
         private WeakReference<EditWorkspaceActivity> activityWeakReference;
@@ -63,9 +168,10 @@ public class EditWorkspaceActivity extends BaseActivity implements I_Parameters 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stubj
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_edit_workspace);
+        ButterKnife.bind(this);
         initView();
         initFragment();
 
@@ -93,53 +199,18 @@ public class EditWorkspaceActivity extends BaseActivity implements I_Parameters 
     }
 
     private void initView() {
-        EditWorkspaceClickListener listener = new EditWorkspaceClickListener();
-        // 返回按键
-        Button cancelBtn = (Button) findViewById(R.id.btnUniformTitleLeft);
-        cancelBtn.setText(R.string.cancel);
-        cancelBtn.setOnClickListener(listener);
+        mTvUniformTitleCenter.setText(R.string.setting_edit_workspace);
         // 隐藏标题栏右侧按键
-        findViewById(R.id.btnUniformTitleRight).setVisibility(View.INVISIBLE);
-        // title
-        ((TextView) findViewById(R.id.tvUniformTitleCenter)).setText(R.string.setting_edit_workspace);
+        mBtnUniformTitleRight.setVisibility(View.INVISIBLE);
 
-
-        //悬浮 菜单
-        fam = (FloatingActionsMenu) findViewById(R.id.fam);
-
-        // 获取地图版本
         int mapVersion = (int) SP.get(this, I_Parameters.MAP_VERSION, 1);
-        // 修改地图版本
-        fabEditMapversion = (FloatingActionButton) findViewById(R.id.fabEditMapVersion);
-        fabEditMapversion.setTitle("地图版本: " + mapVersion);
-        fabEditMapversion.setOnClickListener(listener);
-
-        // 保存地图到下位机
-        fabSaveMap = (FloatingActionButton) findViewById(R.id.fabSaveMap);
-        fabSaveMap.setOnClickListener(listener);
-
-        // 从 调度端 更新地图
-        fabUpdateMap = (FloatingActionButton) findViewById(R.id.fabUpdateMap);
-        fabUpdateMap.setOnClickListener(listener);
-
-        // 添加工作区
-        fabAddWorkspace = (FloatingActionButton) findViewById(R.id.fabAddWorkspace);
-        fabAddWorkspace.setOnClickListener(listener);
-
-        fabAddWorkspace.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                T.show("PASS");
-                return true;
-            }
-        });
-
+        mFabEditMapVersion.setTitle("地图版本: " + mapVersion);
     }
 
     // 当地图更新时...
     private void mapUpdate() {
         int mapVersion = (int) SP.get(this, I_Parameters.MAP_VERSION, 1);
-        fabEditMapversion.setTitle("地图版本: " + mapVersion);
+        mFabEditMapVersion.setTitle("地图版本: " + mapVersion);
 
         initFragment();
     }
@@ -153,89 +224,6 @@ public class EditWorkspaceActivity extends BaseActivity implements I_Parameters 
         fragmentTransaction.commit();
     }
 
-    public class EditWorkspaceClickListener implements android.view.View.OnClickListener {
-        public void onClick(View v) {
-            switch (v.getId()) {
-                // 返回 按键
-                case R.id.btnUniformTitleLeft:
-                    EditWorkspaceActivity.this.finish();
-                    break;
-
-                //修改地图版本
-                case R.id.fabEditMapVersion:
-                    final View view = View.inflate(EditWorkspaceActivity.this, R.layout.dialog_input_oneline, null);
-                    final EditText etInputMode = (EditText) view.findViewById(R.id.etInput);
-                    int mapVersion = (int) SP.get(EditWorkspaceActivity.this, I_Parameters.MAP_VERSION, 1);
-                    etInputMode.setText(String.valueOf(mapVersion));
-                    etInputMode.setSelection(etInputMode.getText().length());
-
-                    new AlertDialog.Builder(EditWorkspaceActivity.this)
-                            .setTitle("编辑地图版本")
-                            .setIcon(android.R.drawable.ic_dialog_info)
-                            .setView(view)
-                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    try {
-                                        int mapVersion = Integer.valueOf(etInputMode.getText().toString());
-                                        SP.put(EditWorkspaceActivity.this, I_Parameters.MAP_VERSION, mapVersion);
-                                        T.show("修改地图版本成功");
-
-                                        mapUpdate();
-                                    } catch (NumberFormatException e) {
-                                        T.show("只接受数字格式的版本号");
-                                    }
-                                }
-                            })
-                            .setNegativeButton("取消", null)
-                            .show();
-                    fam.collapse();
-                    break;
-
-                // 添加工作区
-                case R.id.fabAddWorkspace:
-                    final MapDatabaseHelper mDatabase = MapDatabaseHelper.getInstance();
-                    int maxWorkspaceID = mDatabase.getMaxWorkspaceID();
-                    CustomDialog.Builder builder = new CustomDialog.Builder(EditWorkspaceActivity.this);
-                    builder.setResourceID(R.layout.dialog_workspace)
-                            .setButtonText("添加", "取消")
-                            .setTitle("添加工作区")
-                            .setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
-                                public boolean onDialogBtnClick(List<View> viewList) {
-                                    Workspace wData = Workspace.loadWorkspace(viewList);
-                                    if (wData != null && mDatabase.addData(wData)) {
-                                        handler.sendEmptyMessage(REFRESH);
-                                        return true;
-                                    } else {
-                                        return false;
-                                    }
-                                }
-                            })
-                            .setCancelBtnClick(R.id.dialogCancelBtn, null)
-                            .create(new int[]{R.id.dialog_workspace_id, R.id.dialog_workspace_floor,
-                                    R.id.dialog_workspace_name}, new Object[]{maxWorkspaceID + 1, null, null})
-                            .show();
-                    fam.collapse();
-                    break;
-
-                case R.id.fabUpdateMap:
-                    RobotApplication.getScheduleClient().updateMap();
-                    T.show("正在更新地图...");
-                    fam.collapse();
-                    break;
-
-                case R.id.fabSaveMap:
-//                    ArmUsbManager.getInstance().saveMap();
-                    T.show("正在保存地图...");
-                    fam.collapse();
-                    break;
-                default:
-                    break;
-            }
-            handler.sendEmptyMessage(0);
-        }
-
-    }
 
     @Override
     protected void onRestart() {

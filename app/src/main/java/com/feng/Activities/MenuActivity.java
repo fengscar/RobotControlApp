@@ -146,7 +146,7 @@ public class MenuActivity extends BaseActivity implements I_Parameters {
                     break;
                 // 语音设置
                 case 1:
-                    intent.setClass(MenuActivity.this, EditSpeakerActivity.class);
+                    intent.setClass(MenuActivity.this, EditIatActivity.class);
                     startActivity(intent);
                     break;
                 //本机设置

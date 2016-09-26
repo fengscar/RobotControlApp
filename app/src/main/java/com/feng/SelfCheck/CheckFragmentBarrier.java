@@ -12,7 +12,6 @@ import com.feng.RSS.R;
 import com.feng.Usb.ArmHandler.BarrierHandler;
 import com.feng.Usb.ArmProtocol;
 import com.feng.Usb.UsbData;
-import com.feng.Usb.UsbEvent;
 import com.feng.Utils.L;
 import com.feng.Utils.Verifier;
 
@@ -38,9 +37,28 @@ public class CheckFragmentBarrier extends CheckFragment {
     }
 
     private void initValue() {
-        setKeyStr("前方红外传感器:", "侧方红外传感器:", "后方红外传感器");
+        setKeyStr("前方红外传感器[5个]:", "侧方红外传感器[4个]:", "后方红外传感器[2个]:");
     }
 
+
+    @Override
+    public boolean startSelfCheck() {
+        return BarrierHandler.getInstance().startSelfCheck();
+    }
+
+    @Override
+    public void onReceiveArmData(UsbData usbData) {
+        if (new Verifier().compareHead(usbData.getDataReceive(), ArmProtocol.BarrierWarning)) {
+            byte[] body = usbData.getReceiveBody();
+            if (body == null) {
+                return;
+            }
+            // data[0]	 的二进制的最低位 表示前方, 倒二位表示侧面, 倒三位表示 后面
+            btn1.setChecked(getBooleanArray(body[0], 0));
+            btn2.setChecked(getBooleanArray(body[0], 1));
+            btn3.setChecked(getBooleanArray(body[0], 2));
+        }
+    }
 
     /**
      * @param b
@@ -54,27 +72,6 @@ public class CheckFragmentBarrier extends CheckFragment {
         }
         b = (byte) (b >> x);
         return (b & 1) != 0;
-    }
-
-    @Override
-    public boolean startSelfCheck() {
-        return BarrierHandler.getInstance().startSelfCheck();
-    }
-
-    @Override
-    public void onReceiveArmData(UsbData usbData) {
-        if (usbData.getEvent() == UsbEvent.UsbReceive) {
-            if( new Verifier().compare2Byte(usbData.getDataReceive(), ArmProtocol.BarrierWarning)){
-                byte[] body = usbData.getReceiveBody();
-                if (body == null) {
-                    return;
-                }
-                // data[0]	 的二进制的最低位 表示前方, 倒二位表示侧面, 倒三位表示 后面
-                btn1.setChecked(getBooleanArray(body[0], 0));
-                btn2.setChecked(getBooleanArray(body[0], 1));
-                btn3.setChecked(getBooleanArray(body[0], 2));
-            }
-        }
     }
 }
 

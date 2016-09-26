@@ -12,7 +12,6 @@ import com.feng.RSS.R;
 import com.feng.Usb.ArmHandler.PIRHandler;
 import com.feng.Usb.ArmProtocol;
 import com.feng.Usb.UsbData;
-import com.feng.Usb.UsbEvent;
 import com.feng.Utils.Verifier;
 
 public class CheckFragmentInfra extends CheckFragment {
@@ -45,26 +44,24 @@ public class CheckFragmentInfra extends CheckFragment {
 
     @Override
     public void onReceiveArmData(UsbData usbData) {
-        if (usbData.getEvent() == UsbEvent.UsbReceive) {
-            if (new Verifier().compare2Byte(usbData.getDataReceive(), ArmProtocol.InfraredWarning)) {
-                byte[] body = usbData.getReceiveBody();
-                if (body == null) {
-                    return;
-                }
-                switch (body[0]) {
-                    case 0x00:
-                        btn1.setChecked(false);
-                        break;
-                    case 0x01:
-                        btn1.setChecked(true);
-                        break;
-                }
+        if (new Verifier().compareHead(usbData.getDataReceive(), ArmProtocol.InfraredWarning)) {
+            byte[] body = usbData.getReceiveBody();
+            if (body == null) {
+                return;
+            }
+            switch (body[0]) {
+                case 0x00:
+                    btn1.setChecked(false);
+                    break;
+                case 0x01:
+                    btn1.setChecked(true);
+                    break;
             }
         }
     }
 
     private void initValue() {
-        setKeyStr("红外传感器:", null, null);
+        setKeyStr("人体红外传感器:", null, null);
         btn2.setVisibility(View.GONE);
         btn3.setVisibility(View.GONE);
     }

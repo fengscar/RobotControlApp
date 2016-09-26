@@ -42,7 +42,7 @@ public class T implements I_Parameters{
 			mToast.setDuration(isShowLong?Toast.LENGTH_LONG:Toast.LENGTH_SHORT);
 			mTv.setText(msg);
 			mToast.show();
-			if( needTTS ==true ){
+			if(needTTS){
 				new IntentDealer(new Transfer()).sendTtsIntent(TTS_START_SPEAK,msg.toString());
 			}
 		}

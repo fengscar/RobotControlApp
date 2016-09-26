@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--连接点(传送点)的背景-->
+<shape
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="rectangle">
+    <stroke
+            android:width="2dp"
+            android:color="@color/flat_red"/>
+    <size android:width="15dp"
+          android:height="15dp"/>
+</shape>

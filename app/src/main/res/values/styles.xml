@@ -386,6 +386,13 @@
     <color name="rcs_b">#36C2F2</color>
     <color name="rcs_y">#FF8F00</color>
 
+    <color name="flat_blue">#2C82C9</color>
+    <color name="flat_green">#2CC990</color>
+    <color name="flat_yellow">#EEE657</color>
+    <color name="flat_orange">#FCB941</color>
+    <color name="flat_red">#FC6042</color>
+
+
     <!--悬浮按键的文本标签风格-->
     <style name="fab_menu_labels_style">
         <item name="android:background">@drawable/fab_label_background</item>

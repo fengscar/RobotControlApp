@@ -13,7 +13,7 @@ import java.util.Map;
 public class BaseHandler implements ArmDataReceiver {
     private static final String TAG = "BaseHandler";
     protected Transfer mTransfer;
-    protected ArmUsbManager mArmUsbManager;
+    protected volatile ArmUsbManager mArmUsbManager;
 
 
     protected BaseHandler() {
@@ -21,9 +21,17 @@ public class BaseHandler implements ArmDataReceiver {
         mArmUsbManager = ArmUsbManager.getInstance();
     }
 
-    private static Map<String, Object> instance = new HashMap<>();
+
+    public static void releaseUsbManager() {
+        instance = null;
+    }
+
+    private static Map<String, Object> instance;
 
     public static Object instance(String objname) {
+        if (instance == null) {
+            instance = new HashMap<>();
+        }
         if (instance.get(objname) == null || !(instance.get(objname) instanceof BaseHandler)) {
             try {
                 instance.put(objname, Class.forName(objname).newInstance());

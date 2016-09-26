@@ -6,8 +6,8 @@ import android.util.Base64;
 import android.util.Log;
 import com.feng.Constant.I_MapData;
 import com.feng.Constant.I_Parameters;
-import com.feng.Database.FileTransporter;
-import com.feng.Database.MapDatabaseHelper;
+import com.feng.Database.Map.FileTransporter;
+import com.feng.Database.Map.MapDatabaseHelper;
 import com.feng.RobotApplication;
 import com.feng.Utils.L;
 import com.feng.Utils.SP;
@@ -22,16 +22,16 @@ import java.util.Map;
 
 /**
  * Created by fengscar on 2016/5/19.
- * <p/>
+ * <p>
  * 该类作用是 : 在后台新建线程 与调度服务端进行交互
  * 后台线程 在Application的onCreate()中 开始 ; 当成员sSocket 为空时结束
- * <p/>
+ * <p>
  * -->要主动发送请求给调度系统时, 使用该类对象直接调用public方法 , 比如updateTask等...
- * <p/>
+ * <p>
  * <--要处理调度系统主动发送的信息, activity通过putHandler添加处理指定Method的handler,
  * 后台线程接收到调度系统的回复时,会寻找对应的handler进行处理
  */
-public class ScheduleClient implements ScheduleProtocal, ScheduleRobot.IRobotStatusChangeListener {
+public class ScheduleClient implements ScheduleProtocal, Robot.IRobotStatusChangeListener {
     private final static String TAG = ScheduleClient.class.getSimpleName();
 
     private final static int HEART_BEAT_MESSAGE = 555;
@@ -83,7 +83,7 @@ public class ScheduleClient implements ScheduleProtocal, ScheduleRobot.IRobotSta
     private ScheduleClient() {
         this.startThread();
         initHandlerMap();
-        ScheduleRobot.getInstance().setIRobotStatusChangeListener(this);
+        Robot.getInstance().setIRobotStatusChangeListener(this);
     }
 
     //初始化 handlerMap, 加入 接收到 heartbeat ,syncMap, updateMap时的处理
@@ -360,6 +360,7 @@ public class ScheduleClient implements ScheduleProtocal, ScheduleRobot.IRobotSta
             // 发送JSON文件
             sendJson(SYNC_MAP, param);
 
+
         } catch (FileNotFoundException | JSONException e) {
             e.printStackTrace();
         }
@@ -420,6 +421,10 @@ public class ScheduleClient implements ScheduleProtocal, ScheduleRobot.IRobotSta
             writer.write(json.toString());
             writer.flush();
             L.d(TAG, "[Send JSON]" + json.toString());
+            // 重新计时 当前要发送的心跳 ( 避免和当前发送的包 粘在一起)
+            innerHandler.removeMessages(HEART_BEAT_MESSAGE);
+            sendHeartBeatHandlerMessage();
+
         } catch (JSONException | IOException | NullPointerException e) {
             e.printStackTrace();
         }

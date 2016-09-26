@@ -1,6 +1,6 @@
 package com.feng.Usb.ArmHandler;
 
-import com.feng.Schedule.ScheduleRobot;
+import com.feng.Schedule.Robot;
 import com.feng.Usb.ArmModel.ArmPower;
 import com.feng.Usb.ArmModel.ArmRFID;
 import com.feng.Usb.ArmHead;
@@ -84,7 +84,7 @@ public class PowerHandler extends BaseHandler {
             case 0x01:
                 mCurrentPower = body[0];
 
-                ScheduleRobot scheduleRobot = ScheduleRobot.getInstance();
+                Robot scheduleRobot = Robot.getInstance();
                 scheduleRobot.beginNotifyChange();
                 scheduleRobot.setPower(mCurrentPower);
                 scheduleRobot.endNotifyChange();

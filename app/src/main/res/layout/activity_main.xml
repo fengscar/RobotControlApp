@@ -66,7 +66,7 @@
         </LinearLayout>
 
         <FrameLayout
-                android:id="@+id/taskFragment"
+                android:id="@+id/mainFragment"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"/>
@@ -115,29 +115,73 @@
     </LinearLayout>
 
     <!-- 左滑弹出的菜单-->
-    <LinearLayout android:layout_width="240dp"
+    <LinearLayout android:layout_width="@dimen/mainActivity_drawerLayout_width"
                   android:orientation="vertical"
                   android:layout_gravity="start"
                   android:layout_height="match_parent"
                   android:background="@drawable/white">
-        <ListView
-                android:id="@+id/lvDrawerMenu"
-                android:layout_width="240dp"
-                android:scrollbars="none"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
         <com.feng.CustomView.IconButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btnSetting"
-                android:drawableLeft="@mipmap/btn_setting"
-                android:text="@string/setting"/>
-        <com.feng.CustomView.IconButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnQuit"
-                android:drawableLeft="@mipmap/drawer_menu_quit"
-                android:text="@string/quit"/>
+                android:id="@+id/iconBtnRobot"
+                android:drawableLeft="@mipmap/map_path_arrow2"
+                android:text="@string/robotDefaultName"/>
+        <ScrollView android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scrollbars="none">
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical">
+                <com.feng.CustomView.IconButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iconBtnBack"
+                        android:drawableLeft="@mipmap/btn_back"
+                        android:text="@string/back"/>
+                <com.feng.CustomView.IconButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iconBtnUsb"
+                        android:drawableLeft="@mipmap/drawer_menu_usb_disconnect"
+                        android:text="@string/usbDisconnect"/>
+                <com.feng.CustomView.IconButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iconBtnSchedule"
+                        android:drawableLeft="@mipmap/drawer_menu_schedule_disconnect"
+                        android:text="@string/ScheduleDisconnect"/>
+                <com.feng.CustomView.IconButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iconBtnPower"
+                        android:drawableLeft="@mipmap/drawer_menu_power20"
+                        android:text="@string/powerUnknown"/>
+                <com.feng.CustomView.IconButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/iconBtnWarning"
+                        android:drawableLeft="@mipmap/drawer_menu_warn"/>
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal">
+            <com.feng.CustomView.IconButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnSetting"
+                    android:drawableLeft="@mipmap/btn_setting"
+                    android:text="@string/setting"/>
+            <com.feng.CustomView.IconButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnQuit"
+                    android:drawableLeft="@mipmap/drawer_menu_quit"
+                    android:text="@string/quit"/>
+        </LinearLayout>
     </LinearLayout>
 
 

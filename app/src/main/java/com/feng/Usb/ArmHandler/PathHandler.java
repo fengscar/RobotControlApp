@@ -1,10 +1,12 @@
 package com.feng.Usb.ArmHandler;
 
-import com.feng.Database.ArmDataManager;
-import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Node;
+import android.support.annotation.WorkerThread;
+import com.feng.Database.Map.ArmDataManager;
+import com.feng.Database.Map.MapDatabaseHelper;
+import com.feng.Database.Map.Node;
 import com.feng.Usb.ArmHead;
 import com.feng.Usb.ArmModel.ArmPath;
+import com.feng.Usb.ArmProtocol;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -100,6 +102,25 @@ public class PathHandler extends BaseHandler {
             addTargets(nodeIDs);
         }
     }
+
+    //发送任务给ARM,阻塞到产生结果
+    @WorkerThread
+    public boolean addTargetsForResult(List<Node> nodeList) {
+        if (nodeList != null && nodeList.size() > 0) {
+            int[] nodeIDs = new int[nodeList.size()];
+            for (int i = 0; i < nodeList.size(); i++) {
+                nodeIDs[i] = nodeList.get(i).getId();
+            }
+            byte[] protocolNodeData = new byte[nodeIDs.length * 2 + 1];
+            protocolNodeData[0] = (byte) nodeIDs.length;
+            for (int i = 0; i < nodeIDs.length; i++) {
+                System.arraycopy(mTransfer.intTo2Byte(nodeIDs[i]), 0, protocolNodeData, 1 + i * 2, 2);
+            }
+            return mArmUsbManager.sendForResult(mTransfer.packingByte(ArmProtocol.AddTargets, protocolNodeData)).getSendState();
+        }
+        return false;
+    }
+
     //endregion
 
     //region 执行删除操作的函数
@@ -140,8 +161,8 @@ public class PathHandler extends BaseHandler {
         }
     }
 
-    public boolean setStopPoint(int stopNodeID) {
-        return send(ArmPath.SetStopPoint, (byte) stopNodeID).getSendState();
+    public void setStationPoints(int stopNodeID) {
+        mArmUsbManager.send(ArmPath.SetStopPoint, (byte) stopNodeID);
     }
 //endregion
 
@@ -161,27 +182,27 @@ public class PathHandler extends BaseHandler {
             case 0x03:
                 break;
             case 0x04:
-                mTasks = queryTaskResult(fromUsbData);
+                mTasks = queryTaskResult(body);
                 break;
             case 0x0d:
-                mPaths = queryTaskResult(fromUsbData);
+                mPaths = queryTaskResult(body);
                 reply(fromUsbData);
                 break;
         }
     }
 
-    public int[] queryTaskResult(byte[] fromUsbData) {
-        //无任务时
-        if (fromUsbData == null) {
+    public int[] queryTaskResult(byte[] body) {
+        //无任务时 或数据异常时
+        if (body == null || body.length % 2 != 1) {
             return null;
         }
-        int[] result = new int[fromUsbData[0]];
-        byte[] setOrDelData = mTransfer.getBody(fromUsbData, 1);
-        if (setOrDelData == null) {
+        int[] result = new int[body[0]];
+        if (result.length != body.length / 2) {
             return null;
         }
-        for (int i = 0; i < setOrDelData.length / 2; i++) {
-            int nodeID = mTransfer.twoByteToInt(new byte[]{setOrDelData[i * 2], setOrDelData[i * 2 + 1]});
+
+        for (int i = 0; i < result.length; i++) {
+            int nodeID = mTransfer.twoByteToInt(new byte[]{body[i * 2 + 1], body[i * 2 + 2]});
             result[i] = nodeID;
         }
         return result;

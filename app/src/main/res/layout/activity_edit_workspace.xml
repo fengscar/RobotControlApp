@@ -61,6 +61,16 @@
                 fab:fab_title="更新地图"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAddLifter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_icon="@mipmap/fab_btn_add"
+                fab:fab_colorNormal="@color/azure"
+                fab:fab_colorPressed="@color/aquamarine"
+                fab:fab_title="添加提升机"/>
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fabAddWorkspace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,6 +78,7 @@
                 fab:fab_colorNormal="@color/azure"
                 fab:fab_colorPressed="@color/aquamarine"
                 fab:fab_title="添加工作区"/>
+
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

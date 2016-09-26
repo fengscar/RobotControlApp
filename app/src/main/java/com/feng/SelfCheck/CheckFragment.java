@@ -17,11 +17,9 @@ import com.feng.RSS.R;
 import com.feng.Usb.ArmProtocol;
 import com.feng.Usb.UsbData;
 
-public abstract class CheckFragment extends Fragment implements ArmProtocol, ISelfCheck {
+public abstract class CheckFragment extends Fragment implements ArmProtocol {
     public final static String Explain_RES = "expRes";
     public final static String Image_RES = "imgRes";
-
-    public int CHECK_RESULT = SelfCheckActivity.NORMAL;
 
 
     protected View view;
@@ -81,12 +79,10 @@ public abstract class CheckFragment extends Fragment implements ArmProtocol, ISe
     }
 
 
-    @Override
     @WorkerThread
     public abstract boolean startSelfCheck();
 
 
-    @Override
     public abstract void onReceiveArmData(UsbData usbData);
 }
 

@@ -12,21 +12,23 @@ import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Display;
-import com.feng.Usb.ArmProtocol;
-import com.feng.Schedule.ScheduleProtocal;
 import com.feng.CustomView.WarningDialog;
+import com.feng.RobotApplication;
+import com.feng.Schedule.ScheduleProtocal;
+import com.feng.Usb.ArmProtocol;
 import com.feng.Usb.UsbData;
 import com.feng.Usb.UsbEvent;
 import com.feng.Utils.IntentDealer;
 import com.feng.Utils.L;
-import com.feng.RobotApplication;
 import com.feng.Utils.Transfer;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.lang.ref.WeakReference;
 
 public class BaseActivity extends Activity implements ArmProtocol, ScheduleProtocal {
-    private final static String LOG = "BaseActivity";
+    private final static String TAG = "BaseActivity";
 
     private BroadcastReceiver receiver;
     private IntentFilter filter;
@@ -55,12 +57,12 @@ public class BaseActivity extends Activity implements ArmProtocol, ScheduleProto
                 byte[] dataReceive = data.getDataReceive();
                 byte[] dataSend = data.getDataToSend();
 
-                L.e(LOG, "处理信息:" + data.toString());
-
                 String action = new Transfer().getAction(dataReceive);
                 if (action == null) {
                     return;
                 }
+                Log.i(TAG, "handleMessage:  " + action);
+
                 switch (action) {
                     case BARRIER_WARNING:
                     case LONG_TIME_NOT_OPERATE:
@@ -76,7 +78,37 @@ public class BaseActivity extends Activity implements ArmProtocol, ScheduleProto
                             activity.warningDialog.removeWarning(INFRARED_WARNING);
                         }
                         break;
-
+                    case ERROR_FROM_ARM:
+                        switch (dataReceive[DATA]) {
+                            case 0x01:
+                                L.e("接收超时错误");
+                                break;
+                            case 0x02:
+                                L.e("模块编号错误");
+                                break;
+                            case 0x03:
+                                L.e("命令编号错误");
+                                break;
+                            case 0x04:
+                                L.e("数据长度错误");
+                                break;
+                            case 0x05:
+                                L.e("数据错误");
+                                break;
+                            case 0x06:
+                                IntentDealer.sendTtsBroadcast("我还不能这么做");
+                                TastyToast.makeText(RobotApplication.getContext(), "我还不能这么做", TastyToast.LENGTH_SHORT, TastyToast.WARNING);
+                                break;
+                            case 0x07:
+                                L.e("校验位错误");
+                                break;
+                            case 0x08:
+                                L.e("进入硬件中断错误");
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
                 }
             }
         }
@@ -136,7 +168,7 @@ public class BaseActivity extends Activity implements ArmProtocol, ScheduleProto
         filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
 
         registerReceiver(receiver, filter);
-        L.e(LOG, "BaseActivity ->" + this + "注册 Receiver");
+        L.e(TAG, "BaseActivity ->" + this + "注册 Receiver");
     }
 
     @Override
@@ -148,7 +180,7 @@ public class BaseActivity extends Activity implements ArmProtocol, ScheduleProto
     @Override
     protected void onStop() {
         super.onStop();
-        L.e(LOG, "BaseActivity ->" + this + " 注销 Receiver");
+        L.e(TAG, "BaseActivity ->" + this + " 注销 Receiver");
         if (receiver != null) {
             unregisterReceiver(receiver);
         }

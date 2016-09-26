@@ -8,18 +8,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import butterknife.BindString;
 import com.feng.RSS.R;
 import com.feng.Usb.ArmHandler.UltrasoundHandler;
 import com.feng.Usb.ArmProtocol;
 import com.feng.Usb.UsbData;
-import com.feng.Usb.UsbEvent;
 import com.feng.Utils.Verifier;
 
 public class CheckFragmentUltra extends CheckFragment {
-    @BindString(R.string.selfCheck_ultra_distance)
-    String ultraDistance;
-
 
     public static CheckFragment newInstance(int expRes, int imgRes) {
         CheckFragment f = new CheckFragmentUltra();
@@ -47,20 +42,18 @@ public class CheckFragmentUltra extends CheckFragment {
 
     @Override
     public void onReceiveArmData(UsbData usbData) {
-        if (usbData.getEvent() == UsbEvent.UsbReceive) {
-            if (new Verifier().compare2Byte(usbData.getDataReceive(), ArmProtocol.UltrasonicWarning)) {
-                byte[] body = usbData.getReceiveBody();
-                if (body == null) {
-                    return;
-                }
-                if ((int) (body[0] & 0xff) <= 10) {
-                    btn1.setText("< 10 cm");
-                    btn2.setText("< 10 cm");
-                } else {
-                    // &0xff 是为了将 byte从有符号位转换为无符号位
-                    btn1.setText((int) (body[0] & 0xff) + "cm");
-                    btn2.setText((int) (body[0] & 0xff) + "cm");
-                }
+        if (new Verifier().compareHead(usbData.getDataReceive(), ArmProtocol.UltrasonicWarning)) {
+            byte[] body = usbData.getReceiveBody();
+            if (body == null) {
+                return;
+            }
+            if ((int) (body[0] & 0xff) <= 10) {
+                btn1.setText("< 10 cm");
+                btn2.setText("< 10 cm");
+            } else {
+                // &0xff 是为了将 byte从有符号位转换为无符号位
+                btn1.setText((int) (body[0] & 0xff) + "cm");
+                btn2.setText((int) (body[0] & 0xff) + "cm");
             }
         }
     }

@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <Button
-            android:id="@+id/popupEditPath"
+            android:id="@+id/popupEditPath1"
             style="@style/button_skyblue_row"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

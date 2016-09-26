@@ -1,29 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
-
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
     <TextView
-        android:id="@+id/tvExplain"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="22sp" />
+            android:id="@+id/tvExplain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="22sp"/>
 
     <ImageView
-        android:id="@+id/ivSignPic"
-        android:layout_width="fill_parent"
-        android:layout_height="350dp"
-        android:layout_margin="5dp"
-        android:layout_weight="1"
-        android:scaleType="fitCenter" />
-
+            android:id="@+id/ivSignPic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"/>
+    <!-- 前方传感器 32个-->
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="前方传感器"
+              android:layout_marginLeft="30dp"
+              android:textSize="20sp"/>
     <GridView
-        android:id="@+id/gvMag"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:horizontalSpacing="0dp"
-        android:numColumns="20" />
+            android:id="@+id/gvMagFront"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="0dp"
+            android:numColumns="32"/>
+    <!-- 中间传感器 26个-->
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="中心传感器"
+              android:layout_marginLeft="30dp"
+              android:textSize="20sp"/>
+    <GridView
+            android:id="@+id/gvMagCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="0dp"
+            android:numColumns="32"/>
+
 
 </LinearLayout>

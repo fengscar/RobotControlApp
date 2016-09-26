@@ -11,6 +11,9 @@
     <dimen name="dialog_warning_width">500dp</dimen>
     <!-- 任务列表 -->
     <dimen name="home_btn_width">175dp</dimen>
+    <dimen name="left_drawer_width">175dp</dimen>
+    <!-- 左滑菜单-->
+    <dimen name="mainActivity_drawerLayout_width">240dp</dimen>
     <!-- 返回主页 按键 -->
     <dimen name="home_btn_height">100dp</dimen>
     <!-- 执行按键 宽度 -->

@@ -25,6 +25,11 @@ public class IntentDealer implements ArmProtocol,I_Parameters,ScheduleProtocal {
 		super();
 		this.transfer=new Transfer();
 	}
+	public static void sendTtsBroadcast(String ttsStr){
+		Intent intent=new Intent(I_Parameters.TTS_START_SPEAK);
+		intent.putExtra(UNIFORM_TTS,ttsStr);
+		RobotApplication.getContext().sendBroadcast(intent);
+	}
 	public void sendTtsIntent(String protocolAction,String ttsStr){
 		Intent intent=new Intent(protocolAction);
 		intent.putExtra(UNIFORM_TTS,ttsStr);

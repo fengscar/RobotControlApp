@@ -72,6 +72,10 @@ public class CustomDialog extends Dialog {
             return convertView;
         }
 
+        public Dialog getDialog() {
+            return dialog;
+        }
+
         /**
          * 弹出警告框
          *

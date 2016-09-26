@@ -3,7 +3,6 @@ package com.feng.SelfCheck;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,7 +24,6 @@ import com.feng.Usb.ArmUsbManager;
 import com.feng.Usb.UsbData;
 import com.feng.Usb.UsbEvent;
 import com.feng.Utils.T;
-import com.feng.Utils.Verifier;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -42,8 +40,6 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
 
     @BindView(R.id.tvUniformTitleCenter)
     TextView mTvUniformTitleCenter;
-    @BindView(R.id.btnUniformTitleRight)
-    Button mBtnUniformTitleRight;
     @BindView(R.id.btnCheckPass)
     Button mBtnCheckPass;
     @BindView(R.id.btnCheckError)
@@ -57,6 +53,8 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
     @BindView(R.id.lvSelfCheckItem)
     ListView mLvSelfCheckItem;
 
+
+    private SelfCheckListViewAdapter selfCheckListViewAdapter;
 
     //用户 权限等级
     private String userGroup;
@@ -83,12 +81,13 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
 
         initView();
         refreshBtn();
+
+        changeFragment(0);
     }
 
     private void initView() {
         //返回按键 , 标题, 隐藏右侧按键
         mTvUniformTitleCenter.setText(R.string.menu_self_check);
-        mBtnUniformTitleRight.setVisibility(View.GONE);
 
         //  check操作按键
 
@@ -102,7 +101,7 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
         checkList.add(new CheckItem(R.string.selfCheckListUltra));
         checkList.add(new CheckItem(R.string.selfCheckListMotor));
 
-        final SelfCheckListViewAdapter selfCheckListViewAdapter = new SelfCheckListViewAdapter();
+        selfCheckListViewAdapter = new SelfCheckListViewAdapter();
         mLvSelfCheckItem.setAdapter(selfCheckListViewAdapter);
         mLvSelfCheckItem.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -111,7 +110,6 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
                 if (position != mCurrentCheck) {
                     changeFragment(position);
                     refreshBtn();
-                    selfCheckListViewAdapter.notifyDataSetChanged();
                 }
             }
         });
@@ -148,20 +146,27 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
                             if (mCurrentCheck == -1) {
                                 mCurrentCheck = 0;
                             }
-                            changeFragment(getFragment(mCurrentCheck));
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    changeFragment(mCurrentCheck);
+                                }
+                            });
+
                         }
                     }
                 });
-                refreshBtn();
+
                 break;
 
             case R.id.btnCheckNext:
-                changeFragment(mCurrentCheck + 1);
+                changeFragment(++mCurrentCheck);
                 break;
 
             case R.id.btnCheckFinish:
                 SystemHandler.getInstance().stopSelfCheck();
                 mIsChecking = false;
+                this.finish();
                 break;
 
         }
@@ -279,16 +284,6 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
         }
     }
 
-    private String getSendAction(Intent intent) {
-        byte[] receiveData = intent.getByteArrayExtra(UNIFORM_SEND);
-        for (String action : SELF_CHECK_ACTIONS.keySet()) {
-            if (new Verifier().compareHead(receiveData, SELF_CHECK_ACTIONS.get(action)) == true) {
-                return action;
-            }
-        }
-        return null;
-    }
-
     // 获取当前的Fragment
     @NonNull
     public CheckFragment getFragment(int position) {
@@ -325,17 +320,19 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
         for (CheckItem ci : checkList) {
             switch (ci.getCheckState()) {
                 case PASS:
-                    result.add(ci.getCheckName() + " [通 过]");
+                    result.add(" [通 过] " + ci.getCheckName());
                     break;
                 case ERROR:
-                    result.add(ci.getCheckName() + " [出 错]");
+                    result.add(" [出 错] " + ci.getCheckName());
                     break;
                 default:
-                    result.add(ci.getCheckName() + " [未 检 测]");
+                    result.add(" [未 检 测] " + ci.getCheckName());
                     break;
             }
         }
-        return (String[]) result.toArray();
+        String[] array = new String[result.size()];
+        result.toArray(array);
+        return array;
     }
 
     private static class SelfCheckHandler extends Handler {
@@ -356,6 +353,9 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
             byte[] dataReceive = data.getDataReceive();
             switch (event) {
                 case UsbReceive:
+                    if (activity.mCurrentCheckFragment == null) {
+                        return;
+                    }
                     activity.mCurrentCheckFragment.onReceiveArmData(data);
                     break;
                 case UsbSendSuccess:
@@ -374,6 +374,9 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
         refreshBtn();
         mCurrentCheckFragment = cf;
 
+        if (!mIsChecking) {
+            return;
+        }
         mExecutor.submit(new Runnable() {
             @Override
             public void run() {
@@ -385,7 +388,9 @@ public class SelfCheckActivity extends BaseActivity implements I_Parameters, Arm
     }
 
     private void changeFragment(int position) {
+        mCurrentCheck = position;
         changeFragment(getFragment(position));
+        selfCheckListViewAdapter.notifyDataSetChanged();
     }
 
 

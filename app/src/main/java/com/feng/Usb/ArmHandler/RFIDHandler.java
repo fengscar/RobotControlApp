@@ -50,6 +50,7 @@ public class RFIDHandler extends BaseHandler {
             case 0x02:
                 mCurrentCard = mTransfer.twoByteToInt(body);
                 reply(fromUsbData);
+                break;
             case 0x03:
                 //TODO 与协议不符
                 mMissingCards = queryTaskResult(body);

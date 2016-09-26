@@ -7,13 +7,21 @@ package com.feng.SelfCheck;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.feng.RSS.R;
+import com.feng.RobotApplication;
 import com.feng.Usb.ArmHandler.MotionHandler;
 import com.feng.Usb.UsbData;
+import com.sdsmdg.tastytoast.TastyToast;
 
 public class CheckFragmentMotor extends CheckFragment {
+    @BindView(R.id.tvExplain)
+    TextView mTvExplain;
+
     public static CheckFragment newInstance(int expRes, int imgRes) {
         CheckFragment f = new CheckFragmentMotor();
         Bundle args = new Bundle();
@@ -26,32 +34,13 @@ public class CheckFragmentMotor extends CheckFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_self_check_3button, null);
-        initView();
-        init3Button();
+        view = inflater.inflate(R.layout.fragment_self_check_motor, null);
 
-        initValue();
+        ButterKnife.bind(this, view);
+
+        mTvExplain.setText(this.getArguments().getInt(Explain_RES));
+
         return view;
-    }
-
-    private void initValue() {
-        btn1.setVisibility(View.GONE);
-        btn2.setVisibility(View.GONE);
-        btn3.setVisibility(View.GONE);
-
-        setKeyStr(" 转动 90°", "转动180° ", null);
-        key1.setBackgroundResource(R.drawable.selector_tb_wash);
-        key1.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                MotionHandler.getInstance().setSelfCheckMotion90();
-            }
-        });
-        key2.setBackgroundResource(R.drawable.selector_tb_wash);
-        key2.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                MotionHandler.getInstance().setSelfCheckMotion180();
-            }
-        });
     }
 
     @Override
@@ -62,6 +51,20 @@ public class CheckFragmentMotor extends CheckFragment {
     @Override
     public void onReceiveArmData(UsbData usbData) {
 
+    }
+
+    @OnClick({R.id.btn1, R.id.btn2})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn1:
+                MotionHandler.getInstance().setSelfCheckMotion90();
+                TastyToast.makeText(RobotApplication.getContext(), "开始转动90度", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
+                break;
+            case R.id.btn2:
+                MotionHandler.getInstance().setSelfCheckMotion180();
+                TastyToast.makeText(RobotApplication.getContext(), "开始转动180度", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
+                break;
+        }
     }
 }
 

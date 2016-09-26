@@ -34,8 +34,9 @@ public interface ScheduleProtocal {
 
 
     String PUSH_COMMAND="PushCommand";
-    String COMMAND="Command";
+    String MOVE="Move";
 
+    String PUSH_TASK="PushTask";
     String ADD_TASKS="AddTasks";
     String DEL_TASKS="DelTasks";
 

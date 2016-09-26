@@ -1,6 +1,7 @@
 package com.feng.Fragments;
 
-import com.feng.Database.Node;
+import com.feng.Adapter.UserControlFragmentListener;
+import com.feng.Database.Map.Node;
 
 import java.util.List;
 
@@ -12,8 +13,9 @@ public interface IFragmentControl {
     String BundleWorkspaceID = "WorkspaceID";
     String BundleTaskListIDS = "TaskIDS";
 
+    int getWorkspaceID();
 
-    void setCallback(UserControlFragmentCallback ucfc);
+    void setCallback(UserControlFragmentListener ucfc);
 
     void addTask(Node node);
 

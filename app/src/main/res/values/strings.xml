@@ -11,6 +11,7 @@
     <string name="btnWashSelect">撤台</string>
     <string name="btnWashCancel">取消</string>
     <string name="setting">设置</string>
+    <string name="back">返回</string>
     <string name="quit">退出</string>
     <string name="clearTasks">清空</string>
     <string name="refreshTasks">刷新</string>
@@ -23,11 +24,13 @@
     <string name="usbConnect">机器人已连接</string>
     <string name="usbDisconnect">机器人未连接</string>
     <string name="powerUnknown">获取电量失败</string>
+    <string name="robotDefaultName">首松机器人</string>
+
     <!-- 设置菜单 -->
     <string name="menu_edit_quit">退出登录</string>
     <string name="menu_edit_password">密码管理</string>
     <string name="menu_edit_map">编辑地图</string>
-    <string name="menu_edit_speaker">语音设置</string>
+    <string name="menu_edit_speaker">语音识别设置</string>
     <string name="menu_edit_rss">软件设置</string>
     <string name="menu_edit_arm">机器人设置</string>
     <string name="menu_edit_version">系统升级</string>
@@ -51,6 +54,10 @@
     <string name="dialog_path_angle">到点转向</string>
     <string name="dialog_path_distance">距离</string>
     <string name="dialog_path_maxspeed">限速</string>
+    <string name="dialog_path_turn_type">转向方式</string>
+
+    <string name="dialog_station_stop_point">停靠点</string>
+    <string name="dialog_station_entry_point">进入点</string>
 
     <!-- 自检模块 -->
     <string name="self_check_begin">开始自检</string>
@@ -80,6 +87,8 @@
     <string name="para_audio_point">到点提示</string>
     <string name="para_audio_BGM">背景音乐</string>
     <!-- 参数设置-界面 -->
+    <string name="sp_editRobotActivity_tv_robotID">机器人ID</string>
+    <string name="sp_editRobotActivity_tv_robotName">机器人名称</string>
     <string name="para_working_model">操作界面样式</string>
     <string name="para_listing_sort">排序方式</string>
     <string name="para_listing_numColumn">列数</string>
@@ -106,6 +115,8 @@
     <string name="routeName">路线名称</string>
     <string name="routeEnabled">是否可用</string>
 
+    <string name="iat_clear_all_record">清除所有</string>
+
     <!-- 添加节点对话框 -->
     <string name="dialog_node_ID">编号</string>
     <string name="dialog_node_position">坐标</string>
@@ -118,7 +129,23 @@
         <item>交叉点</item>
         <item>厨房</item>
         <item>消洗区</item>
+        <item>停靠点</item>
+        <item>连接点</item>
     </string-array>
+
+    <string-array name="edit_path_turn_type">
+        <item>弧线转弯</item>
+        <item>原地转弯</item>
+        <item>转完停止</item>
+    </string-array>
+
+    <string-array name="edit_path_turn_angle">
+        <item>不转向</item>
+        <item>左转</item>
+        <item>右转</item>
+        <item>掉头</item>
+    </string-array>
+
 
     <string name="user_customer">普通用户</string>
     <string name="user_servicer">维护人员</string>
@@ -172,28 +199,45 @@
     <string name="selfCheckListMotor">电机检测</string>
 
     <!-- 自检模块  解释文本 -->
-    <string name="selfCheckExplainBarrier">请依次遮挡图中的各个红外传感器.如果遮挡时对应的灯变绿,表示传感器工作正常;如果遮挡时对应的灯没有变化,表示传感器运行异常,请停止使用并联系厂家
+    <string name="selfCheckExplainBarrier">
+        请依次遮挡图中的各个红外传感器。
+        如果遮挡时对应的指示灯变绿，表示传感器工作正常;
+        如果遮挡时对应的灯没有变化，表示传感器运行异常，请停止使用并联系厂家。
     </string>
     <string name="selfCheckExplainRFID">
-        请将测试节点卡放到底盘的RFID读卡模块下方.如果能正常显示该节点卡的4位十六进制卡号,表示该模块正常;如果未显示卡号,则表示该模块异常,请停止使用并联系厂家
+        请将测试卡放到底盘的读卡模块下方。
+        如果能正常显示卡号(如:0x12AB)，表示该模块运行正常;
+        如果未显示卡号，则表示该模块异常，请停止使用并联系厂家。
     </string>
-    <string name="selfCheckExplainMag">请将测试磁条放到底盘的磁传感器下方.如果能正常显示当前的磁传感器状态,则表示该模块正常;如果未显示有部分点不能点亮,则表示该模块异常,请停止使用并联系厂家
+    <string name="selfCheckExplainMag">
+        请将测试磁条放到底盘的磁传感器下方，并左右缓慢移动。
+        如果所有点都能点亮，表示该模块运行正常;
+        如果有部分点不能点亮，则表示该模块运行异常，请停止使用并联系厂家。
     </string>
-    <string name="selfCheckExplainInfra">人体红外安装在机器人头部下方,当机器人正前方有人时,下方的指示灯将会亮起.如果没有亮起,表示该模块异常,请停止使用并联系厂家</string>
-    <string name="selfCheckExplainBtn">外设按键安装在机器人肩膀上,左右各一个.按下按键后,下方的控件会有显示.如果不能正常显示,表示该案件已经失灵,但不影响使用.可以联系厂家进行维护修理.
+    <string name="selfCheckExplainInfra">
+        人体红外安装在机器人头部下方。
+        当机器人正前方有人移动时，下方的指示灯将会亮起；
+        如果指示灯未能亮起，表示红外传感模块异常，请停止使用并联系厂家。
     </string>
-    <string name="selfCheckExplainUltra">超声波传感器安装在机器人正下方,如图所示.当传感器前方有物体时,下方会显示具体的距离.如果没有显示或者显示异常,则表示传感器失效,请联系厂家并进行维护
+    <string name="selfCheckExplainBtn">
+        执行按键安装在机器人的左右肩膀上，
+        按下执行按键后，下方的执行按键会显示打开；
+        急停按键安装在机器人的头顶，
+        按下急停按键后，下方的停止按键会显示打开。
+        如果不能正常显示，表示该按键已经失灵，但不影响日常使用.可以联系厂家进行维护修理。
     </string>
-    <string name="selfCheckExplainMotor">点击下方的按键,如果机器人完成按照指定的操作,则表示电机出现了异常,请联系厂家进行维护</string>
+    <string name="selfCheckExplainUltra">
+        超声波传感器安装在机器人正下方，如下图所示。\n
+        当机器人前方有物体时，下方会显示与该物体的距离。
+        如果没有显示或显示异常，则表示超声波传感器失效，请联系厂家进行维护。
+    </string>
+    <string name="selfCheckExplainMotor">
+        点击界面下方的按键，如果机器人可以完成指定的操作，则表示电机工作正常；
+        如果机器人未能转动或转动角度错误，则电机出现了异常，请停止使用并联系厂家。
+    </string>
+
+
     <string name="title_activity_settings">Settings</string>
-
-    <string name="selfCheck_pass">通 过</string>
-    <string name="selfCheck_error">出 错</string>
-
-
-    <!--自检模块 显示文本(占位符)-->
-    <string name="selfCheck_ultra_distance">%d cm</string>
-
 
     <!-- Strings related to Settings -->
 

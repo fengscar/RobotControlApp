@@ -22,11 +22,11 @@ import java.util.LinkedHashMap;
 public class IatListener {
 
     //这个handler防止出错后重启的太快
-    private final int RESTART_LISTEN=123;
+    private final int RESTART_LISTEN = 123;
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            if ( msg.what == RESTART_LISTEN) {
+            if (msg.what == RESTART_LISTEN) {
                 sIat.startListening(mRecognizerListener);
             }
         }
@@ -39,14 +39,14 @@ public class IatListener {
     private static IatListener sIatListener;
 
     public static IatListener getInstance(IatCallback icb) {
-         iatCallback= icb;
-        L.i(LOG, "IatListenr get Instance!");
+        iatCallback = icb;
+        L.i(LOG, "IatListener get Instance!");
         if (sIatListener == null) {
             sIatListener = new IatListener();
             sIatListener.init();
-        }else{
-            // 退出时记得释放 sIatListenner
-            L.e(LOG,"sIat 不为空");
+        } else {
+            // 退出时记得释放 sIatListener
+            L.e(LOG, "sIat 不为空");
         }
         return sIatListener;
     }
@@ -86,8 +86,8 @@ public class IatListener {
     public void finishListen() {
         stopListen();
         sIat.destroy();
-        sIatListener=null;
-        mHandler=null;
+        sIatListener = null;
+        mHandler = null;
     }
 
 
@@ -119,8 +119,11 @@ public class IatListener {
             // 错误码：10118(您没有说话)，可能是录音机权限被禁，需要提示用户打开应用的录音权限。
             // 如果使用本地功能（语记）需要提示用户开启语记的录音权限。
             L.e(LOG, "识别中错误:" + error.getPlainDescription(true) + " 1秒后 继续开始识别!");
+            if (mHandler == null) {
+                return;
+            }
             mHandler.removeMessages(RESTART_LISTEN);
-            mHandler.sendEmptyMessageDelayed(RESTART_LISTEN,1000);
+            mHandler.sendEmptyMessageDelayed(RESTART_LISTEN, 1000);
         }
 
         @Override
@@ -179,8 +182,8 @@ public class IatListener {
         // 设置音频保存路径，保存音频格式支持pcm、wav，设置路径为sd卡请注意WRITE_EXTERNAL_STORAGE权限
         // 注：AUDIO_FORMAT参数语记需要更新版本才能生效
         sIat.setParameter(SpeechConstant.AUDIO_FORMAT, "wav");
-        sIat.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory()+"/msc/iat.wav");
-        L.i(LOG,sIat.getParameter(SpeechConstant.ASR_AUDIO_PATH));
+        sIat.setParameter(SpeechConstant.ASR_AUDIO_PATH, Environment.getExternalStorageDirectory() + "/msc/iat.wav");
+        L.i(LOG, sIat.getParameter(SpeechConstant.ASR_AUDIO_PATH));
     }
 
     private void printResult(RecognizerResult results) {

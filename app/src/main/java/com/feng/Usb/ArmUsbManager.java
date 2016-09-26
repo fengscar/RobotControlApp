@@ -35,7 +35,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
 
     //region 单例模式的实现
 
-    private static ArmUsbManager instance = null;
+    private volatile static ArmUsbManager instance = null;
 
     protected ArmUsbManager() {
     }
@@ -74,9 +74,9 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
             System.arraycopy(data, 0, mRecData, mRecCount, data.length);
             mRecCount += data.length;
 
-            byte[] debugCache = new byte[mRecCount]; //用来输出调试信息
-            System.arraycopy(mRecData, 0, debugCache, 0, mRecCount);
-            Log.w(TAG, "receive: " + Arrays.toString(data) + ", cache: " + Arrays.toString(debugCache));
+//            byte[] debugCache = new byte[mRecCount]; //用来输出调试信息
+//            System.arraycopy(mRecData, 0, debugCache, 0, mRecCount);
+//            Log.w(TAG, "receive: " + Arrays.toString(data) + ", cache: " + Arrays.toString(debugCache));
 
             //判断是否是正确的数据 (过滤调试信息)
             int mIndex = 0;
@@ -115,7 +115,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
             } else {
                 // 清理缓存 ( 数据前移,计数重置)
                 System.arraycopy(mRecData, mIndex, mRecData, 0, mRecCount);
-                L.e(TAG, "处理了 " + mIndex + " 字节数据");
+//                L.e(TAG, "处理了 " + mIndex + " 字节数据");
             }
         }
     };
@@ -169,27 +169,12 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
 
     //内部的handler ,用来处理重连等问题
     private final int ACTION_RECONNECT_USB = 122;
-    //    private final int ACTION_QUERY_STATE = 123;
-//    private final int ACTION_QUERY_POWER = 124;
     private Handler innerHandler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case ACTION_RECONNECT_USB:
                     reconnect();
                     break;
-
-//                case ACTION_QUERY_STATE:
-//                    removeMessages(ACTION_QUERY_STATE);
-//                    motionHandler.queryMotionState();
-//                    sendEmptyMessageDelayed(ACTION_QUERY_STATE, 500);
-//                    break;
-//
-//                case ACTION_QUERY_POWER:
-//                    removeMessages(ACTION_QUERY_POWER);
-//                    powerHandler.queryCurrentPower();
-//                    sendEmptyMessageDelayed(ACTION_QUERY_STATE, 180000);
-//
-//                    break;
 
                 default:
                     break;
@@ -259,17 +244,18 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
         }
     }
 
-
     public void receive(byte[] data) {
+        //更新各个ArmHandler的状态
+        HandlerFinder.getHandler(data).onReceive(data);
         currentReceive = data;
         // 最后一个参数表示不需要打包
         if (belongAction(data, RECEIVE_ACTIONS)) {
             //自动回复.
             this.reply(data, true);
-            L.i(TAG, "[USB接收]: 已自动回复" + Arrays.toString(data));
+            L.i(TAG, "[ARM->主动发送]: 已自动回复" + Arrays.toString(data));
             notifyActivities(new UsbData(data));
         } else {
-            L.w(TAG, "[ARM-USB回复]: " + Arrays.toString(data));
+            L.i(TAG, "[ARM->回复]: " + Arrays.toString(data));
         }
     }
 
@@ -362,7 +348,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
                 while (sendCount < SEND_REPEAT_COUNT) {
                     sUsbSerialDriver.write(mUsbData.getDataToSend(), 0);
                     sendCount++;
-                    Log.i(TAG, "[USB发送]: " + sendCount + "次 ---" + Arrays.toString(mUsbData.getDataToSend()));
+                    Log.i(TAG, "[发送->ARM]: " + sendCount + "次 ---" + Arrays.toString(mUsbData.getDataToSend()));
                     SystemClock.sleep(SEND_TIMEOUT);
                     // 与当前接收到的 currentReceive比较 头三位( 是否不严谨?)
                     //如果相同 返回发送成功 ,退出 while() 不再发送, 并返回接收到的结果
@@ -409,7 +395,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
 
             startIoManager();
             // 开始轮询机器人
-            startQueryRobot();
+//            startQueryRobot();
 //            innerHandler.sendEmptyMessageDelayed(ACTION_QUERY_STATE, 500);
 //            innerHandler.sendEmptyMessageDelayed(ACTION_QUERY_POWER, 1800000);
 
@@ -459,7 +445,7 @@ public class ArmUsbManager implements ArmProtocol, I_Parameters {
                 while (sendCount < SEND_REPEAT_COUNT) {
                     sUsbSerialDriver.write(dataToSend, 0);
                     sendCount++;
-                    L.e(TAG, "[USB发送]: " + sendCount + "次 ---" + Arrays.toString(dataToSend));
+                    Log.i(TAG, "[发送->ARM]: " + sendCount + "次 ---" + Arrays.toString(dataToSend));
                     SystemClock.sleep(SEND_TIMEOUT);
                     // 与当前接收到的 currentReceive比较 头三位( 是否不严谨?)
                     //如果相同 返回发送成功 ,退出 while() 不再发送, 并返回接收到的结果

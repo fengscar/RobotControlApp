@@ -2,6 +2,7 @@ package com.feng.MapModule;
 
 import android.app.Fragment;
 import android.app.Service;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -10,26 +11,27 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.renderscript.Int2;
+import android.util.Log;
 import android.view.*;
 import android.view.View.OnClickListener;
-import android.widget.FrameLayout;
+import android.widget.*;
 import android.widget.FrameLayout.LayoutParams;
-import android.widget.PopupWindow;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import com.feng.Activities.EditMapActivity;
+import com.feng.Adapter.UserControlFragmentListener;
 import com.feng.Base.BaseActivity;
 import com.feng.Constant.I_Parameters;
 import com.feng.CustomView.CustomDialog;
 import com.feng.CustomView.CustomDialogCallback;
 import com.feng.CustomView.IconButton;
-import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Node;
-import com.feng.Database.Route;
-import com.feng.Database.Workspace;
+import com.feng.Database.Map.*;
 import com.feng.Fragments.IFragmentControl;
-import com.feng.Fragments.UserControlFragmentCallback;
 import com.feng.RSS.R;
 import com.feng.RobotApplication;
 import com.feng.Utils.L;
 import com.feng.Utils.WidgetController;
+import com.sdsmdg.tastytoast.TastyToast;
 
 import java.util.Arrays;
 import java.util.List;
@@ -44,6 +46,7 @@ import java.util.List;
  * ---Path: 属于FrameLayout..显示动态路径
  */
 public class MapFragment extends Fragment implements I_Parameters, IFragmentControl {
+    private static final String TAG = "MapFragment";
 
     private static final String LOG = MapFragment.class.getSimpleName();
     // MVC 中的 Model
@@ -184,6 +187,7 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
             iconBtn.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     View pwContent = LayoutInflater.from(MapFragment.this.getActivity()).inflate(R.layout.popup_edit_node, null);
                     final PopupWindow pw = new PopupWindow(pwContent, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, true);
                     pw.setFocusable(true);
@@ -192,64 +196,156 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
                     pw.setOutsideTouchable(true);
                     pw.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
 
-                    //region 绑定编辑节点的操作
-                    pwContent.findViewById(R.id.popupEditNode).setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            showEditNodeDialog(node);
-                            pw.dismiss();
+                    //region 显示或隐藏 两个路径编辑按键, 绑定按键操作
+                    final Route currentRoute = ((EditMapActivity) getActivity()).getCurrentRoute();
+                    final ImageView path1 = (ImageView) pwContent.findViewById(R.id.popupEditPath1);
+                    final ImageView path2 = (ImageView) pwContent.findViewById(R.id.popupEditPath2);
+                    final ImageView addPortal = (ImageView) pwContent.findViewById(R.id.popupAddPortal);
+                    if (currentRoute == null) {
+                        path1.setVisibility(View.GONE);
+                        path2.setVisibility(View.GONE);
+                        addPortal.setVisibility(View.GONE);
+                    } else {
+
+                        // -1 没经过,直接判断为添加
+                        // 1  经过一次,判断是编辑还是继续添加
+                        // 2  让用户选择编辑那个路径
+                        final List<Path> passPath = mDatabaseHelper.routeContainsNode(currentRoute.getId(), node.getId());
+                        Log.i(TAG, "当前有 " + passPath.size() + "条路径经过该点");
+                        switch (passPath.size()) {
+                            case 0:
+                                // 如果已经完成 全设置成不可见
+                                if (mDatabaseHelper.isCompleted(currentRoute)) {
+                                    path1.setVisibility(View.GONE);
+                                    path2.setVisibility(View.GONE);
+                                    break;
+                                }
+                                path1.setVisibility(View.VISIBLE);
+                                path1.setImageResource(R.mipmap.popup_add_path);
+
+                                path2.setVisibility(View.GONE);
+                                break;
+                            case 1:
+                                path1.setVisibility(View.VISIBLE);
+                                path1.setImageResource(R.mipmap.popup_edit_path);
+                                if (mDatabaseHelper.isCompleted(currentRoute)
+                                        // 避免添加 起始点和终点相同的路径
+                                        || node.equals(mDatabaseHelper.getLastNodeByRouteID(currentRoute.getId()))) {
+                                    path2.setVisibility(View.GONE);
+                                    break;
+                                }
+                                path2.setVisibility(View.VISIBLE);
+                                path2.setImageResource(R.mipmap.popup_add_path);
+                                break;
+                            case 2:
+                                path1.setVisibility(View.VISIBLE);
+                                path1.setImageResource(R.mipmap.popup_edit_path);
+                                path2.setVisibility(View.VISIBLE);
+                                path2.setImageResource(R.mipmap.popup_edit_path);
+                                break;
                         }
-                    });
+                        path1.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (passPath.size() > 0) {
+                                    ((EditMapActivity) getActivity()).showEditPathDialog(currentRoute, passPath.get(0));
+                                } else {
+                                    ((EditMapActivity) getActivity()).showAddPathDialog(currentRoute, node);
+                                }
+                                pw.dismiss();
+                            }
+                        });
+                        path2.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (passPath.size() > 1) {
+                                    ((EditMapActivity) getActivity()).showEditPathDialog(currentRoute, passPath.get(1));
+                                } else {
+                                    ((EditMapActivity) getActivity()).showAddPathDialog(currentRoute, node);
+                                }
+                                pw.dismiss();
+                            }
+                        });
+                        // 如果是 连接点路线, 显示该popup按键
+                        if (node.getType().equals(NODE_TYPE.PORTAL)
+                                && Route.PORTAL_ROUTE == mRoute.getType()) {
+                            addPortal.setVisibility(View.VISIBLE);
+                            //TODO 先做添加的功能,还需要做编辑功能
+//                        if( 该点存在PATH )
+//                        {
+//                          弹出编辑对话框
+//                        }
+                            addPortal.setOnClickListener(new PortalNodeClickListener((MapFragment.this).getActivity(), node));
+                        }
+                    }
+                    //endregion
+
+
+                    //region 绑定编辑节点的操作
+                    pwContent.findViewById(R.id.popupEditNode).
+                            setOnClickListener(new OnClickListener() {
+                                                   @Override
+                                                   public void onClick(View v) {
+                                                       showEditNodeDialog(node);
+                                                       pw.dismiss();
+                                                   }
+                                               }
+                            );
                     //endregion
 
                     //region 绑定删除节点的操作
-                    pwContent.findViewById(R.id.popupDelNode).setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            CustomDialog.Builder builder = new CustomDialog.Builder(MapFragment.this.getActivity());
-                            builder.getConfirmDialog("确认删除", "是否要删除节点 [" + node.getName() + "]?",
-                                    new CustomDialogCallback() {
-                                        @Override
-                                        public boolean onDialogBtnClick(List<View> viewList) {
-                                            //删除成功
-                                            if (mDatabaseHelper.delData(node)) {
-                                                mAllNodes.remove(node);
-                                                refreshHandler.sendEmptyMessage(RefreshAll);
-                                                return true;
-                                            }
-                                            return false;
-                                        }
-                                    })
-                                    .show();
-                            pw.dismiss();
-                        }
-                    });
+                    pwContent.findViewById(R.id.popupDelNode).
+                            setOnClickListener(new OnClickListener() {
+                                                   @Override
+                                                   public void onClick(View v) {
+                                                       CustomDialog.Builder builder = new CustomDialog.Builder(MapFragment.this.getActivity());
+                                                       builder.getConfirmDialog("确认删除", "是否要删除节点 [" + node.getName() + "]?",
+                                                               new CustomDialogCallback() {
+                                                                   @Override
+                                                                   public boolean onDialogBtnClick(List<View> viewList) {
+                                                                       //删除成功
+                                                                       if (mDatabaseHelper.delData(node)) {
+                                                                           mAllNodes.remove(node);
+                                                                           refreshHandler.sendEmptyMessage(RefreshAll);
+                                                                           return true;
+                                                                       }
+                                                                       return false;
+                                                                   }
+                                                               })
+                                                               .show();
+                                                       pw.dismiss();
+                                                   }
+                                               }
+
+                            );
                     //endregion
 
-                    //region 绑定编辑路径的操作
-                    pwContent.findViewById(R.id.popupEditPath).setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            pw.dismiss();
-                        }
-                    });
-                    //endregion
 
                     //region 设置弹出popup的位置
                     Int2 popupSize = WidgetController.getViewMeasure(pwContent);
                     Point screenSize = ((BaseActivity) getActivity()).getScreenSize();
                     // 根据node坐标...来获取偏移量
                     Int2 offset = new Int2();
-                    if (screenSize.x - node.getPositionX() < popupSize.x / 2) {
+                    if (screenSize.x - node.getPositionX() < popupSize.x / 2)
+
+                    {
                         offset.x = screenSize.x - popupSize.x;
-                    } else {
+                    } else
+
+                    {
                         offset.x = node.getPositionX() - popupSize.x / 2;
                     }
-                    if (screenSize.y - node.getPositionY() < popupSize.y / 2) {
+
+                    if (screenSize.y - node.getPositionY() < popupSize.y / 2)
+
+                    {
                         offset.y = screenSize.y - popupSize.y;
-                    } else {
+                    } else
+
+                    {
                         offset.y = node.getPositionY() - popupSize.y / 2;
                     }
+
                     pw.showAtLocation(iconBtn, Gravity.TOP | Gravity.LEFT,
                             offset.x >= 0 ? offset.x : 0, offset.y >= 0 ? offset.y : 0);
                     //endregion
@@ -326,6 +422,8 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
             iconBtn.setTextColor(Color.BLACK);
             iconBtn.setBackgroundColor(Color.TRANSPARENT);
             iconBtn.setIconPosition(IconButton.TOP);
+
+
             switch (node.getType()) {
                 case NODE_TYPE.CROSS:
                     iconBtn.setIconDrawableID(R.drawable.map_button_cross);
@@ -338,6 +436,12 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
                     break;
                 case NODE_TYPE.WASH:
                     iconBtn.setIconDrawableID(R.drawable.map_button_wash);
+                    break;
+                case NODE_TYPE.STATION:
+                    iconBtn.setIconDrawableID(R.drawable.map_button_station);
+                    break;
+                case NODE_TYPE.PORTAL:
+                    iconBtn.setIconDrawableID(R.drawable.map_button_portal);
                     break;
             }
             // 设置btn在父容器中的位置
@@ -403,7 +507,11 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
                             L.e("装载 节点 时出错");
                             return false;
                         } else {
-                            return mDatabaseHelper.updateData(newNode);
+                            boolean result = mDatabaseHelper.updateData(newNode);
+                            if (result) {
+                                refreshAll();
+                            }
+                            return result;
                         }
                     }
                 })
@@ -438,7 +546,12 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
     }
 
     @Override
-    public void setCallback(UserControlFragmentCallback ucc) {
+    public int getWorkspaceID() {
+        return 0;
+    }
+
+    @Override
+    public void setCallback(UserControlFragmentListener ucc) {
 
     }
 
@@ -551,7 +664,8 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
         }
 
     }
-//    private List<Point> getOffsetPoint(List<Node> nodeList) {
+
+    //    private List<Point> getOffsetPoint(List<Node> nodeList) {
 //        List<Point> result = new ArrayList<>();
 //        for (Node node : nodeList) {
 //            result.add(getOffsetPoint(node));
@@ -567,4 +681,141 @@ public class MapFragment extends Fragment implements I_Parameters, IFragmentCont
 //            return new Point((int) (node.getPositionX() * mScale), (int) ((node.getPositionY() - iconBtn.getTextSize() / 2) * mScale));
 //        }
 //    }
+    class PortalNodeClickListener implements OnClickListener {
+        private Node mPortalNode;
+        private Context mContext;
+        private Node mTargetNode;// 所连接到的点 (当编辑的时候用到)
+
+        public PortalNodeClickListener(Context c, Node node) {
+            mContext = c;
+            mPortalNode = node;
+        }
+
+        public PortalNodeClickListener(Context c, Node portalNode, Node connectTo) {
+            this(c, portalNode);
+            mTargetNode = connectTo;
+        }
+
+        @Override
+        public void onClick(View v) {
+            final MapDatabaseHelper mapDatabaseHelper = MapDatabaseHelper.getInstance();
+            // 找到 != 的工作区
+            // sp初始化
+            // sp的ItemSelectListen
+            // 添加路径到当前路线
+            Workspace workspace = mapDatabaseHelper.getWorkspaceByID(mPortalNode.getWorkspaceID());
+            final List<Workspace> allWorkspace = MapDatabaseHelper.getInstance().getAllWorkspace();
+            allWorkspace.remove(workspace);
+            if (allWorkspace.size() == 0) {
+                TastyToast.makeText(mContext, "未找到其他工作区", TastyToast.LENGTH_SHORT, TastyToast.WARNING);
+                return;
+            }
+
+            CustomDialog.Builder mBuilder = new CustomDialog.Builder(mContext);
+            mBuilder.setResourceID(R.layout.dialog_portal_connect);
+            final PortalDialogViewHolder holder = new PortalDialogViewHolder(mBuilder.getConvertView());
+            final Path pathAdd = new Path();
+            pathAdd.setRouteID(mRoute.getId());
+            int orderID = mapDatabaseHelper.getMaxPathOrder(mRoute.getId()) + 1;
+            pathAdd.setOrderID(orderID);
+            pathAdd.setNodeID(mPortalNode.getId());
+
+
+            String[] selection = new String[allWorkspace.size()];
+            for (int i = 0; i < allWorkspace.size(); i++) {
+                selection[i] = allWorkspace.get(i).getName();
+            }
+            holder.mSpConnectWorkspace.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, selection));
+            holder.mSpConnectWorkspace.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    // 得到所选的工作区
+                    Workspace selectWsp = allWorkspace.get(position);
+                    final List<Node> selectableNode = mapDatabaseHelper.getAllNode(selectWsp.getId());
+                    String[] selection = new String[selectableNode.size()];
+                    for (int i = 0; i < selectableNode.size(); i++) {
+                        selection[i] = selectableNode.get(i).getName();
+                    }
+                    holder.mSpConnectNode.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, selection));
+                    holder.mSpConnectNode.invalidate();
+                    holder.mSpConnectNode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            Node selectNode = selectableNode.get(position);
+                            pathAdd.setEndNode(selectNode.getId());
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+
+                }
+            });
+
+            mBuilder.setCancelBtnClick(R.id.dialogCancelBtn, new CustomDialogCallback() {
+                @Override
+                public boolean onDialogBtnClick(List<View> viewList) {
+//                if (chooseDialog != null) {
+//                    chooseDialog.show();
+//                }
+                    return true;
+                }
+            })
+                    .setTitle("添加路径")
+                    .setButtonText("添加", "取消")
+                    .setOkBtnClick(R.id.dialogOKBtn, new CustomDialogCallback() {
+                        public boolean onDialogBtnClick(List<View> viewList) {
+                            Path newPath = Path.loadPath(pathAdd, viewList);
+                            if (newPath == null) {
+                                L.e("装载 路径 时出错");
+                                return false;
+                            } else if (mapDatabaseHelper.addData(newPath)) {
+                                refreshAll();
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    })
+                    .create(new int[]{R.id.spConnectWorkspace, R.id.spConnectNode,
+                            R.id.addPathRouteID, R.id.addPathOrderID,
+                            R.id.spPathYaw, R.id.etPathDistance,
+                            R.id.spPathAngle, R.id.etPathMaxSpeed,
+                            R.id.spPathTurnType}, new Object[]{
+                            0, 0, mRoute.getId(), orderID,
+                            null, null, null, null, null})
+                    .show();
+        }
+
+        class PortalDialogViewHolder {
+            @BindView(R.id.addPathRouteID)
+            TextView mAddPathRouteID;
+            @BindView(R.id.addPathOrderID)
+            TextView mAddPathOrderID;
+            @BindView(R.id.spConnectWorkspace)
+            Spinner mSpConnectWorkspace;
+            @BindView(R.id.spConnectNode)
+            Spinner mSpConnectNode;
+            @BindView(R.id.etPathMaxSpeed)
+            EditText mEtPathMaxSpeed;
+            @BindView(R.id.etPathDistance)
+            EditText mEtPathDistance;
+            @BindView(R.id.spPathYaw)
+            Spinner mSpPathYaw;
+            @BindView(R.id.spPathAngle)
+            Spinner mSpPathAngle;
+            @BindView(R.id.spPathTurnType)
+            Spinner mSpPathTurnType;
+
+            PortalDialogViewHolder(View view) {
+                ButterKnife.bind(this, view);
+            }
+        }
+    }
 }

@@ -22,6 +22,8 @@ public interface I_Parameters {
         public static final String CROSS = "交叉点";
         public static final String KITCHEN = "厨房";
         public static final String WASH = "消洗区";
+        public static final String STATION = "停靠点";
+        public static final String PORTAL = "连接点";
     }
 
     class PATH_TURN {
@@ -49,6 +51,7 @@ public interface I_Parameters {
     String SORT_TYPE = "sort_type";
     //保存 上次执行到的位置
     String CURRENT_NODE_ID = "current_node_id";
+    String STATION_NODE_ID = "station_node_id";
     // 未完成的任务
     String TASK_LIST = "task_list";
     //直接进入 上次退出的工作区

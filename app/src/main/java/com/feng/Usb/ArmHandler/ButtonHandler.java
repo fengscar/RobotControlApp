@@ -25,8 +25,8 @@ public class ButtonHandler extends BaseHandler {
     //region Members
 
     //正常情况下 是否有报警
-    private boolean isExecute; // 执行按键状态 是否按下
-    private boolean isScram; // 急停按键状态
+    private boolean isExecute = false; // 执行按键状态 是否按下
+    private boolean isScram = false; // 急停按键状态
 
     public boolean isExecute() {
         return isExecute;

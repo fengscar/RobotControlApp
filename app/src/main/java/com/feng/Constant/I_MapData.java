@@ -32,9 +32,10 @@ public interface I_MapData {
     String PATH_YAW = "yaw";
     String PATH_ANGLE = "angle";
     String PATH_MAXSPEED = "maxSpeed";
+    String PATH_TURNTYPE = "turnType";
     String PATH_TABLE_ROW =
             PATH_NODEID + "," + PATH_ENDNODEID + "," + PATH_ROUTEID + "," + PATH_ORDERID + "," +
-                    PATH_YAW + "," + PATH_DISTANCE + "," + PATH_ANGLE + "," + PATH_MAXSPEED;
+                    PATH_YAW + "," + PATH_DISTANCE + "," + PATH_ANGLE + "," + PATH_MAXSPEED + "," + PATH_TURNTYPE;
     /***
      * 路线 列名
      */
@@ -43,7 +44,8 @@ public interface I_MapData {
     String ROUTE_NAME = "routeName";
     String ROUTE_WORKSPACEID = "workspaceID";
     String ROUTE_ENABLED = "routeEnabled";
-    String ROUTE_TABLE_ROW = ROUTE_ID + "," + ROUTE_PREID + "," + ROUTE_NAME + "," + ROUTE_WORKSPACEID + "," + ROUTE_ENABLED;
+    String ROUTE_TYPE = "routeType";
+    String ROUTE_TABLE_ROW = ROUTE_ID + "," + ROUTE_PREID + "," + ROUTE_NAME + "," + ROUTE_WORKSPACEID + "," + ROUTE_ENABLED + ", " + ROUTE_TYPE;
     /**
      * 工作区 列名
      */

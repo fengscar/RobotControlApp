@@ -4,8 +4,8 @@ import android.content.Context;
 import android.graphics.*;
 import android.renderscript.Int2;
 import android.view.View;
-import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Route;
+import com.feng.Database.Map.MapDatabaseHelper;
+import com.feng.Database.Map.Route;
 import com.feng.Utils.L;
 
 import java.util.ArrayList;
@@ -118,10 +118,18 @@ public class PathView extends View {
         }
         // 绘出可用的Path ( 包括当前路线)
         for (Integer integer : usablePathIdList) {
-            canvas.drawPath(allPaths.get(integer), usablePaint);
+            Path pathToDraw = allPaths.get(integer);
+            if (pathToDraw == null) {
+                break;
+            }
+            canvas.drawPath(pathToDraw, usablePaint);
         }
         // 绘出不可用的Path
         for (Integer integer : uselessPathIdList) {
+            Path pathToDraw = allPaths.get(integer);
+            if (pathToDraw == null) {
+                break;
+            }
             canvas.drawPath(allPaths.get(integer), uselessPaint);
         }
         // 汇出当前路线
@@ -148,13 +156,13 @@ public class PathView extends View {
     }
 
     // 当一条路线上的路径发生改变时, 刷新该路径信息
-    public void refreshRoute(int routeID) {
-        Path path = PathManager.getRouteGraph(routeID, mRadius);
+    public void refreshRoute(Route route) {
+        Path path = PathManager.getRouteGraph(route, mRadius);
         if (path == null) {
             return;
         }
-        allPaths.remove(routeID);
-        allPaths.put(routeID, path);
+        allPaths.remove(route.getId());
+        allPaths.put(route.getId(), path);
     }
 
     private void drawOrderText(Canvas canvas, float k, Int2 startPoint,
@@ -175,14 +183,12 @@ public class PathView extends View {
     }
 
     private void initPaint() {
-
         currentPaint = new Paint();
         currentPaint.setAntiAlias(true);
         currentPaint.setStrokeWidth(mMainPathWidth);
         currentPaint.setStyle(Paint.Style.STROKE);//设置为空心
         currentPaint.setColor(Color.rgb(54, 194, 242));
         currentPaint.setStrokeCap(Paint.Cap.ROUND);
-
 
         usablePaint = new Paint();
         usablePaint.setAntiAlias(true);

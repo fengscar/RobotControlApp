@@ -1,7 +1,7 @@
 package com.feng.Usb.ArmHandler;
 
 import android.util.Log;
-import com.feng.Schedule.ScheduleRobot;
+import com.feng.Schedule.Robot;
 import com.feng.Usb.ArmHead;
 import com.feng.Usb.ArmModel.ArmMotion;
 
@@ -20,7 +20,7 @@ public class MotionHandler extends BaseHandler {
 
     //region Members
 
-    private ScheduleRobot.MotionState mMotionState;
+    private Robot.MotionState mMotionState;
     private int mSpeed;
     private int mMaxSpeed;
     private int mDistance;
@@ -30,7 +30,7 @@ public class MotionHandler extends BaseHandler {
     //endregion
 
     //region Getter
-    public ScheduleRobot.MotionState getMotionState() {
+    public Robot.MotionState getMotionState() {
         return mMotionState;
     }
 
@@ -70,7 +70,7 @@ public class MotionHandler extends BaseHandler {
             case 0x01:
                 queryStateResult(body);
                 // 更新RobotEntity状态
-                ScheduleRobot robot = ScheduleRobot.getInstance();
+                Robot robot = Robot.getInstance();
                 robot.beginNotifyChange();
                 robot.setMotionState(mMotionState);
                 robot.setSpeed(mSpeed);
@@ -229,7 +229,7 @@ public class MotionHandler extends BaseHandler {
             Log.e(TAG, "queryState: 接收到的信息错误!");
             return;
         }
-        this.mMotionState = ScheduleRobot.MotionState.getState(body[0]);
+        this.mMotionState = Robot.MotionState.getState(body[0]);
         this.mSpeed = mTransfer.twoByteToInt(new byte[]{body[1], body[2]});
         this.mDistance = mTransfer.twoByteToInt(new byte[]{body[3], body[4]});
         this.mMaxSpeed = mTransfer.twoByteToInt(new byte[]{body[5], body[6]});

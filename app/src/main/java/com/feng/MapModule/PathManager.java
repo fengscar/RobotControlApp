@@ -3,9 +3,9 @@ package com.feng.MapModule;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.Log;
-import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Node;
-import com.feng.Database.Route;
+import com.feng.Database.Map.MapDatabaseHelper;
+import com.feng.Database.Map.Node;
+import com.feng.Database.Map.Route;
 import com.feng.Utils.L;
 
 import java.util.HashMap;
@@ -30,25 +30,25 @@ public class PathManager {
             return result;
         }
         for (Route route : allRoute) {
-            result.put(route.getId(), getRouteGraph(route.getId(), radius));
+            result.put(route.getId(), getRouteGraph(route, radius));
         }
         return result;
     }
 
-    public static Path getRouteGraphPath(int routeID) {
-        return getRouteGraph(routeID, 60);
+    public static Path getRouteGraphPath(Route route) {
+        return getRouteGraph(route, 60);
     }
 
     /**
      * 根据数据库的 route->path->node->position ,生成画图上的一个path
      *
-     * @param routeID 数据库中的路线ID
-     * @param Radius  最大的半径( 默认为60像素)
+     * @param route  数据库中的路线
+     * @param Radius 最大的半径( 默认为60像素)
      * @return
      */
-    public static Path getRouteGraph(int routeID, int Radius) {
+    public static Path getRouteGraph(Route route, int Radius) {
         MapDatabaseHelper mapDatabaseHelper = MapDatabaseHelper.getInstance();
-        List<com.feng.Database.Path> pathList = mapDatabaseHelper.getWholeRoute(routeID);
+        List<com.feng.Database.Map.Path> pathList = mapDatabaseHelper.getWholeRoute(route.getId());
         if (pathList == null) {
             return null;
         }
@@ -56,15 +56,25 @@ public class PathManager {
         Map<Integer, Node> nodeMap = mapDatabaseHelper.getNodeMap(pathList);
 
         Path path = new Path();
-        for (com.feng.Database.Path mapPath : pathList) {
+        for (com.feng.Database.Map.Path mapPath : pathList) {
             Node startNode = nodeMap.get(mapPath.getNodeID());
             Node endNode = nodeMap.get(mapPath.getEndNode());
             if (startNode == null || endNode == null) {
                 L.e(LOG, "生成路径时出错: 无法获取节点信息");
                 continue;
             }
+            // 如果 起始点是 portal类型的 && 是连接点路线
+            //  则跳过,不然会连接到 看不见的点( 连接到其他工作区)
+//            if (I_Parameters.NODE_TYPE.PORTAL.equals(startNode.getType())
+//                    && route.getType() == Route.PORTAL_ROUTE) {
+//                continue;
+//            }
+            // 如果两个点在不同的工作区 不显示
+            if (startNode.getWorkspaceID() != endNode.getWorkspaceID()) {
+                continue;
+            }
             //直线
-            if (mapPath.getYaw() == 0) {
+            if (mapPath.getYaw() == 0 || mapPath.getYaw() == -180) {
                 Path linePath = new Path();
                 linePath.moveTo(startNode.getPositionX(), startNode.getPositionY());
                 linePath.lineTo(endNode.getPositionX(), endNode.getPositionY());

@@ -8,9 +8,9 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Node;
-import com.feng.Database.Route;
+import com.feng.Database.Map.MapDatabaseHelper;
+import com.feng.Database.Map.Node;
+import com.feng.Database.Map.Route;
 import com.feng.RSS.R;
 
 import java.util.ArrayList;
@@ -22,19 +22,8 @@ import java.util.List;
  */
 public class ExpanderAdapter extends BaseExpandableListAdapter {
     // 回调接口...当任务添加时触发..
-    public interface TaskChangeCallback {
-        void onTaskAdd(int groupPosition);
-
-        /**
-         * 当用户点击任务列表,准备删除任务时...
-         *
-         * @param node
-         */
-        void onDeleteTask(Node node);
-    }
-
     private LayoutInflater inflater;
-    private TaskChangeCallback mTaskChangedCallback;
+    private UserControlTaskListListener mUserControlTaskListener;
 
 
     private ArrayList<HashMap<Route, ArrayList<Node>>> taskList;
@@ -45,9 +34,9 @@ public class ExpanderAdapter extends BaseExpandableListAdapter {
      */
     private Node currentTarget;
 
-    public ExpanderAdapter(Context context, TaskChangeCallback tccb) {
+    public ExpanderAdapter(Context context, UserControlTaskListListener tccb) {
         inflater = LayoutInflater.from(context);
-        mTaskChangedCallback = tccb;
+        mUserControlTaskListener = tccb;
 
         taskList = new ArrayList<>();
     }
@@ -64,7 +53,7 @@ public class ExpanderAdapter extends BaseExpandableListAdapter {
 
     public void addTarget(final Node node) {
         // 获取 到达该节点的所有路线
-        Route route = MapDatabaseHelper.getInstance().getRouteByNodeId(node.getId());
+        Route route = MapDatabaseHelper.getInstance().getPassNodeRouteID(node.getId());
         if (route == null) {
             return;
         }
@@ -76,7 +65,7 @@ public class ExpanderAdapter extends BaseExpandableListAdapter {
                     //添加完成
                     ((ArrayList) eachRoute.get(route)).add(node);
                     this.notifyDataSetChanged();
-                    mTaskChangedCallback.onTaskAdd(taskList.indexOf(eachRoute));
+                    mUserControlTaskListener.onUserAddToExpander(taskList.indexOf(eachRoute));
                 }
                 return;
             }
@@ -90,7 +79,7 @@ public class ExpanderAdapter extends BaseExpandableListAdapter {
         });
         taskList.add(newRoute);
         this.notifyDataSetChanged();
-        mTaskChangedCallback.onTaskAdd(taskList.indexOf(newRoute));
+        mUserControlTaskListener.onUserAddToExpander(taskList.indexOf(newRoute));
 
     }
 
@@ -177,8 +166,8 @@ public class ExpanderAdapter extends BaseExpandableListAdapter {
             convertView = inflater.inflate(R.layout.expandable_task_group, null);
             routeGroup = new Group();
             routeGroup.name = (TextView) convertView.findViewById(R.id.expandableLvGroupName);
-            routeGroup.btnUp = (Button) convertView.findViewById(R.id.expandableLvGroupBtnUp);
-            routeGroup.btnDown = (Button) convertView.findViewById(R.id.expandableLvGroupBtnDown);
+//            routeGroup.btnUp = (Button) convertView.findViewById(R.id.expandableLvGroupBtnUp);
+//            routeGroup.btnDown = (Button) convertView.findViewById(R.id.expandableLvGroupBtnDown);
             convertView.setTag(routeGroup);
         } else {
             routeGroup = (Group) convertView.getTag();
@@ -248,7 +237,7 @@ public class ExpanderAdapter extends BaseExpandableListAdapter {
             convertView = inflater.inflate(R.layout.expandable_task_child, null);
             child = new Child();
             child.name = (TextView) convertView.findViewById(R.id.expandableLvChildName);
-            child.target = (ImageView) convertView.findViewById(R.id.expandableLvChildImg);
+//            child.target = (ImageView) convertView.findViewById(R.id.expandableLvChildImg);
             convertView.setTag(child);
         } else {
             child = (Child) convertView.getTag();
@@ -257,16 +246,16 @@ public class ExpanderAdapter extends BaseExpandableListAdapter {
         child.name.setText(node.getName());
 
         //  如果是当前任务 ,显示 箭头标志
-        if (currentTarget != null) {
-            if (node.equals(currentTarget)) {
-                // 设置 可见
-                child.target.setVisibility(View.VISIBLE);
-            }
-        }
+//        if (currentTarget != null) {
+//            if (node.equals(currentTarget)) {
+//                // 设置 可见
+//                child.target.setVisibility(View.VISIBLE);
+//            }
+//        }
         // 点击后 回调 activity传入的方法.( 将通过USB发送删除命令, 任务列表还未更新)
         convertView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                mTaskChangedCallback.onDeleteTask(node);
+                mUserControlTaskListener.onUserDelFromExpander(node);
             }
         });
         return convertView;

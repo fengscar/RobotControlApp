@@ -25,8 +25,8 @@ import com.feng.Base.BaseActivity;
 import com.feng.CustomView.CustomDialog;
 import com.feng.CustomView.CustomDialogCallback;
 import com.feng.CustomView.PopupWindowManager;
-import com.feng.Database.MapDatabaseHelper;
-import com.feng.Database.Workspace;
+import com.feng.Database.Map.MapDatabaseHelper;
+import com.feng.Database.Map.Workspace;
 import com.feng.RSS.R;
 import com.feng.Utils.L;
 
@@ -112,7 +112,7 @@ public class WorkspaceFragment extends Fragment {
                                 //点击 编辑时
                                 new OnClickListener() {
                                     public void onClick(View v) {
-                                        //点击后就关闭 popup_path
+                                        //点击后就关闭 popup_edit_path
                                         pwm.close();
                                         //并打开 编辑对话框
                                         CustomDialog.Builder builder = new CustomDialog.Builder(getActivity());

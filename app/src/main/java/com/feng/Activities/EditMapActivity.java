@@ -1,13 +1,16 @@
 package com.feng.Activities;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,36 +18,79 @@ import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.feng.Base.BaseActivity;
 import com.feng.Constant.I_Parameters;
 import com.feng.CustomView.CustomDialog;
 import com.feng.CustomView.CustomDialogCallback;
-import com.feng.CustomView.IconButton;
 import com.feng.CustomView.PopupWindowManager;
-import com.feng.Database.*;
+import com.feng.Database.Map.*;
 import com.feng.MapModule.MapFragment;
 import com.feng.RSS.R;
 import com.feng.Utils.L;
+import com.feng.Utils.T;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class EditMapActivity extends BaseActivity implements I_Parameters {
+    @BindView(R.id.famMenu)
+    FloatingActionsMenu mFamMenu;
+    @BindView(R.id.routeListView)
+    ListView mRouteListView;
+    @BindView(R.id.dlEditMap)
+    DrawerLayout mDrawer;
+    @BindView(R.id.iconBtnBack)
+    Button mBtnBack;
+
+    @OnClick({R.id.fabAutoAdjust, R.id.fabAddPortal, R.id.fabAddStation, R.id.fabAddRoute})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.fabAutoAdjust:
+                if (mapFragment != null) {
+                    mapFragment.autoAdjust();
+                }
+                mFamMenu.collapse();
+                break;
+
+            //添加 传送点
+            case R.id.fabAddPortal:
+                showSimpleAddRouteDialog("添加连接点路线", Route.PORTAL_ROUTE);
+                mFamMenu.collapse();
+                break;
+
+            //添加停靠点
+            case R.id.fabAddStation:
+                showSimpleAddRouteDialog("添加停靠点路线", Route.STATION_ROUTE);
+                mFamMenu.collapse();
+                break;
+
+            // 添加路线 按键
+            case R.id.fabAddRoute:
+                showAddRouteDialog();
+                mFamMenu.collapse();
+                break;
+        }
+    }
+
     // 工作区名称 点击后返回上一页
     private MapDatabaseHelper mMapDatabaseHelper = MapDatabaseHelper.getInstance();
     private List<Route> routeListData;
-    private ListView mRouteList;
     private Workspace mWorkspace;
     //传递 当前选择的路线 值
     private MapFragment mapFragment;
     // 高亮当前选择的值
-    private RouteListViewAdapter listViewAdapter;
+    private RouteListViewAdapter mRouteListViewAdapter;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_map);
+        ButterKnife.bind(this);
 
         mWorkspace = mMapDatabaseHelper.getWorkspaceByID(getIntent().getIntExtra("workspaceID", -1));
         if (mWorkspace == null) {
@@ -56,54 +102,32 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
     }
 
     private void initView() {
-        //整体布局
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.dlEditMap);
         //默认打开抽屉
-        drawerLayout.openDrawer(GravityCompat.START);
-        // 返回按键
-        IconButton iconBtn = (IconButton) findViewById(R.id.iconBtnBack);
+        mDrawer.openDrawer(GravityCompat.START);
         // 工作区名称
-        iconBtn.setText(mWorkspace.getName());
-        iconBtn.setBackgroundColor(Color.TRANSPARENT);
-        iconBtn.setOnClickListener(new OnClickListener() {
+        mBtnBack.setText(mWorkspace.getName());
+        mBtnBack.setBackgroundColor(Color.TRANSPARENT);
+        mBtnBack.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditMapActivity.this.finish();
             }
         });
 
-        // 添加路线 按键
-        findViewById(R.id.addRoute).setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                showAddRouteDialog();
-            }
-        });
-
-        // 自动调整的按键
-        findViewById(R.id.btnAdjust).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mapFragment != null) {
-                    mapFragment.autoAdjust();
-                }
-            }
-        });
-
         routeListData = getRouteListData();
-        // 路线的ListView
-        mRouteList = (ListView) findViewById(R.id.routeListView);
-        listViewAdapter = new RouteListViewAdapter(this);
+
+        mRouteListViewAdapter = new RouteListViewAdapter(this);
         if (routeListData.size() >= 1) {
-            listViewAdapter.setSelectItem(0);
+            mRouteListViewAdapter.setSelectItem(0);
         }
-        mRouteList.setAdapter(listViewAdapter);
+        mRouteListView.setAdapter(mRouteListViewAdapter);
 
         //region 点击路线 -> 切换该路线
-        mRouteList.setOnItemClickListener(new OnItemClickListener() {
+        mRouteListView.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                listViewAdapter.setSelectItem(position);
-                listViewAdapter.notifyDataSetInvalidated();
+                mRouteListViewAdapter.setSelectItem(position);
+                mRouteListViewAdapter.notifyDataSetInvalidated();
                 // 刷新Fragment
                 mapFragment.setRouteID(routeListData.get(position).getId());
                 mapFragment.refreshPath();
@@ -112,14 +136,13 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         //endregion
 
         //region 长按路线 -> 编辑/删除
-        mRouteList.setOnItemLongClickListener(new OnItemLongClickListener() {
-            public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                           final int position, long id) {
+        mRouteListView.setOnItemLongClickListener(new OnItemLongClickListener() {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 final PopupWindowManager pwm = new PopupWindowManager(EditMapActivity.this);
                 pwm.showPopupWindowAsDropDown(view,
                         R.layout.popup_edit_route,
                         view.getWidth(), -view.getHeight(),
-                        new int[]{R.id.popupEditPath, R.id.popupEditRoute, R.id.popupDelRoute},
+                        new int[]{R.id.popupEditPath1, R.id.popupEditRoute, R.id.popupDelRoute},
                         //region 编辑路径 (添加,修改,删除)
                         new OnClickListener() {
                             @Override
@@ -152,10 +175,10 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                                                 if (mMapDatabaseHelper.delData(routeListData.get(position))) {
                                                     // 获取最新数据
                                                     routeListData = getRouteListData();
-                                                    listViewAdapter.notifyDataSetInvalidated();
+                                                    mRouteListViewAdapter.notifyDataSetInvalidated();
                                                     //将 当前路径设置为 0
                                                     if (routeListData.size() != 0) {
-                                                        listViewAdapter.setSelectItem(0);
+                                                        mRouteListViewAdapter.setSelectItem(0);
                                                         mapFragment.setRouteID((routeListData.get(0)).getId());
                                                     } else {
                                                         mapFragment.setRouteID(0);
@@ -180,7 +203,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
 
     private void initFragment() {
         FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTranscation = fragmentManager.beginTransaction();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         mapFragment = new MapFragment();
         Bundle bd = new Bundle();
         if (routeListData.size() != 0) {
@@ -188,8 +211,8 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         }
         bd.putInt("workspaceID", mWorkspace.getId());
         mapFragment.setArguments(bd);
-        fragmentTranscation.replace(R.id.edit_map_frame, mapFragment);
-        fragmentTranscation.commit();
+        fragmentTransaction.replace(R.id.edit_map_frame, mapFragment);
+        fragmentTransaction.commit();
     }
 
     private List<Route> getRouteListData() {
@@ -210,6 +233,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         int currentRouteID = mMapDatabaseHelper.getMaxRouteID() + 1;
         target.setId(currentRouteID);
         target.setWorkspaceID(mWorkspace.getId());
+        target.setType(Route.TASK_ROUTE);
 
         // 初始化 Spinner (隐藏 + 初始化数据)
         View dialogLayout = builder.getConvertView();
@@ -221,7 +245,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         } else {
             // 如果有路线存在, 初始化Spinner
             Spinner spPreRoute = (Spinner) dialogLayout.findViewById(R.id.spPreRoute);
-            List<Route> routeList = mMapDatabaseHelper.getAllRoute(mWorkspace.getId());
+            List<Route> routeList = mMapDatabaseHelper.getLegalPreRoute(target);
             String[] selections = new String[routeList.size()];
             for (int i = 0; i < routeList.size(); i++) {
                 selections[i] = routeList.get(i).getName();
@@ -238,8 +262,8 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                         Route newRoute = Route.loadRoute(target, viewList);
                         if (newRoute != null && mMapDatabaseHelper.addData(newRoute)) {
                             routeListData = getRouteListData();
-                            listViewAdapter.setSelectItem(routeListData.size() - 1);
-                            listViewAdapter.notifyDataSetInvalidated();
+                            mRouteListViewAdapter.setSelectItem(routeListData.size() - 1);
+                            mRouteListViewAdapter.notifyDataSetInvalidated();
 
                             mapFragment.setRouteID(newRoute.getId());
                             return true;
@@ -289,7 +313,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                         Route newRoute = Route.loadRoute(route, viewList);
                         if (newRoute != null && mMapDatabaseHelper.updateData(newRoute)) {
                             routeListData = getRouteListData();
-                            listViewAdapter.notifyDataSetInvalidated();
+                            mRouteListViewAdapter.notifyDataSetInvalidated();
                             return true;
                         } else {
                             return false;
@@ -300,6 +324,56 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                         new Object[]{route.getId(), spinnerSelectionID, route.getName(), route.isEnabled()})
                 .show();
     }
+
+    private void showSimpleAddRouteDialog(String title, int RouteType) {
+        final View dialogView = View.inflate(EditMapActivity.this, R.layout.dialog_route_simple, null);
+        final EditText etInputMode = (EditText) dialogView.findViewById(R.id.etRouteName);
+
+        final Route route = new Route();
+        route.setId(mMapDatabaseHelper.getMaxRouteID() + 1);
+        route.setType(RouteType);
+        route.setEnabled(true);
+        route.setWorkspaceID(mWorkspace.getId());
+
+        final Spinner spPreRoute = (Spinner) dialogView.findViewById(R.id.spPreRoute);
+        final List<Route> preRouteOptions = mMapDatabaseHelper.getLegalPreRoute(route);
+        String[] selections = new String[preRouteOptions.size()];
+        for (int i = 0; i < selections.length; i++) {
+            selections[i] = preRouteOptions.get(i).getName();
+        }
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selections);
+        spPreRoute.setAdapter(adapter);
+
+        new AlertDialog.Builder(EditMapActivity.this)
+                .setTitle(title)
+                .setIcon(RouteType == Route.STATION_ROUTE ? R.mipmap.fab_btn_map_add_station : R.mipmap.fab_btn_map_add_portal)
+                .setView(dialogView)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String name = etInputMode.getText().toString();
+                        if (TextUtils.isEmpty(name)) {
+                            T.show("请输入线路名称");
+                        } else {
+                            route.setName(name);
+                            int preRouteID = preRouteOptions.get(spPreRoute.getSelectedItemPosition()).getId();
+                            route.setPreID(preRouteID);
+
+                            if (mMapDatabaseHelper.addData(route)) {
+                                routeListData = getRouteListData();
+                                mRouteListViewAdapter.setSelectItem(routeListData.size() - 1);
+                                mRouteListViewAdapter.notifyDataSetInvalidated();
+
+                                mapFragment.setRouteID(route.getId());
+                            }
+                        }
+                    }
+                })
+                .setNegativeButton("取消", null)
+                .show();
+        mFamMenu.collapse();
+    }
+
 
     class RouteListViewAdapter extends BaseAdapter {
         private LayoutInflater inflater;
@@ -323,6 +397,14 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
 
         public long getItemId(int position) {
             return position;
+        }
+
+        public Route getSelectRoute() {
+            if (selectItem == -1) {
+                return null;
+            } else {
+                return (Route) getItem(selectItem);
+            }
         }
 
         @Override
@@ -367,51 +449,48 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         }
     }
 
-    private void showAddPathDialog(final Dialog chooseDialog, final Route route, Node startNode) {
+    public Route getCurrentRoute() {
+        if (routeListData.size() <= 0) {
+            return null;
+        }
+        return mRouteListViewAdapter.getSelectRoute();
+    }
+
+    public void showAddPathDialog(final Route currentRoute, Node selectNode) {
+        final Node routeLastNode = mMapDatabaseHelper.getLastNodeByRouteID(currentRoute.getId());
+
         CustomDialog.Builder mBuilder = new CustomDialog.Builder(this);
         mBuilder.setResourceID(R.layout.dialog_path_edit);
-        //初始化Spinner选项
-        String[] selections = new String[]{PATH_TURN.STRAIGHT, PATH_TURN.LEFT, PATH_TURN.RIGHT};
-        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selections);
-        View dialogLayout = mBuilder.getConvertView();
-        //  航向角度
-        Spinner directionSpinner = (Spinner) dialogLayout.findViewById(R.id.spPathYaw);
-        directionSpinner.setAdapter(adapter);
-        // 到点转向
-        Spinner angleSpinner = (Spinner) dialogLayout.findViewById(R.id.spPathAngle);
-        angleSpinner.setAdapter(adapter);
-        // 起始点
-        Spinner spStart = (Spinner) dialogLayout.findViewById(R.id.spStartNode);
-        final Spinner spEnd = (Spinner) dialogLayout.findViewById(R.id.spEndNode);
+        final PathDialogViewHolder holder = new PathDialogViewHolder(mBuilder.getConvertView());
         // 如果起始点为空,表示当前路线还未选择第一个开始点
-        if (startNode == null) {
+        if (routeLastNode == null) {
             List<Node> selectableNodes;
             // 如果当前路线是第一条路线,则起始点在工作区内随便选
-            if (route.getPreID() == 0) {
-                selectableNodes = mMapDatabaseHelper.getAllNode(route.getWorkspaceID());
+            if (currentRoute.getPreID() == 0) {
+                selectableNodes = mMapDatabaseHelper.getAllNodeOrderById(currentRoute.getWorkspaceID());
             } else {
                 //如果当前路线不是第一条路线,则在前级路线上选择起始点
-                selectableNodes = mMapDatabaseHelper.getNodeByRoute(route.getPreID());
+                selectableNodes = mMapDatabaseHelper.getNodeByRoute(currentRoute.getPreID());
             }
             String[] selection = new String[selectableNodes.size()];
             for (int i = 0; i < selectableNodes.size(); i++) {
                 selection[i] = selectableNodes.get(i).getName();
             }
-            spStart.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selection));
+            holder.mSpStartNode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selection));
 
             //当 起点选项更新时,刷新 终点的可选项
-            spStart.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            holder.mSpStartNode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     String nodeName = ((TextView) view).getText().toString();
-                    Node node = mMapDatabaseHelper.getNodeByName(route.getWorkspaceID(), nodeName);
+                    Node node = mMapDatabaseHelper.getNodeByName(currentRoute.getWorkspaceID(), nodeName);
                     List<Node> selectableNode = mMapDatabaseHelper.getSelectableNode(node);
                     String[] selection = new String[selectableNode.size()];
                     for (int i = 0; i < selectableNode.size(); i++) {
                         selection[i] = selectableNode.get(i).getName();
                     }
-                    spEnd.setAdapter(new ArrayAdapter<>(EditMapActivity.this, android.R.layout.simple_spinner_item, selection));
-                    spEnd.invalidate();
+                    holder.mSpEndNode.setAdapter(new ArrayAdapter<>(EditMapActivity.this, android.R.layout.simple_spinner_item, selection));
+                    holder.mSpEndNode.invalidate();
                 }
 
                 @Override
@@ -419,28 +498,31 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                 }
             });
         } else {
-            String[] startSelection = new String[]{startNode.getName()};
-            spStart.setEnabled(false);
-            spStart.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, startSelection));
+            String[] startSelection = new String[]{routeLastNode.getName()};
+            holder.mSpStartNode.setEnabled(false);
+            holder.mSpStartNode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, startSelection));
 
-            List<Node> selectableNodes = mMapDatabaseHelper.getSelectableNode(startNode);
-            String[] selection = new String[selectableNodes.size()];
-            for (int i = 0; i < selectableNodes.size(); i++) {
-                selection[i] = selectableNodes.get(i).getName();
-            }
-            spEnd.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selection));
+//            List<Node> selectableNodes = mMapDatabaseHelper.getSelectableNode(selectNode);
+//            String[] selection = new String[selectableNodes.size()];
+//            for (int i = 0; i < selectableNodes.size(); i++) {
+//                selection[i] = selectableNodes.get(i).getName();
+//            }
+            String[] endSelection = new String[]{selectNode.getName()};
+            holder.mSpEndNode.setEnabled(false);
+            holder.mSpEndNode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, endSelection));
         }
-
 
         // 获取 已经确定的值
         final Path pathAdd = new Path();
-        pathAdd.setRouteID(route.getId());
-        int orderID = mMapDatabaseHelper.getMaxPathOrder(route.getId()) + 1;
+        pathAdd.setRouteID(currentRoute.getId());
+        int orderID = mMapDatabaseHelper.getMaxPathOrder(currentRoute.getId()) + 1;
         pathAdd.setOrderID(orderID);
         mBuilder.setCancelBtnClick(R.id.dialogCancelBtn, new CustomDialogCallback() {
             @Override
             public boolean onDialogBtnClick(List<View> viewList) {
-                chooseDialog.show();
+//                if (chooseDialog != null) {
+//                    chooseDialog.show();
+//                }
                 return true;
             }
         })
@@ -454,7 +536,12 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                             return false;
                         } else if (mMapDatabaseHelper.addData(newPath)) {
                             mapFragment.refreshAll();
-                            chooseDialog.show();
+//                            if (chooseDialog != null) {
+//                                chooseDialog.show();
+//                            }
+//                            if (chooseDialogAdapter != null) {
+//                                chooseDialogAdapter.notifyDataSetChanged();
+//                            }
                             return true;
                         } else {
                             return false;
@@ -464,44 +551,58 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                 .create(new int[]{R.id.spStartNode, R.id.spEndNode,
                         R.id.addPathRouteID, R.id.addPathOrderID,
                         R.id.spPathYaw, R.id.etPathDistance,
-                        R.id.spPathAngle, R.id.etPathMaxSpeed}, new Object[]{
-                        0, 0, route.getId(), orderID,
-                        null, null, null, null})
+                        R.id.spPathAngle, R.id.etPathMaxSpeed,
+                        R.id.spPathTurnType}, new Object[]{
+                        0, 0, currentRoute.getId(), orderID,
+                        null, null, null, null, null})
                 .show();
     }
 
+
     //显示编辑path的dialog, 当操作结束,继续显示chooseDialog
-    private void showEditPathDialog(final Dialog chooseDialog, final Path path) {
-        CustomDialog.Builder mBuilder = new CustomDialog.Builder(this);
+    public void showEditPathDialog(final Route route, final Path path) {
+        final CustomDialog.Builder mBuilder = new CustomDialog.Builder(this);
         mBuilder.setResourceID(R.layout.dialog_path_edit);
-        //初始化Spinner选项
-        String[] selections = new String[]{PATH_TURN.STRAIGHT, PATH_TURN.LEFT, PATH_TURN.RIGHT};
-        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, selections);
-        View dialogLayout = mBuilder.getConvertView();
-        //  航向角度
-        Spinner directionSpinner = (Spinner) dialogLayout.findViewById(R.id.spPathYaw);
-        directionSpinner.setAdapter(adapter);
-        int currentDirectionSelect = getPathTurnSpinnerItemOrder(path.getYaw());
-        // 到点转向
-        Spinner angleSpinner = (Spinner) dialogLayout.findViewById(R.id.spPathAngle);
-        angleSpinner.setAdapter(adapter);
-        int currentAngleSelect = getPathTurnSpinnerItemOrder(path.getAngle());
+        final PathDialogViewHolder holder = new PathDialogViewHolder(mBuilder.getConvertView());
 
         // 起始点
-        Spinner spStart = (Spinner) dialogLayout.findViewById(R.id.spStartNode);
-        spStart.setEnabled(false);
+        holder.mSpStartNode.setEnabled(false);
         String[] startNodeSelection = new String[]{mMapDatabaseHelper.getNodeByID(path.getNodeID()).getName()};
-        spStart.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, startNodeSelection));
+        holder.mSpStartNode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, startNodeSelection));
         // 终点
-        Spinner spEnd = (Spinner) dialogLayout.findViewById(R.id.spEndNode);
-        spEnd.setEnabled(false);
+        holder.mSpEndNode.setEnabled(false);
         String[] endNodeSelection = new String[]{mMapDatabaseHelper.getNodeByID(path.getEndNode()).getName()};
-        spEnd.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, endNodeSelection));
+        holder.mSpEndNode.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, endNodeSelection));
 
+        // 删除
+        holder.mBtnDel.setVisibility(View.VISIBLE);
+        holder.mBtnDel.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mBuilder.getDialog() != null) {
+                    mBuilder.getDialog().dismiss();
+                }
+                CustomDialog.Builder builder = new CustomDialog.Builder(EditMapActivity.this);
+                builder.getConfirmDialog("确认删除", "是否要删除路径 [" + path.getNodeID() + "->" + path.getEndNode() + "]?" +
+                                "\n后续路径也将同时删除!!!",
+                        new CustomDialogCallback() {
+                            @Override
+                            public boolean onDialogBtnClick(List<View> viewList) {
+                                //删除成功
+                                if (mMapDatabaseHelper.delData(path)) {
+                                    mapFragment.refreshAll();
+                                    return true;
+                                }
+                                return false;
+                            }
+                        })
+                        .show();
+            }
+        });
         mBuilder.setCancelBtnClick(R.id.dialogCancelBtn, new CustomDialogCallback() {
             @Override
             public boolean onDialogBtnClick(List<View> viewList) {
-                chooseDialog.show();
+//                chooseDialog.show();
                 return true;
             }
         })
@@ -515,7 +616,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                             return false;
                         } else if (mMapDatabaseHelper.updateData(newPath)) {
                             mapFragment.refreshAll();
-                            chooseDialog.show();
+//                            chooseDialog.show();
                             return true;
                         } else {
                             return false;
@@ -525,11 +626,13 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                 .create(new int[]{R.id.spStartNode, R.id.spEndNode,
                         R.id.addPathRouteID, R.id.addPathOrderID,
                         R.id.spPathYaw, R.id.etPathDistance,
-                        R.id.spPathAngle, R.id.etPathMaxSpeed}, new Object[]{
+                        R.id.spPathAngle, R.id.etPathMaxSpeed,
+                        R.id.spPathTurnType}, new Object[]{
                         0, 0, path.getRouteID(), path.getOrderID(),
-                        currentDirectionSelect, null, currentAngleSelect, null})
+                        getPathTurnSpinnerItemOrder(path.getYaw()), null,
+                        getPathTurnSpinnerItemOrder(path.getAngle()), null,
+                        path.getTurnType()})
                 .show();
-
     }
 
     private void showChoosePathDialog(final Route route) {
@@ -539,7 +642,11 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
         builder.setTitle(route.getName() + "包含的路径");
         builder.setButtonText("添加路径", "取消");
         builder.setCancelBtnClick(R.id.dialogCancelBtn, null);
-        final Dialog dialog = builder.create(null, null);
+        final Dialog chooseDialog = builder.create(null, null);
+
+        ListView lvPaths = (ListView) builder.getViewByID(R.id.lvPathList);
+        final PathListViewAdapter pathChooseDialogAdapter = new PathListViewAdapter(this, route, chooseDialog);
+        lvPaths.setAdapter(pathChooseDialogAdapter);
 
         // 如果该节点不可以添加路径,将添加按键设置为不可用
         Button addPath = (Button) builder.getViewByID(R.id.dialogOKBtn);
@@ -552,24 +659,27 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
             addPath.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    dialog.hide();
-                    showAddPathDialog(dialog, route, node);
+                    chooseDialog.hide();
+//                    showAddPathDialog(chooseDialog, pathChooseDialogAdapter, route, node);
                 }
             });
         }
 
-        ListView lvPaths = (ListView) builder.getViewByID(R.id.lvPathList);
-        PathListViewAdapter pathChooseDialogAdapter = new PathListViewAdapter(this, route, dialog);
-        lvPaths.setAdapter(pathChooseDialogAdapter);
-        dialog.show();
+        chooseDialog.show();
     }
 
     private int getPathTurnSpinnerItemOrder(int turnYaw) {
-        if (turnYaw == 0) {
-            return 0; //直走
+        switch (turnYaw) {
+            case 0:
+                return 0; //直走
+            case -90:
+                return 1; //左转
+            case 90:
+                return 2;//右转
+            case -180:
+                return 3; //掉头
         }
-        // 负值代表左转 --> 1 . 正直代表右转 -->第2个选项
-        return turnYaw > 0 ? 2 : 1;
+        return 0;
     }
 
 
@@ -632,7 +742,7 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
                     public void onClick(View v) {
 //                        mDialog.dismiss();
                         mDialog.hide();
-                        showEditPathDialog(mDialog, path);
+//                        showEditPathDialog(mDialog, path);
                     }
                 });
 
@@ -675,10 +785,47 @@ public class EditMapActivity extends BaseActivity implements I_Parameters {
             return convertView;
         }
 
+        @Override
+        public void notifyDataSetChanged() {
+            mPathList = mMapDatabaseHelper.getWholeRoute(mRoute.getId());
+            super.notifyDataSetChanged();
+        }
+
         class ViewHolder {
             TextView tvPathOrder;
             TextView tvPathName;
             ImageButton ibPathDel;
+        }
+    }
+
+    static class PathDialogViewHolder {
+        @BindView(R.id.dialogTitle)
+        TextView mDialogTitle;
+        @BindView(R.id.spStartNode)
+        Spinner mSpStartNode;
+        @BindView(R.id.spEndNode)
+        Spinner mSpEndNode;
+        @BindView(R.id.addPathRouteID)
+        TextView mAddPathRouteID;
+        @BindView(R.id.addPathOrderID)
+        TextView mAddPathOrderID;
+        @BindView(R.id.etPathMaxSpeed)
+        EditText mEtPathMaxSpeed;
+        @BindView(R.id.etPathDistance)
+        EditText mEtPathDistance;
+        @BindView(R.id.spPathYaw)
+        Spinner mSpPathYaw;
+        @BindView(R.id.spPathAngle)
+        Spinner mSpPathAngle;
+        @BindView(R.id.dialogOKBtn)
+        Button mDialogOKBtn;
+        @BindView(R.id.dialogCancelBtn)
+        Button mDialogCancelBtn;
+        @BindView(R.id.btnDelPath)
+        Button mBtnDel;
+
+        PathDialogViewHolder(View view) {
+            ButterKnife.bind(this, view);
         }
     }
 }

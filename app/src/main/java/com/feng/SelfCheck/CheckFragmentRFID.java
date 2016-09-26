@@ -12,7 +12,6 @@ import com.feng.RSS.R;
 import com.feng.Usb.ArmHandler.RFIDHandler;
 import com.feng.Usb.ArmProtocol;
 import com.feng.Usb.UsbData;
-import com.feng.Usb.UsbEvent;
 import com.feng.Utils.L;
 import com.feng.Utils.Verifier;
 
@@ -43,20 +42,18 @@ public class CheckFragmentRFID extends CheckFragment {
 
     @Override
     public void onReceiveArmData(UsbData usbData) {
-        if (usbData.getEvent() == UsbEvent.UsbReceive) {
-            if (new Verifier().compare2Byte(usbData.getDataReceive(), ArmProtocol.CurrentRFID)) {
-                byte[] body = usbData.getReceiveBody();
-                if (body == null) {
-                    return;
-                }
-                if (body.length != 2) {
-                    L.e(" 自检卡号 长度错误 !=2..");
-                }
-                btn1.setVisibility(View.VISIBLE);
-                btn1.setText("0x" +
-                        (Integer.toHexString((int) (body[1] & 0xff)).toUpperCase()) +
-                        (Integer.toHexString((int) (body[0] & 0xff)).toUpperCase()));
+        if (new Verifier().compareHead(usbData.getDataReceive(), ArmProtocol.CurrentRFID)) {
+            byte[] body = usbData.getReceiveBody();
+            if (body == null) {
+                return;
             }
+            if (body.length != 2) {
+                L.e(" 自检卡号 长度错误 !=2..");
+            }
+            btn1.setVisibility(View.VISIBLE);
+            btn1.setText("0x" +
+                    (Integer.toHexString((int) (body[1] & 0xff)).toUpperCase()) +
+                    (Integer.toHexString((int) (body[0] & 0xff)).toUpperCase()));
         }
     }
 
