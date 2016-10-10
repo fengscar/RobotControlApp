@@ -5,8 +5,8 @@
     android:versionName="服务机器人平板端单机测试版" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="14" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
 
     <!-- 网络操作 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -33,6 +33,7 @@
         android:allowBackup="true"
         android:icon="@drawable/face_laugh"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
 
         <!-- 每个activity中设置 当前界面为 横屏 landscape -->
@@ -91,7 +92,7 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.feng.Activities.EditSpeakerActivity"
+            android:name="com.feng.Activities.EditIatActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
         </activity>
@@ -106,7 +107,7 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name="com.feng.Activities.SelfCheckActivity"
+            android:name="com.feng.SelfCheck.SelfCheckActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
         </activity>
@@ -131,7 +132,7 @@
         </receiver>
 
         <activity
-            android:name="com.feng.Base.SettingsActivity"
+            android:name="com.feng.Activities.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
     </application>

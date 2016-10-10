@@ -1,3 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.1.1_5ffca41b0539d9465dbb9318a05d2db3234b801d\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.orhanobut\logger\1.3\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2c40111d8d404cf9a7c25789676a41661d2651b0">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.orhanobut-logger-1.3_0a9af883722dcda217e89134b1baf910562617d2\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.1_96d2b2a804c95777f0f876fb2e855598962773a7\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_79b72abcd82c4fea32f1cc7bfe88f7e64780cf5b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\fengscar\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\24.1.1\3af19f153122737b372622fa6c81dd11a1c6b999\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.1.1_4e27b9f14a7255e6c2b0c5a272c975099c664228\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="284da35294d7684cdf0439be5086f61f29a314da">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6a37f932c3ed04d3f7ee2840f8da6eaae1a8977c\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_4dc71d6f8968b8a983123acb867476e0136644c5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\fengscar\.gradle\caches\modules-2\files-2.1\com.facebook.rebound\rebound\0.3.8\c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e\rebound-0.3.8.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c8b90640dddaf1e7ad75d7cb00b09a44b3788f7e">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\rebound-0.3.8_be1c1954649ccf7599ad6d199c7cc41e9877d4bc\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\libs\Sunflower.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ed068c1df068e356eb8c25abbc5034b809af4155">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\2\Sunflower_765e50182c05b35555abc9f1a585e3477a01ba46\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\fengscar\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.2.1\d6f54d76edfbe779a50a8636b10fd3f555d8f780\butterknife-annotations-8.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d6f54d76edfbe779a50a8636b10fd3f555d8f780">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.2.1_c1e84fa388278a9c42f1e260e7b2271b2e1afa7d\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\libs\Msc.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4499f115c3f2e52dff1d30aae5cfed9aafac3a63">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\2\Msc_63f6c56ffbdb6250f946ec758635cf76f8fb1aff\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\libs\usbseriallibrary.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1daef1788a0ebf35fdca14d5d4c2865eff0bb473">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\2\usbseriallibrary_e6b65149c209bd16b28d054b4d2d7c2b05b3167e\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.getbase\floatingactionbutton\1.10.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f40cf334cdc8b098b74312e21c7741c6eefbeb0e">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.getbase-floatingactionbutton-1.10.1_ff366ff0fccdb2da2fd26dd93481cf77101c2184\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_bd907a0c75684e41f212484bdc68320dc9fc37a2\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ca5e58104f56f918f0fb3a5b1b371ab599ae56b2">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.2.1_99cc4babb756d64fda42564e84f011bc9f9e9934\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f1226c354cd680074991077ebb3f74391b5c980f">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_278d68e1ad5440d9e0dd1dfe01b8c6770846581b\classes.dex" />
+    </item>
+    <item
+        jar="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\exploded-aar\com.sdsmdg.tastytoast\tastytoast\0.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5aca30f91bab9fa3ee506e18fa2e261df238f57f">
+        <dex dex="D:\AndroidProjects\RobotControlAppV9.18\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.sdsmdg.tastytoast-tastytoast-0.0.2_87d473d9559b56fb3debe1aa157bda2ccbafc9be\classes.dex" />
+    </item>
+
+</items>

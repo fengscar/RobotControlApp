@@ -1,202 +1,802 @@
 [
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_node.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_node.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_version.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_version.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning_content.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_warning_content.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_path.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_path.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\error_toast_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\error_toast_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_route.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_route.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_arm.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_arm.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__button.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog__button.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_workspace.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_workspace.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__button.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog__button.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_version.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_version.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_listing.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_listing.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose_item.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_path_choose_item.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_listing.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_listing.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uniform_setting_title.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\uniform_setting_title.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_oneline.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_input_oneline.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_workspace.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_workspace.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_workspace.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_workspace.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_pwd.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_pwd.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_mag.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_mag.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_route.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\popup_edit_route.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__title.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog__title.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_map.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_map.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_check.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_check.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_mag.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_mag.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_3button.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_self_check_3button.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_child.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\expandable_task_child.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_drawer.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_drawer.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_self_check.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_self_check.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_self_check.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_self_check.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_node.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_node.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_node.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_node.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_menu.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_menu.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_loading.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_loading.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_workspace.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_workspace.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_workspace.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_workspace.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_node_simple.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_node_simple.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_test.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_test.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_route.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_route.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_check.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_check.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_menu.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_menu.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_map.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_map.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_menu.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_menu.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_workspace.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_workspace.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_workspace.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_rss.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_rss.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_loading.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_loading.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_arm_setting.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\layout_arm_setting.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_group.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\expandable_task_group.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_workspace.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\toast.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_edit.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_path_edit.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_self_check.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_self_check.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_speaker.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_edit_speaker.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_motor.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_motor.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_task.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\listview_of_task.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_listing.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_listing.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_menu.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\layout_menu.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\default_toast_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\default_toast_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_warning.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_path_choose.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\info_toast_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\info_toast_layout.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_mag.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\gridview_of_mag.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_lifter.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_lifter.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_map.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_map.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\btn_notify.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\btn_notify.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\toast.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_mag.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_self_check_mag.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_oneline.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_input_oneline.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uniform_setting_title.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\uniform_setting_title.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_warning.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_result.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\fragment_self_check_result.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_oneline.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_input_oneline.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_child.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\expandable_task_child.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_confirm.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_confirm.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_password.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_input_password.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_confirm.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\layout\\dialog_confirm.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_mag.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_mag.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_iat_record.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_iat_record.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning_content.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_warning_content.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\default_toast_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\default_toast_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_edit.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_path_edit.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__button.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog__button.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_menu.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\layout_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_password.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_input_password.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose_item.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_path_choose_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\btn_notify.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\btn_notify.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_workspace.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_route.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_route.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_motor.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_motor.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_check.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_check.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_iat.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_iat.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_task.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_task.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_pwd.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_pwd.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\success_toast_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\success_toast_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_twoline.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_input_twoline.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_route.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_workspace.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_node.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_node.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_iat_record.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_iat_record.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_path_choose.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_route_simple.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_route_simple.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_rss.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_rss.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_node.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_node.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_confirm.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_confirm.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_task.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_task.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_lifter.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_lifter.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_arm.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_arm.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_workspace.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_workspace.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_password.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_input_password.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\btn_notify.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\btn_notify.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\warning_toast_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\warning_toast_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_portal_connect.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_portal_connect.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_drawer.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_drawer.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_menu.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_rss.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_rss.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_map.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_map.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_workspace.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_arm.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_arm.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_route.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\success_toast_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\success_toast_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_path_choose.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_3button.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_3button.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_workspace.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_input_twoline.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_input_twoline.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_result.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_result.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_route.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_route.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_node.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_node.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\info_toast_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\info_toast_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_workspace.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_node.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_node.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning_content.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_warning_content.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_group.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\expandable_task_group.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_map.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_map.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__title.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog__title.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_test.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_test.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_path.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_path.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_3button.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_3button.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_arm_setting.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\layout_arm_setting.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\toast.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\toast.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_path.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_path.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_map.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_map.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_edit_node.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\popup_edit_node.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_portal_connect.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_portal_connect.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_version.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_version.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog__title.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog__title.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_child.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\expandable_task_child.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_workspace.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_workspace.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_drawer.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_drawer.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\warning_toast_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\warning_toast_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_choose_item.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_path_choose_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uniform_setting_title.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\uniform_setting_title.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_mag.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_mag.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_path_edit.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_path_edit.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_menu.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_of_route.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\listview_of_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_self_check_result.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\fragment_self_check_result.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_menu.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gridview_of_node.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\gridview_of_node.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\error_toast_layout.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.sdsmdg.tastytoast\\tastytoast\\0.0.2\\res\\layout\\error_toast_layout.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_iat.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_iat.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_menu.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\layout_menu.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_node_simple.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_node_simple.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_arm_setting.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\layout_arm_setting.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_warning.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_warning.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_route_simple.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_route_simple.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_test.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_test.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_loading.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_loading.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_edit_pwd.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\activity_edit_pwd.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_route.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\dialog_route.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\layout\\expandable_task_group.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\layout\\expandable_task_group.xml"
     }
 ]

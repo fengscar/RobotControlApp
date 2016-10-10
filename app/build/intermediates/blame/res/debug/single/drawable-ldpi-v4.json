@@ -1,6 +1,10 @@
 [
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\text_view_border.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-ldpi\\text_view_border.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\text_view_border.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-ldpi\\text_view_border.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\text_view_border.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-ldpi\\text_view_border.xml"
     }
 ]

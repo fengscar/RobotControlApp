@@ -3,41 +3,33 @@
               style="@style/dialog_background"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:windowSoftInputMode="adjustPan"
               android:orientation="vertical">
 
-    <include layout="@layout/dialog__title"/>
-
-    <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="8dp">
-        <Spinner android:layout_width="150dp"
-                 android:id="@+id/spStartNode"
-                 android:gravity="center"
-                 android:spinnerMode="dropdown"
-                 android:layout_weight="1"
-                 android:layout_gravity="center"
-                 android:layout_height="wrap_content"/>
-
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
         <TextView
-                style="@style/text_20sp_999999"
+                android:id="@+id/dialogTitle"
+                style="@style/dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <com.feng.CustomView.IconButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:text="到"/>
+                android:id="@+id/btnDelPath"
+                android:text="删除"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_marginRight="5dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:visibility="gone"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
 
-        <Spinner android:layout_width="150dp"
-                 android:id="@+id/spEndNode"
-                 android:gravity="center"
-                 android:layout_weight="1"
-                 android:spinnerMode="dropdown"
-                 android:layout_gravity="center"
-                 android:layout_height="wrap_content"/>
-    </LinearLayout>
+
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -75,6 +67,37 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="8dp">
+        <Spinner android:layout_width="150dp"
+                 android:id="@+id/spStartNode"
+                 android:gravity="center"
+                 android:spinnerMode="dropdown"
+                 android:layout_weight="1"
+                 android:layout_gravity="center"
+                 android:layout_height="wrap_content"/>
+
+        <TextView
+                style="@style/text_20sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="到"/>
+
+        <Spinner android:layout_width="150dp"
+                 android:id="@+id/spEndNode"
+                 android:gravity="center"
+                 android:layout_weight="1"
+                 android:spinnerMode="dropdown"
+                 android:layout_gravity="center"
+                 android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout
@@ -136,6 +159,7 @@
                  android:gravity="center"
                  android:spinnerMode="dropdown"
                  android:layout_weight="1"
+                 android:entries="@array/edit_path_turn_angle"
                  android:layout_gravity="center"
                  android:layout_height="wrap_content"/>
     </LinearLayout>
@@ -159,6 +183,31 @@
                  android:layout_weight="1"
                  android:spinnerMode="dropdown"
                  android:dropDownWidth="200dp"
+                 android:entries="@array/edit_path_turn_angle"
+                 android:layout_gravity="center"
+                 android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="8dp">
+
+        <TextView
+                style="@style/text_20sp_999999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dialog_path_turn_type"/>
+
+        <Spinner android:layout_width="200dp"
+                 android:id="@+id/spPathTurnType"
+                 android:gravity="center"
+                 android:layout_weight="1"
+                 android:spinnerMode="dropdown"
+                 android:dropDownWidth="200dp"
+                 android:entries="@array/edit_path_turn_type"
                  android:layout_gravity="center"
                  android:layout_height="wrap_content"/>
     </LinearLayout>

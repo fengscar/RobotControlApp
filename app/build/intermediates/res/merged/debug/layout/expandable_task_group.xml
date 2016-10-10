@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/round_gold_1379"
-    android:orientation="horizontal"
-    android:paddingLeft="15dp" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/flat_orange"
+              android:orientation="horizontal"
+              android:paddingLeft="15dp">
 
     <TextView
-        android:id="@+id/expandableLvGroupName"
-        style="@style/text_22sp_333333"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+            android:id="@+id/expandableLvGroupName"
+            style="@style/text_22sp_333333"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/expandableLvGroupBtnUp"
-        android:layout_width="35dp"
-        android:layout_height="fill_parent"
-        android:layout_marginLeft="15dp"
-        android:background="@drawable/round_gold_1379"
-        android:focusable="false"
-        android:gravity="center"
-        android:text="↑"
-        android:visibility="invisible" />
+    <!--<Button-->
+            <!--android:id="@+id/expandableLvGroupBtnUp"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:background="@drawable/round_gold_1379"-->
+            <!--android:focusable="false"-->
+            <!--android:gravity="center"-->
+            <!--android:text="↑"-->
+            <!--android:visibility="invisible"/>-->
 
-    <Button
-        android:id="@+id/expandableLvGroupBtnDown"
-        android:layout_width="35dp"
-        android:layout_height="fill_parent"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/round_gold_1379"
-        android:focusable="false"
-        android:gravity="center"
-        android:text="↓"
-        android:visibility="invisible" />
+    <!--<Button-->
+            <!--android:id="@+id/expandableLvGroupBtnDown"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="@drawable/round_gold_1379"-->
+            <!--android:focusable="false"-->
+            <!--android:gravity="center"-->
+            <!--android:text="↓"-->
+            <!--android:visibility="invisible"/>-->
 
 </LinearLayout>

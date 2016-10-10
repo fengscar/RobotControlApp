@@ -1,17 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fab="http://schemas.android.com/apk/res-auto"
         android:id="@+id/dlEditMap"
         android:layout_width="match_parent"
         android:background="@color/beige"
         android:layout_height="match_parent">
     <!--编辑地图 fragment-->
-    <FrameLayout
-            android:id="@+id/edit_map_frame"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"/>
-
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+        <FrameLayout
+                android:id="@+id/edit_map_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        </FrameLayout>
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+                android:id="@+id/famMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                fab:fab_addButtonSize="normal"
+                fab:fab_labelStyle="@style/fab_menu_labels_style"
+                fab:fab_expandDirection="up"
+                fab:fab_addButtonStrokeVisible="true"
+                fab:fab_addButtonColorNormal="@color/aquamarine"
+                fab:fab_addButtonColorPressed="@color/aquamarine"
+                fab:fab_addButtonPlusIconColor="#808080">
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAutoAdjust"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_icon="@mipmap/fab_btn_map_auto_adjust"
+                    fab:fab_colorNormal="@color/azure"
+                    fab:fab_colorPressed="@color/aquamarine"
+                    fab:fab_title="自动调整"/>
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAddPortal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_icon="@mipmap/fab_btn_map_add_portal"
+                    fab:fab_colorNormal="@color/azure"
+                    fab:fab_colorPressed="@color/aquamarine"
+                    fab:fab_title="添加连接点线路"/>
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAddStation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_icon="@mipmap/fab_btn_map_add_station"
+                    fab:fab_colorNormal="@color/azure"
+                    fab:fab_colorPressed="@color/aquamarine"
+                    fab:fab_title="添加停靠点路线"/>
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAddRoute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    fab:fab_icon="@mipmap/fab_btn_map_add_route"
+                    fab:fab_colorNormal="@color/azure"
+                    fab:fab_colorPressed="@color/aquamarine"
+                    fab:fab_title="添加任务路线"/>
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </RelativeLayout>
     <!-- 菜单栏 ( 路线 List ) -->
     <LinearLayout
             android:layout_gravity="start"
@@ -36,22 +87,5 @@
                 android:dividerHeight="1dp"
                 android:listSelector="#00000000"
                 android:scrollbars="none"/>
-
-        <Button
-                android:id="@+id/addRoute"
-                android:background="@drawable/uniform_blue_button"
-                android:textColor="@color/black"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="@string/edit_map_add_route"
-                android:textSize="26sp"/>
-        <Button
-                android:id="@+id/btnAdjust"
-                android:background="@drawable/uniform_blue_button"
-                android:textColor="@color/black"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="@string/edit_map_auto_adjust"
-                android:textSize="26sp"/>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

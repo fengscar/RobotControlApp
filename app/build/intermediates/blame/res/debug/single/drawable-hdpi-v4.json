@@ -1,102 +1,466 @@
 [
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_notifications_black_24dp.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\ic_notifications_black_24dp.png"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_normal.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_normal.png"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\yellow.9.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\yellow.9.png"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\circle_skyblue.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\circle_skyblue.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_79.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_blue_79.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gray.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\gray.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_1379.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_blue_1379.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_red_79.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_red_79.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_yellow_1379.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_yellow_1379.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_info_black_24dp.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\ic_info_black_24dp.png"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\skyblue.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\skyblue.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gray.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\gray.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_gold_1379.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_gold_1379.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_mini.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_mini.png"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_mini.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_mini.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\toast_background.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\toast_background.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\blue.9.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\blue.9.png"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_green_gradient.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_green_gradient.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_sync_black_24dp.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\ic_sync_black_24dp.png"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_skyblue_270.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_skyblue_270.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_white_gradient.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_white_gradient.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_gold_1379.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_gold_1379.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_layer.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\btn_layer.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_white_gradient.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_white_gradient.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\dialog.9.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\dialog.9.png"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\warning_yellow.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\warning_yellow.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_yellow_1379.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_yellow_1379.xml"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\red.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\red.png"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_layer.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\btn_layer.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_green_gradient.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\round_green_gradient.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\toast_background.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\toast_background.xml"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\green.png",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\green.png"
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "D:\\AndroidProjects\\RobotControlApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\white.xml",
-        "source": "D:\\AndroidProjects\\RobotControlApp\\app\\src\\main\\res\\drawable-hdpi\\white.xml"
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_gold_1379.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_gold_1379.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_1379.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_blue_1379.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\btn_layer.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\btn_layer.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_skyblue_270.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_skyblue_270.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_normal.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_normal.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\skyblue.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\skyblue.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_yellow_1379.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_yellow_1379.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\circle_skyblue.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\circle_skyblue.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_red_79.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_red_79.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_1379.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_blue_1379.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gray.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\gray.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_79.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_blue_79.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_blue_79.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_blue_79.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\toast_background.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\toast_background.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_white_gradient.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_white_gradient.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\warning_yellow.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\warning_yellow.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_green_gradient.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_green_gradient.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\skyblue.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\skyblue.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_skyblue_270.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_skyblue_270.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_mini.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_mini.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\warning_yellow.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\warning_yellow.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\fab_bg_normal.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.getbase\\floatingactionbutton\\1.10.1\\res\\drawable-hdpi-v4\\fab_bg_normal.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\white.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\white.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\round_red_79.xml",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\round_red_79.xml"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\white.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\white.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\circle_skyblue.xml",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\src\\main\\res\\drawable-hdpi\\circle_skyblue.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "F:\\AndroidProject\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png",
+        "source": "D:\\AndroidProjects\\RobotControlAppV9.18\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
     }
 ]

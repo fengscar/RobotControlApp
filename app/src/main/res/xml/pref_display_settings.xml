@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+            android:key="@string/net_ip_address_edittext_key"
+            android:title="@string/net_ip_address_edittext_title"
+            android:defaultValue="@string/net_ip_address_edittext_default"
+            android:maxLines="1"/>
+
+    <EditTextPreference
+            android:key="@string/net_ip_port_edittext_key"
+            android:title="@string/net_ip_port_edittext_title"
+            android:defaultValue="@string/net_ip_port_edittext_default"
+            android:inputType="number"
+            android:maxLength="5"
+            android:enabled="false"
+            android:maxLines="1"/>
+</PreferenceScreen>

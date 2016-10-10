@@ -1,0 +1,49 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--到点TTS-->
+    <SwitchPreference
+            android:key="@string/sound_reach_tts_switch_key"
+            android:title="@string/sound_reach_tts_switch_title"
+            android:defaultValue="true"/>
+    <!--到点音效-->
+
+    <SwitchPreference
+            android:key="@string/sound_reach_volume_switch_key"
+            android:title="@string/sound_reach_volume_switch_title"
+            android:defaultValue="true"/>
+
+    <RingtonePreference
+            android:dependency="@string/sound_reach_volume_switch_key"
+            android:key="@string/sound_reach_volume_ringtone_key"
+            android:title="@string/sound_reach_volume_ringtone_title"
+            android:ringtoneType="all"
+            android:defaultValue="content://settings/system/notification_sound"/>
+
+
+    <!--背景音乐-->
+    <SwitchPreference
+            android:key="@string/sound_background_switch_key"
+            android:title="@string/sound_background_switch_title"
+            android:defaultValue="true"/>
+    <!--RingtonePreference's summary should be set to its value by the activity code. -->
+    <RingtonePreference
+            android:dependency="@string/sound_background_switch_key"
+            android:key="@string/sound_background_ringtone_key"
+            android:title="@string/sound_background_ringtone_title"
+            android:ringtoneType="all"
+            android:defaultValue="content://settings/system/notification_sound"/>
+    <!--异常提示-->
+
+    <SwitchPreference
+            android:key="@string/sound_alarm_switch_key"
+            android:title="@string/sound_alarm_switch_title"
+            android:defaultValue="true"/>
+
+    <RingtonePreference
+            android:dependency="@string/sound_alarm_switch_key"
+            android:key="@string/sound_alarm_ringtone_key"
+            android:title="@string/sound_alarm_ringtone_title"
+            android:ringtoneType="all"
+            android:defaultValue="content://settings/system/notification_sound"/>
+
+</PreferenceScreen>
